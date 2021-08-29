@@ -12,9 +12,9 @@
     <artifactId>be</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>be</name>
-    <description>Demo project for Spring Boot</description>
+    <description>School-Management-System</description>
     <properties>
-        <java.version>11</java.version>
+        <java.version>16</java.version>
     </properties>
     <dependencies>
         <dependency>
