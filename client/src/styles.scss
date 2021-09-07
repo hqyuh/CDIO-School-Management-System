@@ -1,1 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+$app-color: #e43434;
+
+ @for $i from 6 through 30 {
+  .rounded-#{$i} {
+    --border-radius: #{$i}px !important;
+  }
+}
+
+@for $i from 5 through 50 {
+  .font-size-#{$i} {
+    font-size: #{$i}px !important;
+  }
+}
+
+@for $i from 1 through 9 {
+  .font-weight-#{$i}00 {
+    font-weight: #{$i * 100} !important;
+  }
+}
+
+@for $i from 1 through 100 {
+  .line-height-#{$i} {
+    line-height: $i!important;
+  }
+}
+
+.app-control{
+  border-radius: 16px;
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid rgb(207, 207, 207);
+  display: block;
+  position: relative;
+  &:focus{
+    outline: none;
+    border: 1px solid rgb(50, 114, 253);
+  }
+}
+
+::placeholder{
+  color: #CBCBCB;
+} 
+
+.app-color{
+  color: $app-color!important;
+}
+
+.app-bg{
+  background-color: $app-color!important;
+}
+
+.app-btn{
+  cursor: pointer;
+  padding: .75rem;
+  font-size: 1rem;
+  border-radius: 17px;
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: 1.5;
+  font-weight: 400;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  outline: none;
+  border: none;
+}
+
+.app-padding{
+  padding: 24px;
+}
