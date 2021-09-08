@@ -4,11 +4,15 @@ import { CommonModule } from '@angular/common';
 import { AccountRoutingModule } from './account-routing.module';
 import { LoginComponent } from './pages/login/login.component';
 import { DirectiveModule } from 'src/app/core/directive/directive.module';
+import { RegisterComponent } from './pages/register/register.component';
+import { FormFooterComponent } from './components/form-footer/form-footer.component';
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    FormFooterComponent
   ],
   imports: [
     CommonModule,
@@ -16,7 +20,8 @@ import { DirectiveModule } from 'src/app/core/directive/directive.module';
     DirectiveModule
   ],
   exports: [
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ]
 })
 export class AccountModule { }
