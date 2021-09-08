@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { DirectiveModule } from 'src/app/core/directive/directive.module';
 import { RegisterComponent } from './pages/register/register.component';
 import { FormFooterComponent } from './components/form-footer/form-footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormFooterComponent } from './components/form-footer/form-footer.compon
   imports: [
     CommonModule,
     AccountRoutingModule,
-    DirectiveModule
+    DirectiveModule,
+    ReactiveFormsModule
   ],
   exports: [
     LoginComponent,

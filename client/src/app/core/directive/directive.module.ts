@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InputIconDirective } from './input-icon.directive';
+import {TextErrorDirective} from './text-error.directive'
 
 
 
 @NgModule({
   declarations: [
-    InputIconDirective
+    TextErrorDirective
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    InputIconDirective
+    TextErrorDirective
   ]
 })
 export class DirectiveModule { }

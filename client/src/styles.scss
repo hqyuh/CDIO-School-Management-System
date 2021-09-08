@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
-$app-color: #e43434;
+$app-color: #F63428;
 
  @for $i from 6 through 30 {
   .rounded-#{$i} {
@@ -28,9 +28,9 @@ $app-color: #e43434;
 }
 
 .app-control{
-  border-radius: 16px;
-  padding: 12px;
-  font-size: 16px;
+  border-radius: 16px!important;
+  padding: 12px!important;
+  font-size: 16px!important;
   width: 100%;
   border: 1px solid rgb(207, 207, 207);
   display: block;
@@ -69,4 +69,8 @@ $app-color: #e43434;
 
 .app-padding{
   padding: 24px;
+}
+
+.darker {
+  filter: brightness(60%);
 }

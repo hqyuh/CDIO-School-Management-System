@@ -16,22 +16,38 @@
     </div>
     <div class="card-body">
       <div class="card-block">
-        <form action="#">
+        <form action="#" [formGroup]="loginForm" (ngSubmit)="login()">
           <div class="form-group">
             <label class="font-size-15 font-weight-500 mb-2">Email</label>
             <input
               type="email"
-              class="app-control"
+              class="app-control form-control"
               placeholder="Nhập email của bạn"
+              formControlName="email"
+              [class.is-invalid]="Email.invalid && (Email.touched || Email.dirty)"
+              [class.is-valid]="Email.valid && (Email.touched || Email.dirty)"
             />
+            <div *ngIf="Email.invalid && (Email.touched || Email.dirty)" text-error>
+              <p *ngIf="Email.errors?.required">Vui lòng nhập email !</p>
+              <p *ngIf="Email.errors?.email">Email sai định dạng !</p>
+            </div>
           </div>
           <div class="form-group mt-3">
             <label class="font-size-15 font-weight-500 mb-2">Mật khẩu</label>
             <input
               type="password"
-              class="app-control"
+              class="app-control form-control"
               placeholder="Nhập mật khẩu của bạn"
+              formControlName="password"
+              [class.is-invalid]="Password.invalid && (Password.touched || Password.dirty)"
+              [class.is-valid]="Password.valid && (Password.touched || Password.dirty)"
             />
+            <div *ngIf="Password.invalid && (Password.touched || Password.dirty)" text-error>
+              <p *ngIf="Password.errors?.required">Vui lòng nhập mật khẩu !</p>
+              <p *ngIf="Password.errors?.pattern">Mật khẩu sai định dạng !</p>
+              <p *ngIf="Password.errors?.minLength">Mật khẩu phải ít nhất 6 kí tự !</p>
+              <p *ngIf="Password.errors?.maxLength">Mật khẩu tối đa 18 kí tự !</p>
+            </div>
           </div>
           <div
             class="py-1 font-weight-700 font-size-16 app-color line-height-3"
@@ -40,6 +56,7 @@
           </div>
           <div>
             <button
+              type="submit"
               class="
                 btn-raised
                 app-btn app-bg
@@ -49,6 +66,9 @@
                 mt-4
                 font-weight-700 font-size-22
               "
+              [class.darker]="loginForm.invalid && (loginForm.touched || loginForm.dirty)"
+              [class.user-select-none]="loginForm.invalid"
+              [disabled]="loginForm.invalid"
             >
               Đăng nhập
             </button>
