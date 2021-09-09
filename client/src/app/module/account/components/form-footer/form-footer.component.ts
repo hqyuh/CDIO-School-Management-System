@@ -9,6 +9,7 @@ export class FormFooterComponent implements OnInit {
 
   @Input('text') public text = '';
   @Input('button') public button = '';
+  @Input('link') public routerLink = '/';
 
   constructor() { }
 

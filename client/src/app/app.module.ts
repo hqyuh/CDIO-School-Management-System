@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
 import { AccountModule } from './module/account/account.module';
 
 
@@ -13,7 +14,8 @@ import { AccountModule } from './module/account/account.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AccountModule
+    AccountModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

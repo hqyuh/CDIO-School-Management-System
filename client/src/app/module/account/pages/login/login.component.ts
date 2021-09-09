@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { AccountService } from '../../service/account.service';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +10,11 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
   public loginForm: any;
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private AccountService: AccountService,
+    private toastr: ToastrService
+  ) {}
 
   public ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -25,15 +31,17 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public login(): void{
-    console.log(this.loginForm.valid);
+  public login(): void {
+    this.AccountService.login('test').subscribe({
+      error: (err) => this.toastr.error(err.message),
+    });
   }
 
-  public get Email(): FormControl{
+  public get Email(): FormControl {
     return this.loginForm.get('email');
   }
 
-  public get Password(): FormControl{
+  public get Password(): FormControl {
     return this.loginForm.get('password');
   }
 }
