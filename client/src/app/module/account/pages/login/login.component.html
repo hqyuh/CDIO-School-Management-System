@@ -86,7 +86,7 @@
                 loginForm.invalid && (loginForm.touched || loginForm.dirty)
               "
               [class.user-select-none]="loginForm.invalid"
-              [disabled]="loginForm.invalid"
+              [disabled]="loginForm.invalid && (loginForm.touched || loginForm.dirty)"
             >
               Đăng nhập
             </button>
