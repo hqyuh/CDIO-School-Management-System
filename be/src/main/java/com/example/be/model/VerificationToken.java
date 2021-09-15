@@ -25,6 +25,7 @@ public class VerificationToken {
     private Instant expiryDate;
 
     @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "token_user_id")
     private User user;
 
 }

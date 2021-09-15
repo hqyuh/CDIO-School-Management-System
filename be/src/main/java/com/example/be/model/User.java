@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.Instant;
+import java.util.HashSet;
 
 @Data
 @AllArgsConstructor
@@ -17,7 +18,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id", nullable = false)
-    private Long user_id;
+    private Long userId;
 
     @Column(name = "user_name")
     private String username;
@@ -34,8 +35,14 @@ public class User {
     @Column(name = "enabled")
     private Boolean enabled;
 
-    @OneToOne(orphanRemoval = true)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id")
-    private Role role;
+    private Role roles;
 
+    public User(String username, String email, String password, Role roles) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
 }
