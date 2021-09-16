@@ -62,7 +62,9 @@
           </div>
 
           <div class="form-group">
-            <label class="font-size-15 font-weight-500 mb-2 mt-2">Mật khẩu</label>
+            <label class="font-size-15 font-weight-500 mb-2 mt-2"
+              >Mật khẩu</label
+            >
             <input
               type="password"
               class="app-control form-control"
@@ -71,7 +73,9 @@
               [class.is-invalid]="
                 Password.invalid && (Password.touched || Password.dirty)
               "
-              [class.is-valid]="Password.valid && (Password.touched || Password.dirty)"
+              [class.is-valid]="
+                Password.valid && (Password.touched || Password.dirty)
+              "
             />
             <div
               *ngIf="Password.invalid && (Password.touched || Password.dirty)"
@@ -79,31 +83,50 @@
             >
               <p *ngIf="Password.errors?.required">Vui lòng nhập mật khẩu !</p>
               <p *ngIf="Password.errors?.pattern">Mật khẩu sai định dạng !</p>
-              <p *ngIf="Password.errors?.minLength">Mật khẩu phải ít nhất 6 kí tự !</p>
-              <p *ngIf="Password.errors?.maxLength">Mật khẩu tối đa 18 kí tự !</p>
+              <p *ngIf="Password.errors?.minLength">
+                Mật khẩu phải ít nhất 6 kí tự !
+              </p>
+              <p *ngIf="Password.errors?.maxLength">
+                Mật khẩu tối đa 18 kí tự !
+              </p>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="font-size-15 font-weight-500 mb-2 mt-2">Nhật lại mật khẩu</label>
+            <label class="font-size-15 font-weight-500 mb-2 mt-2"
+              >Nhật lại mật khẩu</label
+            >
             <input
               type="password"
               class="app-control form-control"
               placeholder="Nhập mật khẩu của bạn"
               formControlName="confirmPassword"
               [class.is-invalid]="
-                ConfirmPassword.invalid && registerForm.invalid && (ConfirmPassword.touched || ConfirmPassword.dirty)
+                (ConfirmPassword.touched || ConfirmPassword.dirty) &&
+                (registerForm.errors?.misMatch ||
+                  ConfirmPassword.errors?.required)
               "
-              [class.is-valid]="ConfirmPassword.valid && registerForm.valid && (ConfirmPassword.touched || ConfirmPassword.dirty)"
+              [class.is-valid]="
+                (ConfirmPassword.touched || ConfirmPassword.dirty) &&
+                (!registerForm.errors?.misMatch ||
+                  ConfirmPassword.errors?.required)
+              "
             />
             <div
-              *ngIf="ConfirmPassword.invalid && registerForm.invalid && (ConfirmPassword.touched || ConfirmPassword.dirty)"
+              *ngIf="
+                (ConfirmPassword.touched || ConfirmPassword.dirty) &&
+                (registerForm.errors?.misMatch || registerForm.errors?.required)
+              "
               text-error
-            > 
-              <p *ngIf="registerForm.errors?.misMatch">Mật khẩu không khớp !</p>
-              <p *ngIf="ConfirmPassword.errors?.pattern">Mật khẩu sai định dạng !</p>
-              <p *ngIf="ConfirmPassword.errors?.minLength">Mật khẩu phải ít nhất 6 kí tự !</p>
-              <p *ngIf="ConfirmPassword.errors?.maxLength">Mật khẩu tối đa 18 kí tự !</p>
+            >
+              <p
+                *ngIf="
+                  registerForm.errors?.misMatch ||
+                  ConfirmPassword.errors?.required
+                "
+              >
+                Mật khẩu không khớp !
+              </p>
             </div>
           </div>
 
