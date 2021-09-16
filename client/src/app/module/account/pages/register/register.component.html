@@ -16,14 +16,28 @@
     </div>
     <div class="card-body">
       <div class="card-block">
-        <form action="#">
+        <form action="#" [formGroup]="registerForm" (ngSubmit)="register()">
           <div class="form-group">
             <label class="font-size-15 font-weight-500 mb-2 mt-2">Tên</label>
             <input
               type="text"
               class="app-control form-control"
               placeholder="Nhập tên của bạn"
+              name="username"
+              formControlName="username"
+              [class.is-invalid]="
+                Username.invalid && (Username.touched || Username.dirty)
+              "
+              [class.is-valid]="
+                Username.valid && (Username.touched || Username.dirty)
+              "
             />
+            <div
+              *ngIf="Username.invalid && (Username.touched || Username.dirty)"
+              text-error
+            >
+              <p *ngIf="Username.errors?.required">Vui lòng nhập tên !</p>
+            </div>
           </div>
 
           <div class="form-group">
@@ -32,27 +46,65 @@
               type="email"
               class="app-control form-control"
               placeholder="Nhập email của bạn"
+              formControlName="email"
+              [class.is-invalid]="
+                Email.invalid && (Email.touched || Email.dirty)
+              "
+              [class.is-valid]="Email.valid && (Email.touched || Email.dirty)"
             />
-          </div>
-
-          <div class="form-group mt-3">
-            <label class="font-size-15 font-weight-500 mb-2">Mật khẩu</label>
-            <input
-              type="password"
-              class="app-control"
-              placeholder="Nhập mật khẩu của bạn"
-            />
-          </div>
-
-          <div class="form-group mt-3">
-            <label class="font-size-15 font-weight-500 mb-2"
-              >Nhập lại mật khẩu</label
+            <div
+              *ngIf="Email.invalid && (Email.touched || Email.dirty)"
+              text-error
             >
+              <p *ngIf="Email.errors?.required">Vui lòng nhập email !</p>
+              <p *ngIf="Email.errors?.email">Email sai định dạng !</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="font-size-15 font-weight-500 mb-2 mt-2">Mật khẩu</label>
             <input
               type="password"
-              class="app-control"
-              placeholder="Nhập lại mật khẩu của bạn"
+              class="app-control form-control"
+              placeholder="Nhập mật khẩu của bạn"
+              formControlName="password"
+              [class.is-invalid]="
+                Password.invalid && (Password.touched || Password.dirty)
+              "
+              [class.is-valid]="Password.valid && (Password.touched || Password.dirty)"
             />
+            <div
+              *ngIf="Password.invalid && (Password.touched || Password.dirty)"
+              text-error
+            >
+              <p *ngIf="Password.errors?.required">Vui lòng nhập mật khẩu !</p>
+              <p *ngIf="Password.errors?.pattern">Mật khẩu sai định dạng !</p>
+              <p *ngIf="Password.errors?.minLength">Mật khẩu phải ít nhất 6 kí tự !</p>
+              <p *ngIf="Password.errors?.maxLength">Mật khẩu tối đa 18 kí tự !</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="font-size-15 font-weight-500 mb-2 mt-2">Nhật lại mật khẩu</label>
+            <input
+              type="password"
+              class="app-control form-control"
+              placeholder="Nhập mật khẩu của bạn"
+              formControlName="confirmPassword"
+              [class.is-invalid]="
+                ConfirmPassword.invalid && registerForm.invalid && (ConfirmPassword.touched || ConfirmPassword.dirty)
+              "
+              [class.is-valid]="ConfirmPassword.valid && registerForm.valid && (ConfirmPassword.touched || ConfirmPassword.dirty)"
+            />
+            <div
+              *ngIf="ConfirmPassword.invalid && registerForm.invalid && (ConfirmPassword.touched || ConfirmPassword.dirty)"
+              text-error
+            > 
+              <p *ngIf="registerForm.errors?.misMatch">Mật khẩu không khớp !</p>
+              <p *ngIf="ConfirmPassword.errors?.pattern">Mật khẩu sai định dạng !</p>
+              <p *ngIf="ConfirmPassword.errors?.minLength">Mật khẩu phải ít nhất 6 kí tự !</p>
+              <p *ngIf="ConfirmPassword.errors?.maxLength">Mật khẩu tối đa 18 kí tự !</p>
+            </div>
           </div>
 
           <div>
