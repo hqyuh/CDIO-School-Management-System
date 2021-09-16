@@ -33,7 +33,7 @@ public class User {
     private Instant created;
 
     @Column(name = "enabled")
-    private Boolean enabled;
+    private boolean enabled;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id")

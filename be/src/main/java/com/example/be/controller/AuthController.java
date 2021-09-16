@@ -1,5 +1,7 @@
 package com.example.be.controller;
 
+import com.example.be.dto.AuthenticationResponse;
+import com.example.be.dto.LoginRequest;
 import com.example.be.dto.RegisterRequest;
 import com.example.be.service.AuthService;
 import lombok.AllArgsConstructor;
@@ -26,5 +28,9 @@ public class AuthController {
         return new ResponseEntity<>("Account Activated Successful", HttpStatus.OK);
     }
 
+    @PostMapping("/login")
+    public AuthenticationResponse login(@RequestBody LoginRequest loginRequest){
+        return authService.login(loginRequest);
+    }
 
 }
