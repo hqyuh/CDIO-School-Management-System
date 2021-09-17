@@ -11,6 +11,7 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
   public login(credential: any): Observable<any> {
-    return this.http.post<any>('/login',credential).pipe(map((res: any)=>throwError(res)))
+    return this.http.post<any>('http://localhost:8080/api/auth/login', {
+      email: "hoquanghuy0123@gmail.com", password: "1q2w3e456789" });
   }
 }

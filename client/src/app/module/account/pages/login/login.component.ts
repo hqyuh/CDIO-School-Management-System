@@ -32,9 +32,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login(): void {
-    this.AccountService.login('test').subscribe({
-      error: (err) => this.toastr.error(err.message),
-    });
+    this.AccountService.login('test').subscribe(console.log);
   }
 
   public get Email(): FormControl {
