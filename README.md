@@ -7,3 +7,12 @@ Giao diện: https://www.figma.com/file/9Vr2NDQpJD8guALaTt1XWR/Untitled?node-id=
 Database: https://dbdiagram.io/d/61396086825b5b0146f9b555
 ######################################################################################################################
 Discord: https://discord.com/channels/856773246069637152/856773246069637158
+
+
+*****
+login 
+     request {"email", "password"}
+     response {"email", "token"}
+ register
+     request {"username" "email", "password"}
+     response "OK"
