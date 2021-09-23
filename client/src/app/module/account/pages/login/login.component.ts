@@ -32,7 +32,10 @@ export class LoginComponent implements OnInit {
   }
 
   public login(): void {
-    this.AccountService.login('test').subscribe(console.log);
+    this.AccountService.login(this.loginForm.value).subscribe({
+      next: ()=> this.toastr.success('Welcome to Quizzes Online'),
+      error: (error)=> this.toastr.error(error.message)
+    });
   }
 
   public get Email(): FormControl {

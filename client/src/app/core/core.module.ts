@@ -7,6 +7,7 @@ import {
   NgxUiLoaderModule,
   NgxUiLoaderRouterModule,
 } from 'ngx-ui-loader';
+import { httpInterceptorProviders } from './interceptors';
 
 @NgModule({
   declarations: [],
@@ -26,6 +27,9 @@ import {
       },
     }),
   ],
-  exports: [BrowserAnimationsModule, NgxUiLoaderModule],
+  exports: [BrowserAnimationsModule, NgxUiLoaderModule, ToastrModule, HttpClientModule],
+  providers: [
+    httpInterceptorProviders
+  ]
 })
 export class CoreModule {}

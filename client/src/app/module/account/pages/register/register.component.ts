@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { AccountService } from '../../service/account.service';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +10,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class RegisterComponent implements OnInit {
   public registerForm: any;
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private toastrService: ToastrService, private accountService: AccountService) {}
 
   public ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -35,7 +37,10 @@ export class RegisterComponent implements OnInit {
   }
 
   public register(): void{
-    console.log(this.registerForm)
+    this.accountService.register(this.registerForm.value).subscribe({
+      next: ()=> this.toastrService.success('Register successfully'),
+      error: (error)=> this.toastrService.error(error.message)
+    });
   }
 
   public passwordsMatch() {
