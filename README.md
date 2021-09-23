@@ -13,6 +13,7 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 login 
      request {"email", "password"}
      response {"email", "token"}
+     ****
  register
      request {"username" "email", "password"}
      response "OK"
