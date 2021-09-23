@@ -20,7 +20,6 @@ import {
       }, (err: unknown) => {
         if (err instanceof HttpErrorResponse) {
           if (err.status === 401) {
-            localStorage.removeItem('authToken');
             localStorage.removeItem('currentUser');
             window.location.replace(`/account/login`);
           }
