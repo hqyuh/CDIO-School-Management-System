@@ -29,7 +29,7 @@ import { httpInterceptorProviders } from './interceptors';
   ],
   exports: [BrowserAnimationsModule, NgxUiLoaderModule, ToastrModule, HttpClientModule],
   providers: [
-    httpInterceptorProviders
+
   ]
 })
 export class CoreModule {}

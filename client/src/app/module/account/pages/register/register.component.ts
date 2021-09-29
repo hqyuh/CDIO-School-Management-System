@@ -37,10 +37,7 @@ export class RegisterComponent implements OnInit {
   }
 
   public register(): void{
-    this.accountService.register(this.registerForm.value).subscribe({
-      next: ()=> this.toastrService.success('Register successfully'),
-      error: (error)=> this.toastrService.error(error.message)
-    });
+    this.accountService.register(this.registerForm.value).subscribe(console.log);
   }
 
   public passwordsMatch() {
