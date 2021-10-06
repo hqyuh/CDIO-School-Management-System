@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../../service/account.service';
 
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private AccountService: AccountService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {}
 
   public ngOnInit(): void {
@@ -33,8 +35,11 @@ export class LoginComponent implements OnInit {
 
   public login(): void {
     this.AccountService.login(this.loginForm.value).subscribe({
-      next: ()=> this.toastr.success('Welcome to Quizzes Online'),
-      error: (error)=> this.toastr.error(error.message)
+      next: () => {
+        void this.router.navigate(['/home']);
+        this.toastr.success('Welcome to Quizzes Online');
+      },
+      error: (error) => this.toastr.error(error.message),
     });
   }
 

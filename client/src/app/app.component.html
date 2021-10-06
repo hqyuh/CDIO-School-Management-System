@@ -1,6 +1,16 @@
-<div class="wrapper">
-    <router-outlet></router-outlet>
-</div>
+<!-- 
+<div class="page-wrapper" [ngClass]="{'toggled' : getSideBarState()}">
+  <app-sidebar></app-sidebar>
+  <div class="app-sidebar">
+    <div class="page-content">
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+        <div class="overlay" (click)="toggleSidebar()" [ngClass]="{'show' : !getSideBarState()}"></div>
+      </div>
+  </div>
+  </div>
+</div> -->
+<router-outlet></router-outlet>
 <ngx-ui-loader
   bgsType="three-strings"
   [bgsSize]="300"

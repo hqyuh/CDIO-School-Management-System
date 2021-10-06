@@ -4,11 +4,10 @@
     .page-content {
       display: inline-block;
       width: 100%;
-      padding-top: 20px;
       transition: padding-left .3s ease;
   
       @media screen and (min-width: 768px) {
-        padding-left: 300px;
+        padding-left: 250px;
       }
   
       .overlay {
