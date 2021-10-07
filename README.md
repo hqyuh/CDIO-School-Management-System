@@ -17,3 +17,10 @@ login
  register
      request {"username" "email", "password"}
      response "OK"
+
+
+
+
+ subject 
+     request {"name": "R", "teacher": "Robert Gentleman and Ross Ihaka"}
+     response {"id": 19,"name": "R","dateCreated": "06-10-2021 09:10:33","teacher": "Robert Gentleman and Ross Ihaka"}
