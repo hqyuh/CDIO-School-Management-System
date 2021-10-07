@@ -8,8 +8,7 @@ import {
 } from '@angular/animations';
 import { SidebarService } from './sidebar.service';
 import { AccountService } from 'src/app/module/account/service/account.service';
-import { Observable } from 'rxjs';
-import User from 'src/app/module/account/models/account.model';
+
 
 
 @Component({
@@ -26,12 +25,15 @@ import User from 'src/app/module/account/models/account.model';
 })
 export class SidebarComponent implements OnInit {
   public menus = [];
+  public user: any;
 
-  constructor(public sidebarservice: SidebarService, private accountService: AccountService) {
+  constructor(public sidebarservice: SidebarService) {
     this.menus = sidebarservice.getMenuList();
   }
 
-  public ngOnInit() {}
+  public ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('currentUser'));
+  }
 
   public getSideBarState() {
     return this.sidebarservice.getSidebarState();
@@ -63,9 +65,5 @@ export class SidebarComponent implements OnInit {
 
   public closeSidebar(): void{
     this.sidebarservice.setSidebarState(true);
-  }
-
-  public get CurrentUser(): Observable<User>{
-    return this.accountService.currentUser();
   }
 }

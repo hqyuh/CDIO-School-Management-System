@@ -1,0 +1,72 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Quản Lý Môn Học</h4>
+  </div>
+  <div class="card-body">
+    <div class="card-block">
+      <p-table
+        [value]="subjects | async"
+        [rowHover]="true"
+        [rows]="5"
+        [paginator]="true"
+        [filterDelay]="0"
+        [columns]="cols"
+        [scrollable]="true"
+        #dt1
+      >
+        <ng-template pTemplate="header" let-columns>
+          <tr>
+            <th *ngFor="let col of columns" pSortableColumn="{{ col.field }}">
+              <ng-container [ngSwitch]="col.field">
+                <ng-template ngSwitchCase="selection">
+                  <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </ng-template>
+                <ng-template ngSwitchDefault>
+                  {{ col.header }}
+                  <p-sortIcon field="{{ col.field }}"></p-sortIcon>
+                </ng-template>
+              </ng-container>
+            </th>
+          </tr>
+          <tr>
+              <th *ngFor="let col of columns">
+                  <ng-container [ngSwitch]="col.field">
+                      <ng-template ngSwitchCase="selection"></ng-template>
+                      <ng-template ngSwitchDefault>
+                          <p-columnFilter type="text" [field]="col.field" display="menu"></p-columnFilter>
+                      </ng-template>
+                  </ng-container>
+              </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-subject let-columns="columns">
+            <tr class="p-selectable-row">
+                <td *ngFor="let col of columns">
+                    <ng-container [ngSwitch]="col.field">
+                        <ng-template [ngSwitchCase]="'selection'">
+                            <p-tableCheckbox [value]="subject"></p-tableCheckbox>
+                        </ng-template>
+                        <ng-template [ngSwitchCase]="'id'">
+                            <span class="text-primary">{{subject.id}}</span>
+                        </ng-template>
+                        <ng-template [ngSwitchCase]="'name'">
+                            <i class="pi pi-pencil"></i>
+                            {{subject.name}}
+                        </ng-template>
+                        <ng-template [ngSwitchCase]="'teacher'">
+                           <div class="text-nowrap">
+                            <img src="../../../../../assets/teacher.png" alt="teacher" style="width: 50px;">
+                            {{subject.teacher}}
+                           </div>
+                        </ng-template>
+                        <ng-template [ngSwitchCase]="'dateCreated'">
+                            {{subject.dateCreated}}
+                        </ng-template>
+                    </ng-container>
+                </td>
+            </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>

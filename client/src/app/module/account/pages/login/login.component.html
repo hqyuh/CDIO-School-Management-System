@@ -18,23 +18,24 @@
       <div class="card-block">
         <form action="#" [formGroup]="loginForm" (ngSubmit)="login()">
           <div class="form-group">
-            <label class="font-size-15 font-weight-500 mb-2">Email</label>
+            <label class="font-size-15 font-weight-500 mb-2">Tên tài khoản</label>
             <input
-              type="email"
+              type="text"
               class="app-control form-control"
-              placeholder="Nhập email của bạn"
-              formControlName="email"
+              placeholder="Nhập tài khoản của bạn"
+              formControlName="username"
               [class.is-invalid]="
-                Email.invalid && (Email.touched || Email.dirty)
+              UserName.invalid && (UserName.touched || UserName.dirty)
               "
-              [class.is-valid]="Email.valid && (Email.touched || Email.dirty)"
+              [class.is-valid]="UserName.valid && (UserName.touched || UserName.dirty)"
             />
             <div
-              *ngIf="Email.invalid && (Email.touched || Email.dirty)"
+              *ngIf="UserName.invalid && (UserName.touched || UserName.dirty)"
               text-error
             >
-              <p *ngIf="Email.errors?.required">Vui lòng nhập email !</p>
-              <p *ngIf="Email.errors?.email">Email sai định dạng !</p>
+              <p *ngIf="UserName.errors?.minLength">Tên tài khoản phải có ít nhất 6 kí tự !</p>
+              <p *ngIf="UserName.errors?.maxLength">Tên tài khoản tối đa 24 kí tự !</p>
+              <p *ngIf="UserName.errors?.required">Vui lòng tài khoản  !</p>
             </div>
           </div>
           <div class="form-group mt-3">

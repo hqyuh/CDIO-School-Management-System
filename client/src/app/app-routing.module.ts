@@ -11,6 +11,11 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () =>
       import('./shared/layout/layout.module').then((m) => m.LayoutModule),
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home'
   }
 ];
 

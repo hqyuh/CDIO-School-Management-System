@@ -27,11 +27,11 @@ export class SidebarService {
             text: 'Pro ',
             class: 'badge badge-success'
           },
-          href: 'subject/management'
+          href: '/home/subject'
         },
               {
           title: 'Bài thi',
-          href: 'subject/test'
+          href: '/home/subject/test'
         },
       ]
     },

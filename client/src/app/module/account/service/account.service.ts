@@ -10,8 +10,6 @@ import User from '../models/account.model';
 })
 export class AccountService {
 
-  private user = new BehaviorSubject<User>({} as User);
-
   constructor(private http: HttpClient) {}
 
   public login(credential: User): Observable<any> {
@@ -20,24 +18,19 @@ export class AccountService {
       .pipe(
         tap(
           (user) =>{localStorage.setItem('currentUser', JSON.stringify(user));
-          this.user.next(user);
         }
           )
       );
   }
 
-  public register(credential: User): Observable<User> {
+  public register(credential: User): Observable<any> {
     return this.http.post<User>(
       `${environment.apiHost}/auth/signup`,
       credential
     );
   }
 
-  public logout(): any{
-    this.http.delete(`${environment.apiHost}/auth/logout`).pipe(tap(()=>this.user.next({} as User)))
-  }
-
-  public currentUser(): Observable<User>{
-    return this.user;
+  public logout(): void{
+    this.http.delete(`${environment.apiHost}/auth/logout`);
   }
 }
