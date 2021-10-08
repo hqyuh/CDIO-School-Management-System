@@ -5,6 +5,7 @@ import com.example.be.repository.SubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.util.List;
 
 @Service
@@ -18,6 +19,7 @@ public class SubjectService {
     }
 
     public Subject addSubject(Subject subject){
+        subject.setDateCreated(Instant.now());
         return repo.save(subject);
     }
 

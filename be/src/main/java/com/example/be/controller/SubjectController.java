@@ -10,40 +10,40 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/subject")
+@RequestMapping("/api/subject")
 public class SubjectController {
 
-    private final SubjectService subjectService;
+    private final SubjectService service;
 
     @Autowired
     public SubjectController(SubjectService subjectService) {
-        this.subjectService = subjectService;
+        this.service = subjectService;
     }
 
     @GetMapping
     public ResponseEntity<List<Subject>> getAllSubject(){
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(subjectService.findAllSubjects());
+                .body(service.findAllSubjects());
     }
 
     @PostMapping
     public ResponseEntity<Subject> createSubject(@RequestBody Subject subject){
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .body(subjectService.addSubject(subject));
+                .body(service.addSubject(subject));
     }
 
     @PutMapping
     public ResponseEntity<Subject> updateSubject(@RequestBody Subject subject){
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(subjectService.updateSubject(subject));
+                .body(service.updateSubject(subject));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteSubject(@PathVariable("id") Long id){
-        subjectService.deleteSubject(id);
+        service.deleteSubject(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

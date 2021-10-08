@@ -58,13 +58,13 @@ public class AuthService {
     public AuthenticationResponse login(LoginRequest loginRequest){
         Authentication authenticate = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(
-                   loginRequest.getEmail(),
+                   loginRequest.getUsername(),
                    loginRequest.getPassword()
                 ));
         SecurityContextHolder.getContext().setAuthentication(authenticate);
 
         String token = jwtProvider.generateToken(authenticate);
-        return new AuthenticationResponse(token, loginRequest.getEmail());
+        return new AuthenticationResponse(token, loginRequest.getUsername());
     }
 
     // create verification token
