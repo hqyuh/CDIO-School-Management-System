@@ -9,17 +9,27 @@ import User from '../models/account.model';
   providedIn: 'root',
 })
 export class AccountService {
+  public currentUser: Observable<any>;
+  private currentUser$: BehaviorSubject<User>;
+  constructor(private http: HttpClient) {
+    this.currentUser$ = new BehaviorSubject(
+      JSON.parse(localStorage.getItem('currentUser'))
+    );
+    this.currentUser = this.currentUser$.asObservable();
+  }
 
-  constructor(private http: HttpClient) {}
+  public get currentUserValue(): User {
+    return this.currentUser$.value;
+  }
 
   public login(credential: User): Observable<any> {
     return this.http
       .post<User>(`${environment.apiHost}/auth/login`, credential)
       .pipe(
-        tap(
-          (user) =>{localStorage.setItem('currentUser', JSON.stringify(user));
-        }
-          )
+        tap((user) => {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+          this.currentUser$.next(user);
+        })
       );
   }
 
@@ -30,7 +40,12 @@ export class AccountService {
     );
   }
 
-  public logout(): void{
-    this.http.delete(`${environment.apiHost}/auth/logout`);
+  public logout(): void {
+    this.http.delete(`${environment.apiHost}/auth/logout`).pipe(
+      tap(() => {
+        localStorage.removeItem('currentUser');
+        this.currentUser$.next(null);
+      })
+    );
   }
 }

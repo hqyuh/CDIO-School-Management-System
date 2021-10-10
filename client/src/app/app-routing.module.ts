@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppGuard } from './core/guard/app.guard';
 
 const routes: Routes = [
   {
@@ -9,6 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
+    canActivate: [AppGuard],
     loadChildren: () =>
       import('./shared/layout/layout.module').then((m) => m.LayoutModule),
   },

@@ -1,15 +1,26 @@
-
-<div class="page-wrapper" [ngClass]="{'toggled' : getSideBarState()}">
-    <app-sidebar></app-sidebar>
-    <div class="app-sidebar">
-      <div class="page-content">
-        <div>
-            <app-navbar></app-navbar>
-          <div class="py-5">
-            <router-outlet></router-outlet>
+<div class="page-wrapper" [ngClass]="{ toggled: getSideBarState() }">
+  <app-sidebar></app-sidebar>
+  <div class="app-sidebar">
+    <div class="page-content">
+      <div>
+        <app-navbar></app-navbar>
+        <div class="py-5">
+          <div
+            class="d-flex w-100 justify-content-end align-items-center my-auto"
+          >
+            <button class="btn btn-danger" style="margin-right: 5px">
+              <i class="fas fa-chevron-left mr-3"></i>
+              <a>&nbsp;&nbsp;Trang chủ</a>
+            </button>
           </div>
-          <div class="overlay" (click)="toggleSidebar()" [ngClass]="{'show' : !getSideBarState()}"></div>
+          <router-outlet></router-outlet>
         </div>
-    </div>
+        <div
+          class="overlay"
+          (click)="toggleSidebar()"
+          [ngClass]="{ show: !getSideBarState() }"
+        ></div>
+      </div>
     </div>
   </div>
+</div>

@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxsModule } from '@ngxs/store';
 import { ToastrModule } from 'ngx-toastr';
 import {
   NgxUiLoaderHttpModule,
@@ -15,6 +16,7 @@ import { httpInterceptorProviders } from './interceptors';
     BrowserAnimationsModule,
     HttpClientModule,
     NgxUiLoaderModule,
+    NgxsModule.forRoot([], { developmentMode: false }),
     NgxUiLoaderRouterModule.forRoot({ showForeground: true }),
     NgxUiLoaderHttpModule.forRoot({ showForeground: false }),
     ToastrModule.forRoot({
@@ -38,7 +40,9 @@ import { httpInterceptorProviders } from './interceptors';
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
     if (parentModule) {
-      throw new Error(`${parentModule} has already been loaded. Import Core module in the AppModule only.`);
+      throw new Error(
+        `${parentModule} has already been loaded. Import Core module in the AppModule only.`
+      );
     }
   }
 }

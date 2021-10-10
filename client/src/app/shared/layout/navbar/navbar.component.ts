@@ -4,17 +4,14 @@ import { SidebarService } from '../sidebar/sidebar.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
+  constructor(private sidebarService: SidebarService) {}
 
-  constructor(private sidebarService: SidebarService) { }
+  public ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  public toggleSideBar(): void{
+  public toggleSideBar(): void {
     this.sidebarService.toggle();
   }
-
 }

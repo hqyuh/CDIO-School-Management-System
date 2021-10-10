@@ -4,6 +4,8 @@ import { TableModule} from 'primeng/table'
 
 import { SubjectRoutingModule } from './subject-routing.module';
 import { SubjectPageComponent } from './page/subject-page/subject-page.component';
+import { NgxsModule } from '@ngxs/store';
+import { SubjectState } from './service/subject.state';
 
 
 
@@ -11,6 +13,7 @@ import { SubjectPageComponent } from './page/subject-page/subject-page.component
   declarations: [
     SubjectPageComponent
   ],
-  imports: [CommonModule, SubjectRoutingModule, TableModule],
+  imports: [CommonModule, SubjectRoutingModule, TableModule,
+  NgxsModule.forFeature([SubjectState])],
 })
 export class SubjectModule {}
