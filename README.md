@@ -27,9 +27,8 @@ login
      
      
      
- quizz
-
-     {
+ 
+{
     "id": 1,
     "name": "QuizzA",
     "dateCreated": "29-09-2021 09:06:59",
