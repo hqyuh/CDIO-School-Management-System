@@ -25,10 +25,10 @@ login
      
      
      
-     
-     
  
-{
+ quizz
+          
+     {
     "id": 1,
     "name": "QuizzA",
     "dateCreated": "29-09-2021 09:06:59",
@@ -110,4 +110,4 @@ login
         "teacher": "James Gosling",
         "dateCreated": "06-10-2021 09:10:33"
     }
-}
+    }
