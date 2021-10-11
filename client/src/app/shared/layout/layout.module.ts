@@ -6,7 +6,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { LayOutRoutingModule } from './layout-routing.module';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { BadgeModule } from 'primeng/badge';
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     CommonModule,
     RouterModule,
     PerfectScrollbarModule,
-    LayOutRoutingModule
+    LayOutRoutingModule,
+    BadgeModule
   ],
   exports: [
     SidebarComponent

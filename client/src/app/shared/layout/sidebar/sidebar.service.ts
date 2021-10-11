@@ -31,7 +31,7 @@ export class SidebarService {
         },
               {
           title: 'Bài thi',
-          href: '/home/subject/test'
+          href: '/home/quizz'
         },
       ]
     },

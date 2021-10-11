@@ -55,7 +55,7 @@
         </ng-template>
         <ng-template pTemplate="body" let-subject let-columns="columns">
           <tr class="p-selectable-row text-nowrap">
-            <td *ngFor="let col of columns" class="text-nowrap">
+            <td *ngFor="let col of columns" class="text-nowrap" [class.text-center]="col.field === 'nationality' || col.field === 'quizz'">
               <ng-container [ngSwitch]="col.field">
                 <ng-template [ngSwitchCase]="'selection'">
                   <p-tableRadioButton

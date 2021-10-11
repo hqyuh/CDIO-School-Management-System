@@ -1,0 +1,33 @@
+<div class="card p-2">
+    <p class="card-title">
+        <span class="text-danger font-weight-700">Câu hỏi 1: </span>
+        Trái đất là gì?
+    </p>
+    <div class="card-body">
+        <div class="card-block">
+            <form [formGroup]="questionForm">
+                <div class="row">
+                    <div class="col-6 mt-2">
+                        <p-radioButton formControlName="answer" [value]="'A'" inputId="a"></p-radioButton>
+                        <label class="ms-3" for="a">agagag</label>
+                    </div>
+                    <div class="col-6 mt-2">
+                        <p-radioButton formControlName="answer" [value]="'B'"></p-radioButton>
+                        <label class="ms-3">agagag</label>
+                    </div>
+                    <div class="col-6 mt-2">
+                        <p-radioButton formControlName="answer" [value]="'C'"></p-radioButton>
+                        <label class="ms-3">agagag</label>
+                    </div>
+                    <div class="col-6 mt-2">
+                        <p-radioButton formControlName="answer" [value]="'D'"></p-radioButton>
+                        <label class="ms-3">agagag</label>
+                    </div>
+                </div>
+                <div class="text-end mt-2">
+                    <button class="p-button-success" pButton type="submit" label="Lưu" (click)="onSaveAnswer()"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

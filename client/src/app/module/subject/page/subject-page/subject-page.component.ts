@@ -70,7 +70,7 @@ export class SubjectPageComponent implements OnInit {
     if (!this.selectedSubject) {
       this.toastSerivce.error('Vui lòng chọn môn học để xem bài thi!');
     } else {
-      void this.router.navigate(['/home/subject/test']);
+      void this.router.navigate(['/home/quizz']);
       this.toastSerivce.success(
         `Danh sách bài thi môn ${this.selectedSubject.name}`
       );

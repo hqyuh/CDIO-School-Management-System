@@ -7,7 +7,7 @@ import { SaveSelectedSubject } from './subject.action';
 @State<SubjectStateModel>({
   name: 'subject',
   defaults: {
-    subject: {} as SubjectModel,
+    subject: undefined,
   },
 })
 @Injectable()

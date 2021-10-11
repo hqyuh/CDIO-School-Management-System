@@ -7,23 +7,18 @@ import { DirectiveModule } from 'src/app/core/directive/directive.module';
 import { RegisterComponent } from './pages/register/register.component';
 import { FormFooterComponent } from './components/form-footer/form-footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PasswordModule } from 'primeng/password';
 
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    RegisterComponent,
-    FormFooterComponent
-  ],
+  declarations: [LoginComponent, RegisterComponent, FormFooterComponent],
   imports: [
     CommonModule,
     AccountRoutingModule,
     DirectiveModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PasswordModule,
   ],
-  exports: [
-    LoginComponent,
-    RegisterComponent
-  ]
+  exports: [LoginComponent, RegisterComponent],
 })
-export class AccountModule { }
+export class AccountModule {}
