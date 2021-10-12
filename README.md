@@ -104,10 +104,5 @@ login
             ]
         }
     ],
-    "subject": {
-        "id": 1,
-        "name": "Java",
-        "teacher": "James Gosling",
-        "dateCreated": "06-10-2021 09:10:33"
-    }
+    "subjectId": 1
     }
