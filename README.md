@@ -10,10 +10,24 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 
 
 *****
-login 
-     request {"email", "password"}
-     response {"email", "token"}
-     ****
+  Login 
+     
+   request
+     
+     {
+        "username": "quanghuy",
+        "password": "1q2w3e456789"
+     }
+     
+   response
+     
+     {
+    "authenticationToken":             "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJxdWFuZ2h1eSJ9.K33MRVbk4NF8SfILLxNq6lqAqjVFgIgWy1h1ak6gfL92edoQvLNya0BelLhnUai3Vy7V_oZvnJpDJo8PzRT5ISGz_C6qsvuz_fa0YqV9uhpFKuRJ-E8q2ReXi2UrULgFFrq7hbIEwGeJMmfdODSBNajbKIU7r0y2gazRu-TWxdZAQqBwiBuol20UELOxmP18p5XRWANU2OFUax9qzHu8wvgnULnW40X9LSpQDWzrFRAe4FCa6ykSHRNNBtRFxzyGcHZ9XYFkmj4_FGstmp-zUMucubqRQIAk6D1anHu3a7U_tKlgLnv10F3RSeheqCB7pbWW5S8JvrjhB0b6b9fI4w",
+    "username": "quanghuy"
+     }
+     
+     
+
  register
      request {"username" "email", "password"}
      response "OK"
@@ -23,8 +37,8 @@ login
  request
  
      {
-    "name": "TypeScript",
-    "teacher": "Anders Hejlsberg"
+        "name": "TypeScript",
+        "teacher": "Anders Hejlsberg"
      }
      
  response
