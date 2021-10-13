@@ -18,9 +18,23 @@ login
      request {"username" "email", "password"}
      response "OK"
 
- subject 
-     request {"name": "R", "teacher": "Robert Gentleman and Ross Ihaka"}
-     response {"id": 19,"name": "R","dateCreated": "06-10-2021 09:10:33","teacher": "Robert Gentleman and Ross Ihaka"}
+ Subject 
+     
+ request
+ 
+     {
+    "name": "TypeScript",
+    "teacher": "Anders Hejlsberg"
+     }
+     
+ response
+ 
+     {
+        "id": 5,
+        "name": "TypeScript",
+        "teacher": "Anders Hejlsberg",
+        "dateCreated": "13-10-2021 09:52:50"
+     }
      
      
      
