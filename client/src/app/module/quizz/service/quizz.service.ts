@@ -69,6 +69,6 @@ export class QuizzService {
     //     ],
     //   },
     // ]);
-    return this.http.get<QuizzModel[]>(`${environment.apiHost}/api/quizz/bySubject/${subjectId}`);
+    return this.http.get<QuizzModel[]>(`${environment.apiHost}/quizz/bySubject/${subjectId}`);
   }
 }
