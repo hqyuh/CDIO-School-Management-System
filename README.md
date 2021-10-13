@@ -10,7 +10,7 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 
 
 *****
-  Login 
+  LOGIN
      
    request
      
@@ -28,7 +28,7 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
      
      
 
- Register
+ REGISTER
      request 
      
      {
@@ -40,7 +40,7 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
      response
         "User Registration Successfully"
 
- Subject 
+ SUBJECT 
      
  request
  
@@ -62,7 +62,7 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
      
      
  
- Quizz
+ QUIZZ
  
      {
     "id": 1,
