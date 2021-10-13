@@ -9,4 +9,5 @@ export class QuizzModel {
   public subjectId?: number;
   public subject?: SubjectModel;
   public questions?: QuestionModel[];
+  public description: string;
 }
