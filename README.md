@@ -29,7 +29,8 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
      
 
  REGISTER
-     request 
+
+   request 
      
      {
         "username": "admin",
@@ -37,7 +38,8 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
         "password": "1q2w3e456789"
      }
      
-     response
+   response
+  
         "User Registration Successfully"
 
  SUBJECT 
