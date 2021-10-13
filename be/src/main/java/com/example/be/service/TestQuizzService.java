@@ -35,4 +35,8 @@ public class TestQuizzService {
         return repo.findTestQuizzById(id);
     }
 
+    public List<TestQuizz> getQuizzBySubjectId(Long id){
+        return repo.findAllTestQuizzBySubjectId(id);
+    }
+
 }

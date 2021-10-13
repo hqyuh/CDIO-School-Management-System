@@ -37,6 +37,13 @@ public class TestQuizzController {
                 .body(service.findQuizzById(id));
     }
 
+    @GetMapping("/bySubject/{id}")
+    public ResponseEntity<List<TestQuizz>> getQuizzBySubject(@PathVariable("id") Long id){
+        return ResponseEntity
+                .status(OK)
+                .body(service.getQuizzBySubjectId(id));
+    }
+
     @PostMapping
     public ResponseEntity<TestQuizz> addQuizz(@RequestBody TestQuizz quizz){
         return ResponseEntity
