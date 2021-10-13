@@ -27,82 +27,38 @@ login
      
  
  quizz
-          
+ 
      {
     "id": 1,
-    "name": "QuizzA",
-    "dateCreated": "29-09-2021 09:06:59",
+    "name": "Quizz A",
+    "dateCreated": "13-10-2021 09:55:08",
+    "description": "Mid-term test",
     "questions": [
         {
             "id": 1,
-            "text": "Given the string \"strawberries\" saved in a variable called fruit, what would fruit.substring(2, 5) return?",
+            "text": "How can you achieve runtime polymorphism in Java?",
             "mark": 2.0,
-            "answers": [
-                {
-                    "id": 1,
-                    "answerA": "rawb",
-                    "answerB": " raw",
-                    "answerC": "awb",
-                    "answerD": "traw"
-                }
-            ]
+            "dateCreated": "13-10-2021 09:55:08",
+            "answerA": "method overloading",
+            "answerB": "method overrunning",
+            "answerC": "method overriding",
+            "answerD": "method calling"
         },
         {
             "id": 2,
-            "text": "How can you achieve runtime polymorphism in Java?",
+            "text": "What method can be used to create a new instance of an object?",
             "mark": 2.0,
-            "answers": [
-                {
-                    "id": 2,
-                    "answerA": "method overloading",
-                    "answerB": "method overrunning",
-                    "answerC": "method overriding",
-                    "answerD": "method calling"
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "text": "Which is the most up-to-date way to instantiate the current date?",
-            "mark": 2.0,
-            "answers": [
-                {
-                    "id": 3,
-                    "answerA": "new SimpleDateFormat(\"yyyy-MM-dd\").format(new Date())",
-                    "answerB": "new Date(System.currentTimeMillis())",
-                    "answerC": "LocalDate.now()",
-                    "answerD": "Calendar.getInstance().getTime()"
-                }
-            ]
-        },
-        {
-            "id": 4,
-            "text": "Which statement is NOT true?",
-            "mark": 2.0,
-            "answers": [
-                {
-                    "id": 4,
-                    "answerA": "An anonymous class may specify an abstract base class as its base type.",
-                    "answerB": "An anonymous class does not require a zero-argument constructor.",
-                    "answerC": "An anonymous class may specify an interface as its base type.",
-                    "answerD": "An anonymous class may specify both an abstract class and interface as base types."
-                }
-            ]
-        },
-        {
-            "id": 5,
-            "text": "Which is the most reliable expression for testing whether the values of two string variables are the same?",
-            "mark": 2.0,
-            "answers": [
-                {
-                    "id": 5,
-                    "answerA": " string1 == string2",
-                    "answerB": "string1 = string2",
-                    "answerC": "string1.matches(string2)",
-                    "answerD": "string1.equals(string2)"
-                }
-            ]
+            "dateCreated": "13-10-2021 09:55:08",
+            "answerA": "another instance",
+            "answerB": "field",
+            "answerC": "constructor",
+            "answerD": "private method"
         }
     ],
-    "subjectId": 1
+    "subject": {
+        "id": 1,
+        "name": "Java",
+        "teacher": "James Gosling",
+        "dateCreated": "13-10-2021 09:49:37"
     }
+}
