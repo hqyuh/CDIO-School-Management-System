@@ -1,10 +1,13 @@
 <div class="card">
-    <div class="card-header">
-        <h4 class="card-title">Bài thi</h4>
+    <div class="card-header d-flex justify-content-between">
+        <h4 class="card-title d-inline-block">Bài thi {{exam.name}} - {{exam.description}}</h4>
+        <span class="text-primary"><b class="text-dark">Ngày tạo:</b> {{exam.dateCreated}}</span>
     </div>
     <div class="card-body">
         <div class="card-block">
-            <app-question-form></app-question-form>
+            <ng-container *ngFor="let question of exam.questions; let i = index">
+                <app-question-form [question]="question" [index]="i"></app-question-form>
+            </ng-container>
         </div>
     </div>
 </div>

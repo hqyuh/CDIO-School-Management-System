@@ -10,6 +10,9 @@ import { QuestionFormComponent } from './components/question-form/question-form.
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { ReactiveFormsModule } from '@angular/forms';
 import {  ButtonModule } from 'primeng/button';
+import { NgxsModule } from '@ngxs/store';
+import { QuizzState } from './service/quizz.state';
+import { SubjectState } from '../subject/service/subject.state';
 @NgModule({
   declarations: [
     QuizzListComponent,
@@ -23,7 +26,8 @@ import {  ButtonModule } from 'primeng/button';
     NgbTooltipModule,
     RadioButtonModule,
     ReactiveFormsModule,
-    ButtonModule
+    ButtonModule,
+    NgxsModule.forFeature([QuizzState, SubjectState])
   ],
   exports: [
     QuizzListComponent

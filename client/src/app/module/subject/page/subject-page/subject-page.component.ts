@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Store } from '@ngxs/store';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { DestroyableService } from 'src/app/core/service/destroyable.service';
 import { SubjectModel } from '../../model/subject.model';
 import { SaveSelectedSubject } from '../../service/subject.action';
 import { SubjectService } from '../../service/subject.service';
@@ -12,6 +14,7 @@ import { SubjectService } from '../../service/subject.service';
   selector: 'app-subject-page',
   templateUrl: './subject-page.component.html',
   styleUrls: ['./subject-page.component.scss'],
+  providers: [DestroyableService]
 })
 export class SubjectPageComponent implements OnInit {
   public subjects: Observable<SubjectModel[]>;
@@ -54,11 +57,12 @@ export class SubjectPageComponent implements OnInit {
     private subjectService: SubjectService,
     private toastSerivce: ToastrService,
     private store: Store,
-    private router: Router
+    private router: Router,
+    private destroyableService: DestroyableService
   ) {}
 
   public ngOnInit(): void {
-    this.subjects = this.subjectService.getSubjectList();
+    this.subjects = this.subjectService.getSubjectList().pipe(takeUntil(this.destroyableService.destroy$));
   }
 
   public onSelectionSubject(subject: SubjectModel): void {

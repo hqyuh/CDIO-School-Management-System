@@ -25,7 +25,7 @@
         responsiveLayout="scroll"
         #dt1
       >
-      <ng-template pTemplate="header" let-columns>
+      <ng-template pTemplate="header" let-columns let-quizzes>
         <tr>
           <th *ngFor="let col of columns" pSortableColumn="{{ col.field }}">
             <ng-container [ngSwitch]="col.field">
@@ -57,35 +57,29 @@
           </th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-subject let-columns="columns">
+      <ng-template pTemplate="body" let-quizzes let-columns="columns">
         <tr class="p-selectable-row text-nowrap">
           <td *ngFor="let col of columns" class="text-nowrap" [class.text-center]="col.field === 'nationality' || col.field === 'exam'">
             <ng-container [ngSwitch]="col.field">
               <ng-template [ngSwitchCase]="'selection'">
                 <p-tableRadioButton
                   name="subject"
-                  [value]="subject"
+                  [value]="quizzes"
                 ></p-tableRadioButton>
               </ng-template>
               <ng-template [ngSwitchCase]="'id'">
-                <span class="text-primary">{{ subject.id }}</span>
+                <span class="text-primary">{{ quizzes.id }}</span>
+              </ng-template>
+              <ng-template [ngSwitchCase]="'description'">
+                <i class="pi pi-pencil"></i>
+                {{ quizzes.description }}
               </ng-template>
               <ng-template [ngSwitchCase]="'name'">
                 <i class="pi pi-pencil"></i>
-                {{ subject.name }}
-              </ng-template>
-              <ng-template [ngSwitchCase]="'teacher'">
-                <div class="text-nowrap">
-                  <img
-                    src="../../../../../assets/teacher.png"
-                    alt="teacher"
-                    style="width: 50px"
-                  />
-                  {{ subject.teacher }}
-                </div>
+                {{ quizzes.name }}
               </ng-template>
               <ng-template [ngSwitchCase]="'dateCreated'">
-                {{ subject.dateCreated }}
+                {{ quizzes.dateCreated }}
               </ng-template>
               <ng-template [ngSwitchCase]="'nationality'">
                 <img
@@ -95,9 +89,10 @@
                 />
               </ng-template>
               <ng-template [ngSwitchCase]="'exam'">
-                <a class="btn btn-danger px-4" [ngbTooltip]="'Bắt đầu làm bài'" container="body" placement="bottom">
+                <button class="btn btn-danger px-4" [ngbTooltip]="'Bắt đầu làm bài'" 
+                (click)="saveSelectedQuizz(quizzes)" container="body" placement="bottom">
                   <i class="fas fa-hourglass-start"></i>
-                </a>
+                </button>
               </ng-template>
             </ng-container>
           </td>

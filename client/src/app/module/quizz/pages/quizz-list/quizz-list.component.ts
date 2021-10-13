@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Select } from '@ngxs/store';
+import { Select, Store } from '@ngxs/store';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { SubjectModel } from 'src/app/module/subject/model/subject.model';
 import { SubjectState } from 'src/app/module/subject/service/subject.state';
 import { QuizzModel } from '../../model/quizz.model';
+import { SaveSelectedQuizz } from '../../service/quizz.action';
 import { QuizzService } from '../../service/quizz.service';
 
 @Component({
@@ -35,6 +36,10 @@ export class QuizzListComponent implements OnInit {
       field: 'name'
     },
     {
+      header: 'Mô tả',
+      field: 'description'
+    },
+    {
       header: 'Ngày tạo',
       field: 'dateCreated',
     },
@@ -48,7 +53,7 @@ export class QuizzListComponent implements OnInit {
     },
   ]
 
-  constructor(private router: Router , private toastService: ToastrService, private quizzService: QuizzService) {}
+  constructor(private router: Router , private toastService: ToastrService, private quizzService: QuizzService, private store: Store) {}
 
   public ngOnInit(): void {
     this.selectedSublect$.subscribe((subject) => {
@@ -59,6 +64,12 @@ export class QuizzListComponent implements OnInit {
         this.selectedSubject = subject;
         this.quizzes$ = this.quizzService.getQuizz(subject.id);
       }
+    });
+  }
+
+  public saveSelectedQuizz(quizz: QuizzModel): void{
+    this.store.dispatch(new SaveSelectedQuizz(quizz)).subscribe(()=>{
+      this.router.navigate(['/home/quizz/exam']);
     });
   }
 }
