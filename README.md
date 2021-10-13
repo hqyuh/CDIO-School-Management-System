@@ -26,7 +26,7 @@ login
      
      
  
- quizz
+ Quizz
  
      {
     "id": 1,
@@ -60,5 +60,5 @@ login
         "name": "Java",
         "teacher": "James Gosling",
         "dateCreated": "13-10-2021 09:49:37"
+        }
     }
-}
