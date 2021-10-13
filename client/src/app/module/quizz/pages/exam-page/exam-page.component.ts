@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -17,11 +18,15 @@ export class ExamPageComponent implements OnInit {
   @Select(QuizzState.selectedQuizz)
   public selectedQuizz$: Observable<QuizzModel>;
   constructor(
-    private destroyableService: DestroyableService
+    private destroyableService: DestroyableService,
+    private router: Router,
   ) {}
 
   public ngOnInit(): void {
     this.selectedQuizz$.pipe(takeUntil(this.destroyableService.destroy$)).subscribe((quizz) => {
+      if(quizz === undefined) {
+        this.router.navigate(['/home/quizz']);
+      }
       this.exam = quizz;
     });
   }
