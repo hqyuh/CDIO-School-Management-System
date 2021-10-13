@@ -25,9 +25,13 @@ public class TestQuizz {
     @Column(name = "name", length = 45)
     private String name;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss", timezone = "Asia/Ho_Chi_Minh")
+    @JsonFormat(shape = JsonFormat.Shape.STRING,
+            pattern = "dd-MM-yyyy hh:mm:ss", timezone = "Asia/Ho_Chi_Minh")
     @Column(name = "date_created")
     private Instant dateCreated;
+
+    @Column(name = "description")
+    private String description;
 
     @OneToMany
     @JoinColumn(name = "test_id")
