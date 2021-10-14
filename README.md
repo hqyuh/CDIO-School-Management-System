@@ -107,3 +107,40 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
         "dateCreated": "13-10-2021 09:49:37"
         }
     }
+    
+    
+ All Teacher
+    
+    [
+        {
+            "teacherId": 1,
+            "name": "James Gosling",
+            "position": "Professor"
+        },
+        {
+            "teacherId": 2,
+            "name": "Guido van Rossum",
+            "position": "Professor"
+        },
+        {
+            "teacherId": 3,
+            "name": "Brendan Eichh",
+            "position": "Professor"
+        },
+        {
+            "teacherId": 4,
+            "name": "Anders Hejlsberg",
+            "position": "Professor"
+        },
+        {
+            "teacherId": 5,
+            "name": "Bjarne Stroustrup",
+            "position": "Professor"
+        },
+        {
+            "teacherId": 6,
+            "name": "Martin Odersky",
+            "position": "Professor"
+        }
+    ]
+    
