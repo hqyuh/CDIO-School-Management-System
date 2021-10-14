@@ -44,6 +44,8 @@
               type="password"
               class="app-control form-control"
               placeholder="Nhập mật khẩu của bạn"
+              pPassword
+              mediumRegex="^[a-zA-Z0-9!@#$%^&*]{6,18}$" 
               formControlName="password"
               [class.is-invalid]="
                 Password.invalid && (Password.touched || Password.dirty)

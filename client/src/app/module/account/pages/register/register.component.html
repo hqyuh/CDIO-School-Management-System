@@ -70,6 +70,7 @@
               class="app-control form-control"
               placeholder="Nhập mật khẩu của bạn"
               formControlName="password"
+              pPassword
               [class.is-invalid]="
                 Password.invalid && (Password.touched || Password.dirty)
               "
@@ -101,6 +102,7 @@
               class="app-control form-control"
               placeholder="Nhập mật khẩu của bạn"
               formControlName="confirmPassword"
+              pPassword
               [class.is-invalid]="
                 (ConfirmPassword.touched || ConfirmPassword.dirty) &&
                 (registerForm.errors?.misMatch ||
