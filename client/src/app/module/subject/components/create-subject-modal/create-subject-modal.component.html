@@ -1,0 +1,29 @@
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Thêm môn học</h4>
+        <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form [formGroup]="createSubjectForm">
+            <div class="form-group">
+                <label for="subjectName">Tên môn học</label>
+                <input
+                  type="text"
+                  class="app-control form-control mt-1"
+                  placeholder="Tên môn học"
+                  formControlName="name"
+                  pInputText
+                  id="subjectName"e
+                />
+                <div *ngIf="(Name.touched || Name.dirty) && Name.invalid">
+                    <small class="text-danger" *ngIf="Name?.errors.required">Vui lòng nhập tên môn</small>
+                </div>
+            </div>
+          </form>
+      </div>
+</ng-template>
+
+<button pButton type="button" label="Create" class="p-button-success" (click)="openCreateSubjectModal(content)"><i class="fas fa-plus text-white"></i>&nbsp;&nbsp;</button>

@@ -16,19 +16,31 @@ export class SubjectService {
       {
         id: 5,
         name: 'Hệ phân tán',
-        teacher: 'Thầy 3',
+        teacher: {
+          teacherId: 4,
+          name: 'huy',
+          position: 'Professcor',
+        },
         dateCreated: '0',
       },
       {
         id: 7,
         name: 'K7',
-        teacher: 'Ba gà',
+        teacher:  {
+          teacherId: 4,
+          name: 'huy',
+          position: 'Professcor',
+        },
         dateCreated: '0',
       },
       {
         id: 7,
         name: 'Xạo lz',
-        teacher: 'Quang huy',
+        teacher:  {
+          teacherId: 4,
+          name: 'huy',
+          position: 'Professcor',
+        },
         dateCreated: '0',
       }
     ])

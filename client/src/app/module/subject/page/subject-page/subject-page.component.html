@@ -24,6 +24,9 @@
         responsiveLayout="scroll"
         #dt1
       >
+      <ng-template pTemplate="caption">
+        <app-create-subject-modal></app-create-subject-modal>
+      </ng-template>
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th *ngFor="let col of columns" pSortableColumn="{{ col.field }}">
@@ -77,7 +80,7 @@
                       alt="teacher"
                       style="width: 50px"
                     />
-                    {{ subject.teacher }}
+                    {{ subject.teacher.name }}
                   </div>
                 </ng-template>
                 <ng-template [ngSwitchCase]="'dateCreated'">
