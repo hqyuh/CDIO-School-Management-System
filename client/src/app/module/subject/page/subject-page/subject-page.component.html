@@ -24,9 +24,11 @@
         responsiveLayout="scroll"
         #dt1
       >
-      <ng-template pTemplate="caption">
-        <app-create-subject-modal></app-create-subject-modal>
-      </ng-template>
+        <ng-template pTemplate="caption">
+            <app-create-subject-modal></app-create-subject-modal>
+            <app-update-subject-modal></app-update-subject-modal>
+            <app-delete-subject-modal></app-delete-subject-modal>
+        </ng-template>
         <ng-template pTemplate="header" let-columns>
           <tr>
             <th *ngFor="let col of columns" pSortableColumn="{{ col.field }}">
@@ -58,7 +60,13 @@
         </ng-template>
         <ng-template pTemplate="body" let-subject let-columns="columns">
           <tr class="p-selectable-row text-nowrap">
-            <td *ngFor="let col of columns" class="text-nowrap" [class.text-center]="col.field === 'nationality' || col.field === 'quizz'">
+            <td
+              *ngFor="let col of columns"
+              class="text-nowrap"
+              [class.text-center]="
+                col.field === 'nationality' || col.field === 'quizz'
+              "
+            >
               <ng-container [ngSwitch]="col.field">
                 <ng-template [ngSwitchCase]="'selection'">
                   <p-tableRadioButton

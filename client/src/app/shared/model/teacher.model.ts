@@ -1,5 +1,5 @@
 export class TeacherModel {
     public teacherId: number;
-    public name: string;
-    public position: string;
+    public name?: string;
+    public position?: string;
 }

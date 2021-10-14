@@ -10,9 +10,9 @@
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 $app-color: #f63428;
 
-@for $i from 6 through 30 {
+@for $i from 6 through 50 {
   .rounded-#{$i} {
-    --border-radius: #{$i}px !important;
+    border-radius: #{$i}px !important;
   }
 }
 

@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxsModule } from '@ngxs/store';
 import { ToastrModule } from 'ngx-toastr';
 import {
@@ -8,6 +9,7 @@ import {
   NgxUiLoaderModule,
   NgxUiLoaderRouterModule,
 } from 'ngx-ui-loader';
+import { NgxsResetPluginModule } from 'ngxs-reset-plugin';
 import { httpInterceptorProviders } from './interceptors';
 
 @NgModule({
@@ -19,6 +21,8 @@ import { httpInterceptorProviders } from './interceptors';
     NgxsModule.forRoot([], { developmentMode: false }),
     NgxUiLoaderRouterModule.forRoot({ showForeground: true }),
     NgxUiLoaderHttpModule.forRoot({ showForeground: false }),
+    NgbModule,
+    NgxsResetPluginModule,
     ToastrModule.forRoot({
       maxOpened: 5,
       iconClasses: {

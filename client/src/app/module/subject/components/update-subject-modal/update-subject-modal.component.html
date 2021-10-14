@@ -1,12 +1,16 @@
-<ng-template #content let-modal>
+<ng-template let-modal #content>
   <div class="modal-header">
-    <h4 class="modal-title text-center mx-auto">Thêm môn học</h4>
-    <button type="button" class="close btn" (click)="modal.dismiss('Cross click')">
+    <h4 class="modal-title text-center mx-auto">Cập nhật môn học</h4>
+    <button
+      type="button"
+      class="close btn"
+      (click)="modal.dismiss('Cross click')"
+    >
       <span>&times;</span>
     </button>
   </div>
   <div class="modal-body py-5">
-    <form [formGroup]="createSubjectForm" (ngSubmit)="createSubject()">
+    <form [formGroup]="updateSubjectForm" (ngSubmit)="updateSubject()">
       <div class="form-group">
         <label for="subjectName">Tên môn học</label>
         <input
@@ -32,25 +36,13 @@
             *ngFor="let teacher of teachers | async"
             [value]="teacher"
             class="custom"
-            [class.is-valid]="
-              (Teacher.touched || Teacher.dirty) && Teacher.valid
-            "
-            [class.is-invalid]="
-              (Teacher.touched || Teacher.dirty) && Teacher.invalid
-            "
           >
-           <img src="../../../../../assets/teacher.png" alt="teacher" style="width: 50px;"> {{ teacher.name }}
+            {{ teacher?.name }}
           </ng-option>
         </ng-select>
-        <div *ngIf="Teacher.invalid && (Teacher.dirty || Teacher.touched)">
-          <small class="text-danger" *ngIf="Teacher?.errors.required">
-            Vui lòng chọn giáo viên của môn học này
-          </small>
-        </div>
       </div>
       <div class="text-end mt-3">
-        <button class="btn btn-outline-danger">Clear</button
-        ><button class="btn btn-success ms-2" type="submit" (click)="createSubject()">Save</button>
+        <button class="btn btn-success ms-2" type="submit">Update</button>
       </div>
     </form>
   </div>
@@ -59,9 +51,9 @@
 <button
   pButton
   type="button"
-  label="Create"
-  class="p-button-success"
-  (click)="openCreateSubjectModal(content)"
+  label="Update"
+  class="p-button-help ms-2"
+  (click)="openUpdateSubjectModal(content)"
 >
-  <i class="fas fa-plus text-white"></i>&nbsp;&nbsp;
+  <i class="fas fa-edit text-white"></i>&nbsp;&nbsp;
 </button>
