@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -19,6 +19,7 @@ export class CreateSubjectModalComponent implements OnInit {
   public createSubjectForm: any;
   public teachers: Observable<TeacherModel[]>;
   constructor(
+    public activeModal: NgbActiveModal,
     private modal: NgbModal,
     private formBuilder: FormBuilder,
     private teacherService: TeacherService,
@@ -54,9 +55,12 @@ export class CreateSubjectModalComponent implements OnInit {
         .createSubject(this.createSubjectForm.value)
         .pipe(takeUntil(this.destroyableService.destroy$))
         .subscribe({
-          next: () => this.toastService.success('Thêm môn học thành công!'),
+          next: () => {
+            this.toastService.success('Thêm môn học thành công!');
+          },
           error: () => this.toastService.error('Thêm môn học thất bại'),
+          complete: ()=> this.activeModal.close('cross click'),
         });
-    } 
+    }
   }
 }
