@@ -144,3 +144,45 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
         }
     ]
     
+  POST Teacher
+    
+   request
+   
+     {
+        "name": "Quang Huy",
+        "position": "Professor"
+      }
+    
+  response
+  
+    {
+        "teacherId": 8,
+        "name": "Quang Huy",
+        "position": "Professor"
+    }
+    
+ PUT Teacher
+   request
+    
+      {
+          "teacherId": 7,
+          "name": "Quang Huyyyyy",
+          "position": "Professor"
+      }
+      
+     
+   response
+   
+      {
+          "teacherId": 8,
+          "name": "Quang Huyyyy",
+          "position": "Professor"
+      }
+      
+      
+   DELETE 
+      Chỉ cần http://localhost:8080/api/teacher/{id}
+      
+ 
+ 
+    
