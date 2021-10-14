@@ -159,9 +159,8 @@
       </div>
     </div>
     <div class="dropdown" dropdown>
-      <a dropdownToggle>
-        <i class="fa fa-envelope"></i>
-        <span class="badge badge-pill badge-success notification">7</span>
+      <a dropdownToggle [ngbTooltip]="'Đăng xuất'" container="body" placement="top" (click)="logout()">
+        <i class="fa fa-power-off"></i>
       </a>
       <div class="dropdown-menu messages" *dropdownMenu>
         <div class="messages-header">
@@ -234,7 +233,7 @@
     </div>
     <div>
       <a (click)="closeSidebar()">
-        <i class="fa fa-power-off"></i>
+        <i class="fas fa-times"></i>
       </a>
     </div>
   </div>

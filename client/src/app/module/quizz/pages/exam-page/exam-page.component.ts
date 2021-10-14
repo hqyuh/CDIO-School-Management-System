@@ -24,9 +24,6 @@ export class ExamPageComponent implements OnInit {
 
   public ngOnInit(): void {
     this.selectedQuizz$.pipe(takeUntil(this.destroyableService.destroy$)).subscribe((quizz) => {
-      if(quizz === undefined) {
-        this.router.navigate(['/home/quizz']);
-      }
       this.exam = quizz;
     });
   }
