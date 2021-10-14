@@ -113,4 +113,7 @@ export class SidebarService {
   public set hasBackgroundImage(hasBackgroundImage) {
     this._hasBackgroundImage = hasBackgroundImage;
   }
+
+
+
 }

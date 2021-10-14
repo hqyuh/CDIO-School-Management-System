@@ -43,5 +43,9 @@ public class Question {
     @Column(name = "answer_d")
     private String answerD;
 
+    @Column(name = "result")
+    private String result;
+
+
 
 }

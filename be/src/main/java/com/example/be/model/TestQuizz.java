@@ -33,6 +33,9 @@ public class TestQuizz {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "exam_time")
+    private Integer examTime;
+
     @OneToMany
     @JoinColumn(name = "test_id")
     private List<Question> questions;

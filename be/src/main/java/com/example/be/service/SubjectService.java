@@ -28,6 +28,7 @@ public class SubjectService {
     }
 
     public Subject updateSubject(Subject subject){
+        subject.setDateCreated(Instant.now());
         return repo.save(subject);
     }
 
