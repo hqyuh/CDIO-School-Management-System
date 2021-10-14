@@ -2,6 +2,7 @@ package com.example.be.service;
 
 import com.example.be.model.Subject;
 import com.example.be.repository.SubjectRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,7 @@ public class SubjectService {
 
     public Subject updateSubject(Subject subject){
         subject.setDateCreated(Instant.now());
+        subject.setName(subject.getName());
         return repo.save(subject);
     }
 

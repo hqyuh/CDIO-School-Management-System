@@ -3,7 +3,6 @@ package com.example.be.controller;
 import com.example.be.model.TestQuizz;
 import com.example.be.service.TestQuizzService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

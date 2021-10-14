@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.*;
 import java.security.cert.CertificateException;
+import java.util.Date;
 
 import static io.jsonwebtoken.Jwts.parser;
 
@@ -31,10 +32,12 @@ public class JwtProvider {
         }
     }
 
+
     public String generateToken(Authentication authentication){
         User principal = (User) authentication.getPrincipal();
         return Jwts.builder()
                 .setSubject(principal.getUsername())
+                .setIssuedAt(new Date())
                 .signWith(getPrivateKey())
                 .compact();
     }

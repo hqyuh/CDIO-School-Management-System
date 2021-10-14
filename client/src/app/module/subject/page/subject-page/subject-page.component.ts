@@ -36,11 +36,6 @@ export class SubjectPageComponent implements OnInit {
       field: 'name',
     },
     {
-      header: 'Giáo viên',
-      field: 'teacher',
-      width: 50,
-    },
-    {
       header: 'Ngày tạo',
       field: 'dateCreated',
     },

@@ -70,16 +70,6 @@
                   <i class="pi pi-pencil"></i>
                   {{ subject.name }}
                 </ng-template>
-                <ng-template [ngSwitchCase]="'teacher'">
-                  <div class="text-nowrap">
-                    <img
-                      src="../../../../../assets/teacher.png"
-                      alt="teacher"
-                      style="width: 50px"
-                    />
-                    {{ subject.teacher }}
-                  </div>
-                </ng-template>
                 <ng-template [ngSwitchCase]="'dateCreated'">
                   {{ subject.dateCreated }}
                 </ng-template>
