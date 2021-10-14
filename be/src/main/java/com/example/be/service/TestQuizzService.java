@@ -28,10 +28,12 @@ public class TestQuizzService {
         return repo.save(testQuizz);
     }
 
+
     public TestQuizz updateQuizz(TestQuizz testQuizz) {
         testQuizz.setName(testQuizz.getName());
         testQuizz.setDescription(testQuizz.getDescription());
         testQuizz.setExamTime(testQuizz.getExamTime());
+        testQuizz.setDateCreated(Instant.now());
         return repo.save(testQuizz);
     }
 
