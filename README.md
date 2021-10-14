@@ -47,18 +47,24 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
  request
  
      {
-        "name": "TypeScript",
-        "teacher": "Anders Hejlsberg"
+        "name": "PHP",
+        "teacher": {
+        "teacherId": 1
+        }
      }
      
  response
  
      {
         "id": 5,
-        "name": "TypeScript",
-        "teacher": "Anders Hejlsberg",
-        "dateCreated": "13-10-2021 09:52:50"
-     }
+        "name": "PHP",
+        "dateCreated": "14-10-2021 02:21:26",
+        "teacher": {
+            "teacherId": 1,
+            "name": "James Gosling",
+            "position": "Professor"
+        }
+    }
      
      
      
