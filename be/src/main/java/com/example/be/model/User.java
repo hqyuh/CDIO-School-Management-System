@@ -26,6 +26,9 @@ public class User {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "full_name")
+    private String fullName;
+
     @Column(name = "password", length = 64)
     private String password;
 
@@ -35,14 +38,7 @@ public class User {
     @Column(name = "enabled")
     private boolean enabled;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "role_id")
-    private Role roles;
+    @Column(name = "role")
+    private String role;
 
-    public User(String username, String email, String password, Role roles) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.roles = roles;
-    }
 }

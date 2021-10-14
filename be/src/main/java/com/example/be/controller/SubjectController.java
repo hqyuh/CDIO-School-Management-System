@@ -34,7 +34,7 @@ public class SubjectController {
                 .body(service.addSubject(subject));
     }
 
-    @PutMapping
+    @PatchMapping
     public ResponseEntity<Subject> updateSubject(@RequestBody Subject subject){
         return ResponseEntity
                 .status(HttpStatus.OK)

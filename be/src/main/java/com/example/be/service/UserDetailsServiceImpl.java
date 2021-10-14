@@ -1,6 +1,5 @@
 package com.example.be.service;
 
-import com.example.be.model.Role;
 import com.example.be.model.User;
 import com.example.be.repository.UserRepository;
 import lombok.AllArgsConstructor;

@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from '../../service/account.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,9 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private toastrService: ToastrService,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private router: Router,
+    private toastr: ToastrService,
   ) {}
 
   public ngOnInit(): void {
@@ -45,8 +48,15 @@ export class RegisterComponent implements OnInit {
 
   public register(): void {
     this.accountService.register(this.registerForm.value).subscribe({
-      next: () => this.toastrService.success('Register successfully!'),
-      error: () => this.toastrService.error('Some thing went wrong!'),
+      // next: () => this.toastrService.success('Register successfully!'),
+      error: () => {
+        this.toastrService.success('Register successfully!');
+        this.router.navigate(['/login']).then();
+      }
+      // next: () => {
+      //   void this.router.navigate(['/signup']);
+      //   this.toastr.success('Sign Up Success');
+      // },
     });
   }
 

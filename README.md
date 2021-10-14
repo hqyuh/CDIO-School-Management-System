@@ -47,18 +47,24 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
  request
  
      {
-        "name": "TypeScript",
-        "teacher": "Anders Hejlsberg"
+        "name": "PHP",
+        "teacher": {
+        "teacherId": 1
+        }
      }
      
  response
  
      {
         "id": 5,
-        "name": "TypeScript",
-        "teacher": "Anders Hejlsberg",
-        "dateCreated": "13-10-2021 09:52:50"
-     }
+        "name": "PHP",
+        "dateCreated": "14-10-2021 02:21:26",
+        "teacher": {
+            "teacherId": 1,
+            "name": "James Gosling",
+            "position": "Professor"
+        }
+    }
      
      
      
@@ -70,6 +76,7 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
     "id": 1,
     "name": "Quizz A",
     "dateCreated": "13-10-2021 09:55:08",
+    "examTime: 1200,
     "description": "Mid-term test",
     "questions": [
         {
@@ -100,3 +107,84 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
         "dateCreated": "13-10-2021 09:49:37"
         }
     }
+    
+    
+ All Teacher
+    
+    [
+        {
+            "teacherId": 1,
+            "name": "James Gosling",
+            "position": "Professor"
+        },
+        {
+            "teacherId": 2,
+            "name": "Guido van Rossum",
+            "position": "Professor"
+        },
+        {
+            "teacherId": 3,
+            "name": "Brendan Eichh",
+            "position": "Professor"
+        },
+        {
+            "teacherId": 4,
+            "name": "Anders Hejlsberg",
+            "position": "Professor"
+        },
+        {
+            "teacherId": 5,
+            "name": "Bjarne Stroustrup",
+            "position": "Professor"
+        },
+        {
+            "teacherId": 6,
+            "name": "Martin Odersky",
+            "position": "Professor"
+        }
+    ]
+    
+  POST Teacher
+    
+   request
+   
+     {
+        "name": "Quang Huy",
+        "position": "Professor"
+      }
+    
+  response
+  
+    {
+        "teacherId": 8,
+        "name": "Quang Huy",
+        "position": "Professor"
+    }
+    
+ PUT Teacher
+ 
+   request
+    
+      {
+          "teacherId": 7,
+          "name": "Quang Huyyyyy",
+          "position": "Professor"
+      }
+      
+     
+   response
+   
+      {
+          "teacherId": 8,
+          "name": "Quang Huyyyy",
+          "position": "Professor"
+      }
+      
+      
+   DELETE 
+   
+      Chỉ cần http://localhost:8080/api/teacher/{id}
+      
+ 
+ 
+    

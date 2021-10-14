@@ -1,6 +1,7 @@
 package com.example.be.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,11 +24,13 @@ public class Subject {
     @Column(name = "name", length = 45)
     private String name;
 
-    @Column(name = "teacher", length = 45)
-    private String teacher;
-
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss", timezone = "Asia/Ho_Chi_Minh")
+    @JsonFormat(shape = JsonFormat.Shape.STRING,
+            pattern = "dd-MM-yyyy hh:mm:ss", timezone = "Asia/Ho_Chi_Minh")
     @Column(name = "date_created")
     private Instant dateCreated;
+
+    @OneToOne
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
 
 }

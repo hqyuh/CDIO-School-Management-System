@@ -2,6 +2,7 @@ package com.example.be.service;
 
 import com.example.be.model.TestQuizz;
 import com.example.be.repository.TestQuizzRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,13 @@ public class TestQuizzService {
 
     public TestQuizz addQuizz(TestQuizz testQuizz){
         testQuizz.setDateCreated(Instant.now());
+        return repo.save(testQuizz);
+    }
+
+    public TestQuizz updateQuizz(TestQuizz testQuizz) {
+        testQuizz.setName(testQuizz.getName());
+        testQuizz.setDescription(testQuizz.getDescription());
+        testQuizz.setExamTime(testQuizz.getExamTime());
         return repo.save(testQuizz);
     }
 
