@@ -185,6 +185,71 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
    
       Chỉ cần http://localhost:8080/api/teacher/{id}
       
+      
+ QUIZZ
+    
+   POST Quizz
+   
+   request
+    
+      {
+          "name": "Quizz GG",
+          "description": "First quizz",
+          "examTime": 1100,
+          "subject": {"id": 1}
+      }
+      
+   response
+      
+      {
+        "id": 11,
+        "name": "Quizz GG",
+        "dateCreated": "14-10-2021 11:21:59",
+        "description": "First quizz",
+        "examTime": 1100,
+        "questions": null,
+        "subject": {
+            "id": 1,
+            "name": "Java",
+            "dateCreated": "14-10-2021 11:17:48",
+        }
+      }
+      
+      
+  PUT Quizz
+  
+   request
+      
+      {
+        "id": 13,
+        "name": "Quizz HHHHHHHHHHHHHH",
+        "description": "First quizz",
+        "examTime": 1100,
+        "subject": {"id": 1}
+      }
+      
+   response
+    
+      {
+        "id": 13,
+        "name": "Quizz HHHHHHHHHHHHHH",
+        "dateCreated": "14-10-2021 11:21:59",
+        "description": "First quizz",
+        "examTime": 1100,
+        "questions": null,
+        "subject": {
+            "id": 1,
+            "name": "Java",
+            "dateCreated": "14-10-2021 11:17:48",
+        }
+      }
+  
+  
+   DELETE Quizz
+   
+      Chỉ cần http://localhost:8080/api/quizz/{id}
+      
+    
  
  
     
