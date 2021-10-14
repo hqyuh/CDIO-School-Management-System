@@ -60,8 +60,9 @@ export class UpdateSubjectModalComponent implements OnInit {
 
   public updateSubject(): void {
     if (this.updateSubjectForm.valid) {
+      const newSubject = {...this.updateSubjectForm.value, id: this.subject.id};
       this.subjectService
-        .updateSubject(this.updateSubjectForm.value)
+        .updateSubject(newSubject)
         .pipe(takeUntil(this.destroyableService.destroy$))
         .subscribe({
           next: () => this.toastService.success('Cập nhật thành công!'),

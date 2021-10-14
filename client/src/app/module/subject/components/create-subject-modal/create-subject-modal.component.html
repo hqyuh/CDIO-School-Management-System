@@ -49,8 +49,8 @@
         </div>
       </div>
       <div class="text-end mt-3">
-        <button class="btn btn-outline-danger">Clear</button
-        ><button class="btn btn-success ms-2" type="submit" (click)="createSubject()">Save</button>
+        <button class="btn btn-outline-danger" (click)="modal.close('save click')">Cancel</button
+        ><button class="btn btn-success ms-2" type="submit" (click)="createSubject(); modal.close('save click')">Save</button>
       </div>
     </form>
   </div>
