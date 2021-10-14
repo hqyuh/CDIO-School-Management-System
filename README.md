@@ -70,6 +70,7 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
     "id": 1,
     "name": "Quizz A",
     "dateCreated": "13-10-2021 09:55:08",
+    "examTime: 1200,
     "description": "Mid-term test",
     "questions": [
         {
