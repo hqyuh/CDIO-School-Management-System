@@ -9,6 +9,8 @@ import {
 import { SidebarService } from './sidebar.service';
 import { AccountService } from 'src/app/module/account/service/account.service';
 import User from 'src/app/module/account/models/account.model';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -28,7 +30,9 @@ export class SidebarComponent implements OnInit {
 
   constructor(
     public sidebarservice: SidebarService,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private toastService: ToastrService,
+    private router: Router
   ) {
     this.menus = sidebarservice.getMenuList();
   }
@@ -67,5 +71,15 @@ export class SidebarComponent implements OnInit {
 
   public closeSidebar(): void {
     this.sidebarservice.setSidebarState(true);
+  }
+
+  public logout(): void {
+    this.accountService.logout().subscribe({
+      next: () => {
+        void this.router.navigate(['/account/login']);
+        this.toastService.show('We will miss you UwU');
+      },
+      error: () => this.toastService.error('Some thing went wrong!'),
+    });
   }
 }

@@ -40,8 +40,8 @@ export class AccountService {
     );
   }
 
-  public logout(): void {
-    this.http.delete(`${environment.apiHost}/auth/logout`).pipe(
+  public logout(): Observable<any> {
+   return this.http.delete(`${environment.apiHost}/auth/logout`).pipe(
       tap(() => {
         localStorage.removeItem('currentUser');
         this.currentUser$.next(null);

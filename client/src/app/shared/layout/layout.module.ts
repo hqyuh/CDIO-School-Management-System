@@ -7,6 +7,7 @@ import { LayOutRoutingModule } from './layout-routing.module';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BadgeModule } from 'primeng/badge';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { BadgeModule } from 'primeng/badge';
     RouterModule,
     PerfectScrollbarModule,
     LayOutRoutingModule,
-    BadgeModule
+    BadgeModule,
+    NgbTooltipModule
   ],
   exports: [
     SidebarComponent
