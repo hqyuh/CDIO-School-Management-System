@@ -7,11 +7,13 @@ import {
     HttpResponse
   } from '@angular/common/http';
   import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
   import { Observable } from 'rxjs';
   import { tap } from 'rxjs/operators';
   
   @Injectable()
   export class HttpErrorInterceptor implements HttpInterceptor {
+    constructor(private router: Router){}
     public intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
       return next.handle(req).pipe(tap((event: HttpEvent<unknown>) => {
         if (event instanceof HttpResponse) {
@@ -21,7 +23,7 @@ import {
         if (err instanceof HttpErrorResponse) {
           if (err.status === 401) {
             localStorage.removeItem('currentUser');
-            window.location.replace(`/account/login`);
+            void this.router.navigate([`/account/login`]);
           }
         }
       }));
