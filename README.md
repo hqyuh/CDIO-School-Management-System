@@ -249,6 +249,19 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
    
       Chỉ cần http://localhost:8080/api/quizz/{id}
       
+      
+      
+Student Answer
+  
+   POST 
+   
+      {
+         "testQuizzId": 2,                   id bài test quizz
+         "questionId": 8,                    id câu hỏi
+         "isSelected": "A"                   câu trả lời
+      }
+      
+      
     
  
  
