@@ -48,8 +48,9 @@ public class StudentAnswerService {
         Question question = questionRepo.findQuestionById(studentAnswerDTO.getQuestionId());
 
         StudentAnswer studentAnswer = studentAnswerMapper.map(studentAnswerDTO, testQuizz, question);
-        studentAnswer.setIsResult(studentAnswerDTO.getIsResult());
+        studentAnswer.setIsSelected(studentAnswerDTO.getIsSelected());
         studentAnswer.setCompletionTime(Instant.now());
+
         return repo.save(studentAnswer);
     }
 
