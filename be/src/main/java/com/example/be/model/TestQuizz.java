@@ -43,7 +43,7 @@ public class TestQuizz {
     private List<Question> questions;
 
     @ManyToOne
-    //@JsonIgnore
+    // @JsonIgnore
     @JoinColumn(name = "subject_id")
     private Subject subject;
 

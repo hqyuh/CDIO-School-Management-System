@@ -42,15 +42,27 @@ public class StudentAnswerService {
                 .collect(Collectors.toList());
     }
 
+    public List<StudentAnswerDTO> getAllByTestQuizzId(Long id){
+        return repo.findByTestQuizzId(id)
+                .stream()
+                .map(studentAnswerMapper::mapToDTO)
+                .collect(Collectors.toList());
+    }
+
     public StudentAnswer saveStudentAnswer(StudentAnswerDTO studentAnswerDTO){
 
         TestQuizz testQuizz = testQuizzRepo.findTestQuizzById(studentAnswerDTO.getTestQuizzId());
         Question question = questionRepo.findQuestionById(studentAnswerDTO.getQuestionId());
 
         StudentAnswer studentAnswer = studentAnswerMapper.map(studentAnswerDTO, testQuizz, question);
-        studentAnswer.setIsResult(studentAnswerDTO.getIsResult());
+        studentAnswer.setIsSelected(studentAnswerDTO.getIsSelected());
         studentAnswer.setCompletionTime(Instant.now());
+
         return repo.save(studentAnswer);
+    }
+
+    public float getMark(Long id){
+        return repo.getMarkByTestQuizzId(id);
     }
 
 }

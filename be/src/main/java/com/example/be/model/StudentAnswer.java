@@ -29,9 +29,10 @@ public class StudentAnswer {
     @JoinColumn(name = "question_id")
     private Question question;
 
-    @Column(name = "is_result", length = 5)
-    private String isResult;
+    @Column(name = "is_selected", length = 5)
+    private String isSelected;
 
     @Column(name = "completion_time")
     private Instant completionTime;
+
 }

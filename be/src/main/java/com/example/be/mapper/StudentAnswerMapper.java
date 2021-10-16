@@ -16,7 +16,7 @@ public interface StudentAnswerMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "testQuizz", source = "testQuizz")
     @Mapping(target = "question", source = "question")
-    @Mapping(target = "isResult", ignore = true)
+    @Mapping(target = "isSelected", ignore = true)
     StudentAnswer map(StudentAnswerDTO studentAnswerDTO, TestQuizz testQuizz, Question question);
 
     @Mapping(target = "testQuizzId", expression = "java(studentAnswer.getTestQuizz().getId())")
