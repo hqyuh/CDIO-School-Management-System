@@ -74,31 +74,66 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
  
  
      {
-        "id": 1,
-        "name": "Quizz A",
+        "id": 2,
+        "name": "Quizz B",
         "dateCreated": "13-10-2021 09:55:08",
-        "examTime: 1200,
-        "description": "Mid-term test",
+        "description": "Quizz test 2",
+        "examTime": 1200,
         "questions": [
             {
-                "id": 1,
+                "id": 5,
                 "text": "How can you achieve runtime polymorphism in Java?",
                 "mark": 2.0,
-                "dateCreated": "13-10-2021 09:55:08",
+                "dateCreated": "14-10-2021 10:54:09",
                 "answerA": "method overloading",
                 "answerB": "method overrunning",
                 "answerC": "method overriding",
-                "answerD": "method calling"
+                "answerD": "method calling",
+                "result": "C"
             },
             {
-                "id": 2,
+                "id": 6,
                 "text": "What method can be used to create a new instance of an object?",
                 "mark": 2.0,
                 "dateCreated": "13-10-2021 09:55:08",
                 "answerA": "another instance",
                 "answerB": "field",
                 "answerC": "constructor",
-                "answerD": "private method"
+                "answerD": "private method",
+                "result": "C"
+            },
+            {
+                "id": 7,
+                "text": "How do you write a foreach loop that will iterate over ArrayList<Pencil>pencilCase?",
+                "mark": 2.0,
+                "dateCreated": "13-10-2021 09:55:08",
+                "answerA": "for (Pencil pencil : pencilCase) {}",
+                "answerB": "for (pencilCase.next()) {}",
+                "answerC": "for (Pencil pencil : pencilCase.iterator()) {}",
+                "answerD": "for (pencil in pencilCase) {}",
+                "result": "A"
+            },
+            {
+                "id": 8,
+                "text": " Which is the most reliable expression for testing whether the values of two string variables are the same?",
+                "mark": 2.0,
+                "dateCreated": "13-10-2021 09:55:08",
+                "answerA": "string1 == string2",
+                "answerB": "string1 = string2",
+                "answerC": " string1.matches(string2)",
+                "answerD": "string1.equals(string2)",
+                "result": "D"
+            },
+            {
+                "id": 9,
+                "text": " Which code snippet is valid?",
+                "mark": 2.0,
+                "dateCreated": "13-10-2021 09:55:08",
+                "answerA": "ArrayList<String> words = new ArrayList<String>(){\"Hello\", \"World\"};",
+                "answerB": "ArrayList words = Arrays.asList(\"Hello\", \"World\");",
+                "answerC": "ArrayList<String> words = {\"Hello\", \"World\"};",
+                "answerD": "ArrayList<String> words = new ArrayList<>(Arrays.asList(\"Hello\", \"World\"));",
+                "result": "D"
             }
         ]
     }
