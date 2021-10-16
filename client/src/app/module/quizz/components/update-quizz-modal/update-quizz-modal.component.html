@@ -1,0 +1,91 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title text-center mx-auto app-modal-title ">Cập nhật thi</h4>
+      <button type="button" class="close btn" (click)="modal.dismiss('Cross click')">
+        <span>&times;</span>
+      </button>
+    </div>
+    <div class="modal-body py-5">
+      <form [formGroup]="updateQuizzForm" (ngSubmit)="updateQuizz()">
+        <div class="form-group">
+          <label for="quizzName">Tên bài thi</label>
+          <input
+            type="text"
+            class="app-control form-control mt-1"
+            placeholder="Tên bài thi"
+            formControlName="name"
+            pInputText
+            id="quizzName"
+            [class.is-valid]="(Name.touched || Name.dirty) && Name.valid"
+            [class.is-invalid]="(Name.touched || Name.dirty) && Name.invalid"
+          />
+          <div *ngIf="(Name.touched || Name.dirty) && Name.invalid">
+            <small class="text-danger" *ngIf="Name?.errors.required"
+              >Vui lòng nhập tên bài thi</small
+            >
+          </div>
+        </div>
+        <div class="form-group mt-2">
+            <label for="quizzDes">Loại bài thi</label>
+            <input
+              type="text"
+              class="app-control form-control mt-1"
+              placeholder="Ex: Mid term exam"
+              formControlName="description"
+              pInputText
+              id="quizzDes"
+              [class.is-valid]="(Description.touched || Description.dirty) && Description.valid"
+              [class.is-invalid]="(Description.touched || Description.dirty) && Description.invalid"
+            />
+            <div *ngIf="(Description.touched || Description.dirty) && Description.invalid">
+              <small class="text-danger" *ngIf="Description?.errors.required"
+                >Vui lòng loại bài thi</small
+              >
+            </div>
+          </div>
+        <div class="form-group mt-2">
+            <label>Thời gian làm bài</label>
+            <ngb-timepicker formControlName="examTime"></ngb-timepicker>
+        </div>
+        <div class="form-group mt-2">
+          <!-- <label>Chọn giáo viên của môn học</label> -->
+          <!-- <ng-select placeholder="Ex: Teacher three" formControlName="teacher">
+            <ng-option
+              *ngFor="let teacher of teachers | async"
+              [value]="teacher"
+              class="custom"
+              [class.is-valid]="
+                (Teacher.touched || Teacher.dirty) && Teacher.valid
+              "
+              [class.is-invalid]="
+                (Teacher.touched || Teacher.dirty) && Teacher.invalid
+              "
+            >
+             <img src="../../../../../assets/teacher.png" alt="teacher" style="width: 50px;"> {{ teacher.name }}
+            </ng-option>
+          </ng-select> -->
+          <!-- <div *ngIf="Teacher.invalid && (Teacher.dirty || Teacher.touched)">
+            <small class="text-danger" *ngIf="Teacher?.errors.required">
+              Vui lòng chọn giáo viên của môn học này
+            </small>
+          </div> -->
+        </div>
+        <div class="text-end mt-3">
+          <button   label="Update"
+          class="p-button-help ms-2" pButton type="submit">
+          <i class="fas fa-sync text-white"></i>&nbsp;&nbsp;
+        </button>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+
+<button
+  pButton
+  type="button"
+  label="Update"
+  class="p-button-help ms-2"
+  (click)="openUpdateQuizzModal(content)"
+>
+  <i class="fas fa-edit text-white"></i>&nbsp;&nbsp;
+</button>
