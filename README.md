@@ -72,40 +72,35 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
  
  QUIZZ
  
+ 
      {
-    "id": 1,
-    "name": "Quizz A",
-    "dateCreated": "13-10-2021 09:55:08",
-    "examTime: 1200,
-    "description": "Mid-term test",
-    "questions": [
-        {
-            "id": 1,
-            "text": "How can you achieve runtime polymorphism in Java?",
-            "mark": 2.0,
-            "dateCreated": "13-10-2021 09:55:08",
-            "answerA": "method overloading",
-            "answerB": "method overrunning",
-            "answerC": "method overriding",
-            "answerD": "method calling"
-        },
-        {
-            "id": 2,
-            "text": "What method can be used to create a new instance of an object?",
-            "mark": 2.0,
-            "dateCreated": "13-10-2021 09:55:08",
-            "answerA": "another instance",
-            "answerB": "field",
-            "answerC": "constructor",
-            "answerD": "private method"
-        }
-    ],
-    "subject": {
         "id": 1,
-        "name": "Java",
-        "teacher": "James Gosling",
-        "dateCreated": "13-10-2021 09:49:37"
-        }
+        "name": "Quizz A",
+        "dateCreated": "13-10-2021 09:55:08",
+        "examTime: 1200,
+        "description": "Mid-term test",
+        "questions": [
+            {
+                "id": 1,
+                "text": "How can you achieve runtime polymorphism in Java?",
+                "mark": 2.0,
+                "dateCreated": "13-10-2021 09:55:08",
+                "answerA": "method overloading",
+                "answerB": "method overrunning",
+                "answerC": "method overriding",
+                "answerD": "method calling"
+            },
+            {
+                "id": 2,
+                "text": "What method can be used to create a new instance of an object?",
+                "mark": 2.0,
+                "dateCreated": "13-10-2021 09:55:08",
+                "answerA": "another instance",
+                "answerB": "field",
+                "answerC": "constructor",
+                "answerD": "private method"
+            }
+        ]
     }
     
     
