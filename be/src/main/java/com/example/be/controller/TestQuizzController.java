@@ -50,6 +50,13 @@ public class TestQuizzController {
                 .body(service.addQuizz(quizz));
     }
 
+    @PatchMapping
+    public ResponseEntity<TestQuizz> updateQuizz(@RequestBody TestQuizz quizz){
+        return ResponseEntity
+                .status(OK)
+                .body(service.updateQuizz(quizz));
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteQuizz(@PathVariable("id") Long id){
         service.deleteQuizz(id);

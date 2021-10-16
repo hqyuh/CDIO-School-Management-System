@@ -17,9 +17,9 @@ export class SubjectService {
   }
 
   public updateSubject(subject: SubjectModel): Observable<SubjectModel>{
-    return this.http.patch<SubjectModel>(`${environment.apiHost}/subject`,subject);
+    return this.http.put<SubjectModel>(`${environment.apiHost}/subject`,subject);
   }
-  
+
   public deleteSubject(subjectId: number): Observable<any>{
     return this.http.delete<any>(`${environment.apiHost}/subject/${subjectId}`);
   }
