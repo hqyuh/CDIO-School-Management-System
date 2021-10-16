@@ -72,40 +72,70 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
  
  QUIZZ
  
+ 
      {
-    "id": 1,
-    "name": "Quizz A",
-    "dateCreated": "13-10-2021 09:55:08",
-    "examTime: 1200,
-    "description": "Mid-term test",
-    "questions": [
-        {
-            "id": 1,
-            "text": "How can you achieve runtime polymorphism in Java?",
-            "mark": 2.0,
-            "dateCreated": "13-10-2021 09:55:08",
-            "answerA": "method overloading",
-            "answerB": "method overrunning",
-            "answerC": "method overriding",
-            "answerD": "method calling"
-        },
-        {
-            "id": 2,
-            "text": "What method can be used to create a new instance of an object?",
-            "mark": 2.0,
-            "dateCreated": "13-10-2021 09:55:08",
-            "answerA": "another instance",
-            "answerB": "field",
-            "answerC": "constructor",
-            "answerD": "private method"
-        }
-    ],
-    "subject": {
-        "id": 1,
-        "name": "Java",
-        "teacher": "James Gosling",
-        "dateCreated": "13-10-2021 09:49:37"
-        }
+        "id": 2,
+        "name": "Quizz B",
+        "dateCreated": "13-10-2021 09:55:08",
+        "description": "Quizz test 2",
+        "examTime": 1200,
+        "questions": [
+            {
+                "id": 5,
+                "text": "How can you achieve runtime polymorphism in Java?",
+                "mark": 2.0,
+                "dateCreated": "14-10-2021 10:54:09",
+                "answerA": "method overloading",
+                "answerB": "method overrunning",
+                "answerC": "method overriding",
+                "answerD": "method calling",
+                "result": "C"
+            },
+            {
+                "id": 6,
+                "text": "What method can be used to create a new instance of an object?",
+                "mark": 2.0,
+                "dateCreated": "13-10-2021 09:55:08",
+                "answerA": "another instance",
+                "answerB": "field",
+                "answerC": "constructor",
+                "answerD": "private method",
+                "result": "C"
+            },
+            {
+                "id": 7,
+                "text": "How do you write a foreach loop that will iterate over ArrayList<Pencil>pencilCase?",
+                "mark": 2.0,
+                "dateCreated": "13-10-2021 09:55:08",
+                "answerA": "for (Pencil pencil : pencilCase) {}",
+                "answerB": "for (pencilCase.next()) {}",
+                "answerC": "for (Pencil pencil : pencilCase.iterator()) {}",
+                "answerD": "for (pencil in pencilCase) {}",
+                "result": "A"
+            },
+            {
+                "id": 8,
+                "text": " Which is the most reliable expression for testing whether the values of two string variables are the same?",
+                "mark": 2.0,
+                "dateCreated": "13-10-2021 09:55:08",
+                "answerA": "string1 == string2",
+                "answerB": "string1 = string2",
+                "answerC": " string1.matches(string2)",
+                "answerD": "string1.equals(string2)",
+                "result": "D"
+            },
+            {
+                "id": 9,
+                "text": " Which code snippet is valid?",
+                "mark": 2.0,
+                "dateCreated": "13-10-2021 09:55:08",
+                "answerA": "ArrayList<String> words = new ArrayList<String>(){\"Hello\", \"World\"};",
+                "answerB": "ArrayList words = Arrays.asList(\"Hello\", \"World\");",
+                "answerC": "ArrayList<String> words = {\"Hello\", \"World\"};",
+                "answerD": "ArrayList<String> words = new ArrayList<>(Arrays.asList(\"Hello\", \"World\"));",
+                "result": "D"
+            }
+        ]
     }
     
     
@@ -248,6 +278,19 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
    DELETE Quizz
    
       Chỉ cần http://localhost:8080/api/quizz/{id}
+      
+      
+      
+Student Answer
+  
+   POST 
+   
+      {
+         "testQuizzId": 2,                   id bài test quizz
+         "questionId": 8,                    id câu hỏi
+         "isSelected": "A"                   câu trả lời
+      }
+      
       
     
  
