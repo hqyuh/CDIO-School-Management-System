@@ -61,6 +61,8 @@ public class StudentAnswerService {
         return repo.save(studentAnswer);
     }
 
-
+    public float getMark(Long id){
+        return repo.getMarkByTestQuizzId(id);
+    }
 
 }
