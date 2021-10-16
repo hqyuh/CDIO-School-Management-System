@@ -34,4 +34,5 @@ public class StudentAnswer {
 
     @Column(name = "completion_time")
     private Instant completionTime;
+
 }

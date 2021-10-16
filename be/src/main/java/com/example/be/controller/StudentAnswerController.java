@@ -29,6 +29,13 @@ public class StudentAnswerController {
                 .body(service.getAll());
     }
 
+    @GetMapping("/byQuizz/{id}")
+    public ResponseEntity<List<StudentAnswerDTO>> getAllByQuizzId(@PathVariable("id") Long id){
+        return ResponseEntity
+                .status(OK)
+                .body(service.getAllByTestQuizzId(id));
+    }
+
     @PostMapping
     public ResponseEntity<StudentAnswerDTO> saveStudentAnswer(@RequestBody StudentAnswerDTO studentAnswerDTO){
         service.saveStudentAnswer(studentAnswerDTO);

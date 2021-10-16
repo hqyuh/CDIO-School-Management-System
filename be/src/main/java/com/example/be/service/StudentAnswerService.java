@@ -42,6 +42,13 @@ public class StudentAnswerService {
                 .collect(Collectors.toList());
     }
 
+    public List<StudentAnswerDTO> getAllByTestQuizzId(Long id){
+        return repo.findByTestQuizzId(id)
+                .stream()
+                .map(studentAnswerMapper::mapToDTO)
+                .collect(Collectors.toList());
+    }
+
     public StudentAnswer saveStudentAnswer(StudentAnswerDTO studentAnswerDTO){
 
         TestQuizz testQuizz = testQuizzRepo.findTestQuizzById(studentAnswerDTO.getTestQuizzId());
@@ -53,5 +60,7 @@ public class StudentAnswerService {
 
         return repo.save(studentAnswer);
     }
+
+
 
 }
