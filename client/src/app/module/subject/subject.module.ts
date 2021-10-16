@@ -30,7 +30,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     InputTextModule,
     NgSelectModule,
     FormsModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
   ],
   providers: [
     NgbActiveModal

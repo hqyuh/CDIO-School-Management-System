@@ -10,6 +10,18 @@ import { QuizzModel } from '../model/quizz.model';
 export class QuizzService {
   constructor(private http: HttpClient) {}
 
+  public createQuizz(quizz: QuizzModel): Observable<QuizzModel> {
+    return this.http.post<QuizzModel>(`${environment.apiHost}/quizz`, quizz);
+  }
+
+  public updateQuizz(quizz: QuizzModel): Observable<QuizzModel> {
+    return this.http.put<QuizzModel>(`${environment.apiHost}/quizz`, quizz);
+  }
+
+  public deleteQuizz(quizzId: number): Observable<any> {
+    return this.http.delete<any>(`${environment.apiHost}/quizz/${quizzId}`);
+  }
+
   public getQuizz(subjectId: number): Observable<QuizzModel[]> {
     // return of([
     //   {
@@ -17,6 +29,7 @@ export class QuizzService {
     //     name: 'bài 1',
     //     dateCreated: '29-09-2021 09:06:59',
     //     description: 'ab',
+    //     examTime: 6900,
     //     questions: [
     //       {
     //         id: 1,
@@ -45,6 +58,7 @@ export class QuizzService {
     //     name: 'bài 2',
     //     dateCreated: '29-09-2021 09:06:59',
     //     description: 'ab',
+    //     examTime: 12345,
     //     questions: [
     //       {
     //         id: 1,

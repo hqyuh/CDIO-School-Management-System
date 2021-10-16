@@ -4,10 +4,11 @@ import { QuestionModel } from './question.model';
 export class QuizzModel {
   public id: number;
   public name: string;
-  public dateCreated: string;
+  public dateCreated?: string;
   public testId?: number;
   public subjectId?: number;
   public subject?: SubjectModel;
-  public questions?: QuestionModel[];
+  public questions?: QuestionModel[] | null;
   public description: string;
+  public examTime?: number;
 }

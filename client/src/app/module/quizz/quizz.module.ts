@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { QuizzRoutingModule } from './quizz-routing.module';
 import { QuizzListComponent } from './pages/quizz-list/quizz-list.component';
 import { TableModule } from 'primeng/table';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalModule, NgbTimepickerModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { ExamPageComponent } from './pages/exam-page/exam-page.component';
 import { QuestionFormComponent } from './components/question-form/question-form.component';
 import { RadioButtonModule } from 'primeng/radiobutton';
@@ -13,11 +13,19 @@ import {  ButtonModule } from 'primeng/button';
 import { NgxsModule } from '@ngxs/store';
 import { QuizzState } from './service/quizz.state';
 import { SubjectState } from '../subject/service/subject.state';
+import { CreateQuizzModalComponent } from './components/create-quizz-modal/create-quizz-modal.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { UpdateQuizzModalComponent } from './components/update-quizz-modal/update-quizz-modal.component';
+import { DeleteQuizzModalComponent } from './components/delete-quizz-modal/delete-quizz-modal.component';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 @NgModule({
   declarations: [
     QuizzListComponent,
     ExamPageComponent,
-    QuestionFormComponent
+    QuestionFormComponent,
+    CreateQuizzModalComponent,
+    UpdateQuizzModalComponent,
+    DeleteQuizzModalComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +35,11 @@ import { SubjectState } from '../subject/service/subject.state';
     RadioButtonModule,
     ReactiveFormsModule,
     ButtonModule,
-    NgxsModule.forFeature([QuizzState, SubjectState])
+    NgxsModule.forFeature([QuizzState, SubjectState]),
+    NgSelectModule,
+    NgbModalModule,
+    NgbTimepickerModule,
+    ConfirmDialogModule
   ],
   exports: [
     QuizzListComponent

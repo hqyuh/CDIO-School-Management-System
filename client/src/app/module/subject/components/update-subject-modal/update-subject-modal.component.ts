@@ -49,7 +49,7 @@ export class UpdateSubjectModalComponent implements OnInit {
       this.subject = selectedSubjectOnStore;
       this.updateSubjectForm = this.formBuilder.group({
         name: [this.subject?.name, Validators.required],
-        teacher: [undefined, Validators.required],
+        teacher: [selectedSubjectOnStore.teacher.name, Validators.required],
       });
     }
   }
@@ -60,7 +60,11 @@ export class UpdateSubjectModalComponent implements OnInit {
 
   public updateSubject(): void {
     if (this.updateSubjectForm.valid) {
-      const newSubject = {...this.updateSubjectForm.value, id: this.subject.id};
+      const selectedSubjectOnStore = this.store.selectSnapshot(
+        SubjectState.getSelectedSubject
+      );
+      const value:  SubjectModel = this.updateSubjectForm.value;
+      const newSubject: SubjectModel = {...value, id: this.subject.id, teacher: value.teacher.position ? value.teacher : selectedSubjectOnStore.teacher };
       this.subjectService
         .updateSubject(newSubject)
         .pipe(takeUntil(this.destroyableService.destroy$))

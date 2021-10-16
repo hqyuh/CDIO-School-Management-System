@@ -1,11 +1,7 @@
 <ng-template let-modal #content>
   <div class="modal-header">
-    <h4 class="modal-title text-center mx-auto">Cập nhật môn học</h4>
-    <button
-      type="button"
-      class="close btn"
-      (click)="modal.dismiss('Cross click')"
-    >
+    <h4 class="modal-title text-center mx-auto app-modal-title ">Cập nhật môn học</h4>
+    <button type="button" class="close btn" (click)="modal.dismiss('Cross click')">
       <span>&times;</span>
     </button>
   </div>
@@ -13,47 +9,30 @@
     <form [formGroup]="updateSubjectForm" (ngSubmit)="updateSubject(); modal.close('save click')">
       <div class="form-group">
         <label for="subjectName">Tên môn học</label>
-        <input
-          type="text"
-          class="app-control form-control mt-1"
-          placeholder="Tên môn học"
-          formControlName="name"
-          pInputText
-          id="subjectName"
-          [class.is-valid]="(Name.touched || Name.dirty) && Name.valid"
-          [class.is-invalid]="(Name.touched || Name.dirty) && Name.invalid"
-        />
+        <input type="text" class="app-control form-control mt-1" placeholder="Tên môn học" formControlName="name"
+          pInputText id="subjectName" [class.is-valid]="(Name.touched || Name.dirty) && Name.valid"
+          [class.is-invalid]="(Name.touched || Name.dirty) && Name.invalid" />
         <div *ngIf="(Name.touched || Name.dirty) && Name.invalid">
-          <small class="text-danger" *ngIf="Name?.errors.required"
-            >Vui lòng nhập tên môn</small
-          >
+          <small class="text-danger" *ngIf="Name?.errors.required">Vui lòng nhập tên môn</small>
         </div>
       </div>
       <div class="form-group mt-2">
         <label>Chọn giáo viên của môn học</label>
-        <ng-select placeholder="Ex: Teacher three" formControlName="teacher">
-          <ng-option
-            *ngFor="let teacher of teachers | async"
-            [value]="teacher"
-            class="custom"
-          >
+        <ng-select placeholder="Ex: Teacher three" formControlName="teacher" class="mt-1">
+          <ng-option *ngFor="let teacher of teachers | async" [value]="teacher" class="custom">
             {{ teacher?.name }}
           </ng-option>
         </ng-select>
       </div>
       <div class="text-end mt-3">
-        <button class="btn btn-success ms-2" type="submit">Update</button>
+        <button label="Update" class="p-button-help ms-2" pButton type="submit">
+          <i class="fas fa-sync text-white"></i>&nbsp;&nbsp;
+        </button>
       </div>
     </form>
   </div>
 </ng-template>
 
-<button
-  pButton
-  type="button"
-  label="Update"
-  class="p-button-help ms-2"
-  (click)="openUpdateSubjectModal(content)"
->
+<button pButton type="button" label="Update" class="p-button-help ms-2" (click)="openUpdateSubjectModal(content)">
   <i class="fas fa-edit text-white"></i>&nbsp;&nbsp;
 </button>

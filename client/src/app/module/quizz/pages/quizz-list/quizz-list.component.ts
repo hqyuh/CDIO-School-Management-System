@@ -72,4 +72,8 @@ export class QuizzListComponent implements OnInit {
       this.router.navigate(['/home/quizz/exam']);
     });
   }
+
+  public onSelectedQuizz(quizz: QuizzModel): void{
+    this.store.dispatch(new SaveSelectedQuizz(quizz));
+  }
 }

@@ -1,0 +1,5 @@
+<p [style.color]="areTenSecsRemainings ? 'red' : ''">
+  {{ timerValue?.hours | number: "2.0" }}:{{
+    timerValue?.minutes | number: "2.0"
+  }}:{{ timerValue?.seconds | number: "2.0" }}
+</p>

@@ -1,7 +1,13 @@
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title text-center mx-auto">Thêm môn học</h4>
-    <button type="button" class="close btn" (click)="modal.dismiss('Cross click')">
+    <h4 class="modal-title text-center mx-auto app-modal-title">
+      Thêm môn học
+    </h4>
+    <button
+      type="button"
+      class="close btn"
+      (click)="modal.dismiss('Cross click')"
+    >
       <span>&times;</span>
     </button>
   </div>
@@ -27,7 +33,11 @@
       </div>
       <div class="form-group mt-2">
         <label>Chọn giáo viên của môn học</label>
-        <ng-select placeholder="Ex: Teacher three" formControlName="teacher">
+        <ng-select
+          placeholder="Ex: Teacher three"
+          formControlName="teacher"
+          class="mt-1"
+        >
           <ng-option
             *ngFor="let teacher of teachers | async"
             [value]="teacher"
@@ -39,7 +49,12 @@
               (Teacher.touched || Teacher.dirty) && Teacher.invalid
             "
           >
-           <img src="../../../../../assets/teacher.png" alt="teacher" style="width: 50px;"> {{ teacher.name }}
+            <img
+              src="../../../../../assets/teacher.png"
+              alt="teacher"
+              style="width: 50px"
+            />
+            {{ teacher.name }}
           </ng-option>
         </ng-select>
         <div *ngIf="Teacher.invalid && (Teacher.dirty || Teacher.touched)">
@@ -49,8 +64,15 @@
         </div>
       </div>
       <div class="text-end mt-3">
-        <button class="btn btn-outline-danger" (click)="modal.close('save click')">Cancel</button
-        ><button class="btn btn-success ms-2" type="submit" (click)="createSubject(); modal.close('save click')">Save</button>
+        <button
+          class="p-button-success ms-2"
+          pButton
+          label="Save"
+          type="submit"
+          (click)="modal.close('save click')"
+        >
+          <i class="far fa-check-square text-white"></i>&nbsp;&nbsp;
+        </button>
       </div>
     </form>
   </div>

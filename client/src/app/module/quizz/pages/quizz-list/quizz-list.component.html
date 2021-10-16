@@ -15,6 +15,7 @@
         [columns]="cols"
         [scrollable]="true"
         [(selection)]="selectedQuizz"
+        (selectionChange)="onSelectedQuizz($event)"
         [scrollHeight]="'100%'"
         scrollWidth="100%"
         [responsive]="true"
@@ -25,6 +26,11 @@
         responsiveLayout="scroll"
         #dt1
       >
+      <ng-template pTemplate="caption">
+        <app-create-quizz-modal></app-create-quizz-modal>
+        <app-update-quizz-modal></app-update-quizz-modal>
+        <app-delete-quizz-modal></app-delete-quizz-modal>
+      </ng-template>
       <ng-template pTemplate="header" let-columns let-quizzes>
         <tr>
           <th *ngFor="let col of columns" pSortableColumn="{{ col.field }}">
