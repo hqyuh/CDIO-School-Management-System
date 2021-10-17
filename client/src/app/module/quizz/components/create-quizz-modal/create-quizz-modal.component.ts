@@ -66,6 +66,8 @@ export class CreateQuizzModalComponent implements OnInit {
         newQuizz.examTime
       );
       newQuizz.subject = selectedSubjectOnStore;
+      delete newQuizz.subject.dateCreated;
+      delete newQuizz.subject.teacher;
       this.quizzService
         .createQuizz(newQuizz)
         .pipe(takeUntil(this.destroyableService.destroy$))
