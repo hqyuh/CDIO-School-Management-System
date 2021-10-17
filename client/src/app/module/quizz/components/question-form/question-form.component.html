@@ -1,30 +1,58 @@
 <div class="card p-2 mt-2">
-    <p class="card-title">
-        <span class="text-danger font-weight-700">Câu hỏi {{index + 1}}: </span>
-        {{question.text}}? ({{question.mark}} điểm)
-    </p>
-    <div class="card-body">
-        <div class="card-block">
-            <form [formGroup]="questionForm">
-                <div class="row">
-                    <div class="col-6 mt-2">
-                        <p-radioButton formControlName="answer" [value]="'A'" inputId="1" (change)="onSelectAnswer($event)"></p-radioButton>
-                        <label class="ms-3" for="1">A. {{question.answerA}}</label>
-                    </div>
-                    <div class="col-6 mt-2">
-                        <p-radioButton formControlName="answer" [value]="'B'" inputId="2" (change)="onSelectAnswer($event)"></p-radioButton>
-                        <label class="ms-3" for="2">B. {{question.answerB}}</label>
-                    </div>
-                    <div class="col-6 mt-2">
-                        <p-radioButton formControlName="answer" [value]="'C'" inputId="3" (change)="onSelectAnswer($event)"></p-radioButton>
-                        <label class="ms-3" for="3">C. {{question.answerC}}</label>
-                    </div>
-                    <div class="col-6 mt-2">
-                        <p-radioButton formControlName="answer" [value]="'D'" inputId="4" (change)="onSelectAnswer($event)"></p-radioButton>
-                        <label class="ms-3" for="4">D. {{question.answerD}}</label>
-                    </div>
-                </div>
-            </form>
+  <p class="card-title">
+    <span class="text-danger font-weight-700">Câu hỏi {{ index + 1 }}: </span>
+    {{ question.text }}? ({{ question.mark }} điểm)
+  </p>
+  <div class="card-body">
+    <div class="card-block">
+      <form [formGroup]="questionForm">
+        <div class="row">
+          <div class="col-6 mt-2">
+            <p-radioButton
+              formControlName="answer"
+              [value]="'A'"
+              [inputId]="'1a' + index"
+              (change)="onSelectAnswer($event.target.value)"
+            ></p-radioButton>
+            <label class="ms-3" [for]="'1a' + index"
+              >A. {{ question.answerA }}</label
+            >
+          </div>
+          <div class="col-6 mt-2">
+            <p-radioButton
+              formControlName="answer"
+              [value]="'B'"
+              [inputId]="'2a' + index"
+              (change)="onSelectAnswer($event.target.value)"
+            ></p-radioButton>
+            <label class="ms-3" [for]="'2a' + index"
+              >B. {{ question.answerB }}</label
+            >
+          </div>
+          <div class="col-6 mt-2">
+            <p-radioButton
+              formControlName="answer"
+              [value]="'C'"
+              [inputId]="'3a' + index"
+              (change)="onSelectAnswer($event.target.value)"
+            ></p-radioButton>
+            <label class="ms-3" [for]="'3a' + index"
+              >C. {{ question.answerC }}</label
+            >
+          </div>
+          <div class="col-6 mt-2">
+            <p-radioButton
+              formControlName="answer"
+              [value]="'D'"
+              [inputId]="'4a' + index"
+              (change)="onSelectAnswer($event.target.value)"
+            ></p-radioButton>
+            <label class="ms-3" [for]="'1a' + index"
+              >D. {{ question.answerD }}</label
+            >
+          </div>
         </div>
+      </form>
     </div>
+  </div>
 </div>

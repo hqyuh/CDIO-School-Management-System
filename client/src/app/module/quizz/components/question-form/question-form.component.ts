@@ -32,10 +32,10 @@ export class QuestionFormComponent implements OnInit {
     return this.questionForm.get('answer');
   }
 
-  public onSelectAnswer(event: any){
-    const answerSelected = event.target.value
+  public onSelectAnswer(isSelected: any){
+    
     const selectedQuizzOnStore = this.store.selectSnapshot(QuizzState.selectedQuizz);
-    this.quizzService.storeAnswer(new AnswerRequestModel(selectedQuizzOnStore.id, this.question.id, answerSelected)).subscribe({
+    this.quizzService.storeAnswer(new AnswerRequestModel(selectedQuizzOnStore.id, this.question.id, isSelected)).subscribe({
       error: ()=> this.toastService.error('Đã có bất ngờ xảy ra. Vui lòng thử lại :(')
     })
   }
