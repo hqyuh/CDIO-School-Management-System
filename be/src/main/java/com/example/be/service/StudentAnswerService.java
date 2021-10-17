@@ -11,7 +11,6 @@ import com.example.be.repository.TestQuizzRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,16 +22,19 @@ public class StudentAnswerService {
     private final StudentAnswerMapper studentAnswerMapper;
     private final TestQuizzRepository testQuizzRepo;
     private final QuestionRepository questionRepo;
+    private final AuthService authService;
 
     @Autowired
     public StudentAnswerService(StudentAnswerRepository repo,
                                 StudentAnswerMapper studentAnswerMapper,
                                 TestQuizzRepository testQuizzRepo,
-                                QuestionRepository questionRepo) {
+                                QuestionRepository questionRepo,
+                                AuthService authService) {
         this.repo = repo;
         this.studentAnswerMapper = studentAnswerMapper;
         this.testQuizzRepo = testQuizzRepo;
         this.questionRepo = questionRepo;
+        this.authService = authService;
     }
 
     public List<StudentAnswerDTO> getAll(){
@@ -54,7 +56,8 @@ public class StudentAnswerService {
         TestQuizz testQuizz = testQuizzRepo.findTestQuizzById(studentAnswerDTO.getTestQuizzId());
         Question question = questionRepo.findQuestionById(studentAnswerDTO.getQuestionId());
 
-        StudentAnswer studentAnswer = studentAnswerMapper.map(studentAnswerDTO, testQuizz, question);
+        StudentAnswer studentAnswer = studentAnswerMapper
+                .map(studentAnswerDTO, testQuizz, question, authService.getCurrentUser());
         studentAnswer.setIsSelected(studentAnswerDTO.getIsSelected());
         studentAnswer.setCompletionTime(Instant.now());
 

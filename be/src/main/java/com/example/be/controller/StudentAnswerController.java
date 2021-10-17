@@ -42,7 +42,7 @@ public class StudentAnswerController {
         return new ResponseEntity<>(CREATED);
     }
 
-    @PostMapping("/calculateMark/{id}")
+    @GetMapping("/calculateMark/{id}")
     public String getMark(@PathVariable("id") Long id){
         return "{ \"mark\": " + service.getMark(id) + " }";
     }
