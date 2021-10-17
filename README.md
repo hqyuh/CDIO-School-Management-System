@@ -289,6 +289,7 @@ Student Answer
          "testQuizzId": 2,                   id bài test quizz
          "questionId": 8,                    id câu hỏi
          "isSelected": "A"                   câu trả lời
+         "userId": 1                         id của user 
       }
       
       
