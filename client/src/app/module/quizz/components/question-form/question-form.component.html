@@ -1,4 +1,4 @@
-<div class="card p-2">
+<div class="card p-2 mt-2">
     <p class="card-title">
         <span class="text-danger font-weight-700">Câu hỏi {{index + 1}}: </span>
         {{question.text}}? ({{question.mark}} điểm)
@@ -8,24 +8,21 @@
             <form [formGroup]="questionForm">
                 <div class="row">
                     <div class="col-6 mt-2">
-                        <p-radioButton formControlName="answer" [value]="1" inputId="1"></p-radioButton>
+                        <p-radioButton formControlName="answer" [value]="'A'" inputId="1" (change)="onSelectAnswer($event)"></p-radioButton>
                         <label class="ms-3" for="1">A. {{question.answerA}}</label>
                     </div>
                     <div class="col-6 mt-2">
-                        <p-radioButton formControlName="answer" [value]="2" inputId="2"></p-radioButton>
+                        <p-radioButton formControlName="answer" [value]="'B'" inputId="2" (change)="onSelectAnswer($event)"></p-radioButton>
                         <label class="ms-3" for="2">B. {{question.answerB}}</label>
                     </div>
                     <div class="col-6 mt-2">
-                        <p-radioButton formControlName="answer" [value]="3" inputId="3"></p-radioButton>
+                        <p-radioButton formControlName="answer" [value]="'C'" inputId="3" (change)="onSelectAnswer($event)"></p-radioButton>
                         <label class="ms-3" for="3">C. {{question.answerC}}</label>
                     </div>
                     <div class="col-6 mt-2">
-                        <p-radioButton formControlName="answer" [value]="4" inputId="4"></p-radioButton>
+                        <p-radioButton formControlName="answer" [value]="'D'" inputId="4" (change)="onSelectAnswer($event)"></p-radioButton>
                         <label class="ms-3" for="4">D. {{question.answerD}}</label>
                     </div>
-                </div>
-                <div class="text-end mt-2">
-                    <button class="p-button-success" pButton type="submit" label="Lưu" (click)="onSaveAnswer()"></button>
                 </div>
             </form>
         </div>

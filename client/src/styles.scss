@@ -92,8 +92,18 @@ $app-color: #f63428;
 }
 
 
+.jumbotron {
+  padding: 2rem 1rem;
+  background-color: #e9ecef!important;
+  border-radius: .3rem;
+}
 
-
+.card-header {
+  border: none!important;
+  box-shadow: none!important;
+  padding-top: 2rem!important;
+  padding-bottom: 2rem!important;
+}
 
 
 

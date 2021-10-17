@@ -1,0 +1,12 @@
+.is-time-out {
+  animation: time-out 1s infinite;
+}
+
+@keyframes time-out {
+  0% {
+    color: inherit;
+  }
+  100% {
+    color: #fa7070;
+  }
+}

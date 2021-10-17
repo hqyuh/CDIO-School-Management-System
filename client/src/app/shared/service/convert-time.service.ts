@@ -7,7 +7,7 @@ export class ConvertTimeService {
     const hourToMinute = examTime.hour * 60;
     const totalMinutes = hourToMinute + examTime.minute;
     const totalSeconds = totalMinutes * 60;
-    return totalSeconds;
+    return examTime.second ? totalSeconds + examTime.second : totalSeconds;
   }
 
   public convertSecondsToTimer(seconds: number): TimerModel {

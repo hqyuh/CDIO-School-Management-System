@@ -18,6 +18,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { UpdateQuizzModalComponent } from './components/update-quizz-modal/update-quizz-modal.component';
 import { DeleteQuizzModalComponent } from './components/delete-quizz-modal/delete-quizz-modal.component';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { TimerCountdownModule } from 'src/app/shared/time-countdown/timer-countdown.module';
+import { ExamFulfilledPageComponent } from './pages/exam-fulfilled-page/exam-fulfilled-page.component';
 @NgModule({
   declarations: [
     QuizzListComponent,
@@ -25,7 +27,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     QuestionFormComponent,
     CreateQuizzModalComponent,
     UpdateQuizzModalComponent,
-    DeleteQuizzModalComponent
+    DeleteQuizzModalComponent,
+    ExamFulfilledPageComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +42,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     NgSelectModule,
     NgbModalModule,
     NgbTimepickerModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    TimerCountdownModule
   ],
   exports: [
     QuizzListComponent

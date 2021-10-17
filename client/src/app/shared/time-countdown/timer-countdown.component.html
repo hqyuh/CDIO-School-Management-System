@@ -1,5 +1,5 @@
-<p [style.color]="areTenSecsRemainings ? 'red' : ''">
-  {{ timerValue?.hours | number: "2.0" }}:{{
-    timerValue?.minutes | number: "2.0"
-  }}:{{ timerValue?.seconds | number: "2.0" }}
-</p>
+<h5 [class.is-time-out]="areTenSecsRemainings === true" class="mt-2">
+  <span class="text-dark font-weight-500">Thời gian còn lại:</span> {{ timerValue?.hour | number: "2.0" }}:{{
+    timerValue?.minute | number: "2.0"
+  }}:{{ timerValue?.second | number: "2.0" }}
+</h5>
