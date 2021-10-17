@@ -23,71 +23,82 @@ export class QuizzService {
     return this.http.delete<any>(`${environment.apiHost}/quizz/${quizzId}`);
   }
 
-  public storeAnswer(answer: AnswerRequestModel): Observable<any>{
-    return this.http.post<AnswerRequestModel>(`${environment.apiHost}/studentAnswer`,answer);
+  public getQuizzMark(quizzId: number): Observable<{ mark: number }> {
+    return this.http.get<{ mark: number }>(
+      `${environment.apiHost}/studentAnswer/calculateMark/${quizzId}`
+    );
+  }
+
+  public storeAnswer(answer: AnswerRequestModel): Observable<any> {
+    return this.http.post<AnswerRequestModel>(
+      `${environment.apiHost}/studentAnswer`,
+      answer
+    );
   }
 
   public getQuizz(subjectId: number): Observable<QuizzModel[]> {
-    return of([
-      {
-        id: 1,
-        name: 'bài 1',
-        dateCreated: '29-09-2021 09:06:59',
-        description: 'ab',
-        examTime: 6900,
-        questions: [
-          {
-            id: 1,
-            text: 'hỏi gì',
-            mark: 2.0,
-            answerA: 'A',
-            answerB: 'B',
-            answerC: 'C',
-            answerD: 'D',
-            dateCreated: 'f',
-          },
-          {
-            id: 2,
-            text: 'hỏi gì 2',
-            mark: 2.0,
-            answerA: 'A',
-            answerB: 'B',
-            answerC: 'C',
-            answerD: 'D',
-            dateCreated: 'f',
-          },
-        ],
-      },
-      {
-        id: 1,
-        name: 'bài 2',
-        dateCreated: '29-09-2021 09:06:59',
-        description: 'ab',
-        examTime: 12345,
-        questions: [
-          {
-            id: 1,
-            text: 'hỏi gì',
-            mark: 2.0,
-            answerA: 'A',
-            answerB: 'B',
-            answerC: 'C',
-            answerD: 'D',
-            dateCreated: 'f',
-          },
-          {
-            id: 2,
-            text: 'hỏi gì 2',
-            mark: 2.0,
-            answerA: 'A',
-            answerB: 'B',
-            answerC: 'C',
-            answerD: 'D',
-            dateCreated: 'f',
-          },
-        ],
-      },
-    ]);
-    // return this.http.get<QuizzModel[]>(`${environment.apiHost}/quizz/bySubject/${subjectId}`);
+    // return of([
+    //   {
+    //     id: 1,
+    //     name: 'bài 1',
+    //     dateCreated: '29-09-2021 09:06:59',
+    //     description: 'ab',
+    //     examTime: 6900,
+    //     questions: [
+    //       {
+    //         id: 1,
+    //         text: 'hỏi gì',
+    //         mark: 2.0,
+    //         answerA: 'A',
+    //         answerB: 'B',
+    //         answerC: 'C',
+    //         answerD: 'D',
+    //         dateCreated: 'f',
+    //       },
+    //       {
+    //         id: 2,
+    //         text: 'hỏi gì 2',
+    //         mark: 2.0,
+    //         answerA: 'A',
+    //         answerB: 'B',
+    //         answerC: 'C',
+    //         answerD: 'D',
+    //         dateCreated: 'f',
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     id: 1,
+    //     name: 'bài 2',
+    //     dateCreated: '29-09-2021 09:06:59',
+    //     description: 'ab',
+    //     examTime: 12345,
+    //     questions: [
+    //       {
+    //         id: 1,
+    //         text: 'hỏi gì',
+    //         mark: 2.0,
+    //         answerA: 'A',
+    //         answerB: 'B',
+    //         answerC: 'C',
+    //         answerD: 'D',
+    //         dateCreated: 'f',
+    //       },
+    //       {
+    //         id: 2,
+    //         text: 'hỏi gì 2',
+    //         mark: 2.0,
+    //         answerA: 'A',
+    //         answerB: 'B',
+    //         answerC: 'C',
+    //         answerD: 'D',
+    //         dateCreated: 'f',
+    //       },
+    //     ],
+    //   },
+    // ]);
+    return this.http.get<QuizzModel[]>(
+      `${environment.apiHost}/quizz/bySubject/${subjectId}`
+    );
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-exam-fulfilled-page',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exam-fulfilled-page.component.scss']
 })
 export class ExamFulfilledPageComponent implements OnInit {
+  public mark: number;
+  constructor(private router: Router) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.mark = this.router.getCurrentNavigation().extras.state.mark;
   }
 
 }
