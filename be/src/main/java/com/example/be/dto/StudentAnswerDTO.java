@@ -12,4 +12,5 @@ public class StudentAnswerDTO {
     private Long testQuizzId;
     private Long questionId;
     private String isSelected;
+    private String username;
 }

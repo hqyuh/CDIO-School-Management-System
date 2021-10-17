@@ -4,6 +4,7 @@ import com.example.be.dto.StudentAnswerDTO;
 import com.example.be.model.Question;
 import com.example.be.model.StudentAnswer;
 import com.example.be.model.TestQuizz;
+import com.example.be.model.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -17,9 +18,11 @@ public interface StudentAnswerMapper {
     @Mapping(target = "testQuizz", source = "testQuizz")
     @Mapping(target = "question", source = "question")
     @Mapping(target = "isSelected", ignore = true)
-    StudentAnswer map(StudentAnswerDTO studentAnswerDTO, TestQuizz testQuizz, Question question);
+    StudentAnswer map(StudentAnswerDTO studentAnswerDTO, TestQuizz testQuizz, Question question, User user);
 
     @Mapping(target = "testQuizzId", expression = "java(studentAnswer.getTestQuizz().getId())")
     @Mapping(target = "questionId", expression = "java(studentAnswer.getQuestion().getId())")
+    @Mapping(target = "username", expression = "java(studentAnswer.getUser().getUsername())")
     StudentAnswerDTO mapToDTO(StudentAnswer studentAnswer);
+
 }
