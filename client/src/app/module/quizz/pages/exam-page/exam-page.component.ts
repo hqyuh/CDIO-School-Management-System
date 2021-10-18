@@ -35,17 +35,17 @@ export class ExamPageComponent implements OnInit {
   }
 
   public calculateQuizzMark(): void {
-    console.log('run');
     this.quizzService
       .getQuizzMark(this.exam.id)
       .pipe(takeUntil(this.destroyableService.destroy$))
       .subscribe({
         next: (res) =>
           void this.router.navigate(['/home/quizz/exam/fulfilled'], {
-            state: { ...res },
+            state: { mark: res.mark },
           }),
-        error: () =>
-          this.toastService.error('Nộp bài thất bại. Vui lòng thử lại!'),
+        error: () => {
+          this.toastService.error('Nộp bài thất bại. Vui lòng thử lại!');
+        },
       });
   }
 }
