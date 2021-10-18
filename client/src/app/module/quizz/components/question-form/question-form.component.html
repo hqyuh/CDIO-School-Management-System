@@ -12,7 +12,7 @@
               formControlName="answer"
               [value]="'A'"
               [inputId]="'1a' + index"
-              (onBlur)="onSelectAnswer($event.target.value)"
+              (onFocus)="onSelectAnswer($event.target.value)"
             ></p-radioButton>
             <label class="ms-3" [for]="'1a' + index"
               >A. {{ question.answerA }}</label
@@ -23,7 +23,7 @@
               formControlName="answer"
               [value]="'B'"
               [inputId]="'2a' + index"
-              (onBlur)="onSelectAnswer($event.target.value)"
+              (onFocus)="onSelectAnswer($event.target.value)"
             ></p-radioButton>
             <label class="ms-3" [for]="'2a' + index"
               >B. {{ question.answerB }}</label
@@ -34,7 +34,7 @@
               formControlName="answer"
               [value]="'C'"
               [inputId]="'3a' + index"
-              (onBlur)="onSelectAnswer($event.target.value)"
+              (onFocus)="onSelectAnswer($event.target.value)"
             ></p-radioButton>
             <label class="ms-3" [for]="'3a' + index"
               >C. {{ question.answerC }}</label
@@ -45,7 +45,7 @@
               formControlName="answer"
               [value]="'D'"
               [inputId]="'4a' + index"
-              (onBlur)="onSelectAnswer($event.target.value)"
+              (onFocus)="onSelectAnswer($event.target.value)"
             ></p-radioButton>
             <label class="ms-3" [for]="'1a' + index"
               >D. {{ question.answerD }}</label
