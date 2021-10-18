@@ -4,6 +4,7 @@ import com.example.be.dto.AuthenticationResponse;
 import com.example.be.dto.LoginRequest;
 import com.example.be.dto.RegisterRequest;
 import com.example.be.exception.SpringEmailException;
+import com.example.be.model.CustomUserDetail;
 import com.example.be.model.NotificationEmail;
 import com.example.be.model.User;
 import com.example.be.model.VerificationToken;
@@ -64,7 +65,7 @@ public class AuthService {
                 ));
         SecurityContextHolder.getContext().setAuthentication(authenticate);
 
-        String token = jwtProvider.generateToken(authenticate);
+        String token = jwtProvider.generateToken((CustomUserDetail) authenticate.getPrincipal());
         return new AuthenticationResponse(token, loginRequest.getUsername());
     }
 
@@ -104,9 +105,10 @@ public class AuthService {
     }
 
     public User getCurrentUser(){
-        UserDetails principal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return userRepository.findByUsername(principal.getUsername())
-                .orElseThrow(() -> new UsernameNotFoundException("Username not found " + principal.getUsername()));
+        CustomUserDetail principal = (CustomUserDetail)
+                SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return userRepository.findByUsername(principal.getUsername());
+                // .orElseThrow(() -> new UsernameNotFoundException("Username not found " + principal.getUsername()));
     }
 
 }

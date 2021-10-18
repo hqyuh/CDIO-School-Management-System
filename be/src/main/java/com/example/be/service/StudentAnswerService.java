@@ -5,9 +5,11 @@ import com.example.be.mapper.StudentAnswerMapper;
 import com.example.be.model.Question;
 import com.example.be.model.StudentAnswer;
 import com.example.be.model.TestQuizz;
+import com.example.be.model.User;
 import com.example.be.repository.QuestionRepository;
 import com.example.be.repository.StudentAnswerRepository;
 import com.example.be.repository.TestQuizzRepository;
+import com.example.be.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,18 +25,20 @@ public class StudentAnswerService {
     private final TestQuizzRepository testQuizzRepo;
     private final QuestionRepository questionRepo;
     private final AuthService authService;
+    private final UserRepository userRepo;
 
     @Autowired
     public StudentAnswerService(StudentAnswerRepository repo,
                                 StudentAnswerMapper studentAnswerMapper,
                                 TestQuizzRepository testQuizzRepo,
                                 QuestionRepository questionRepo,
-                                AuthService authService) {
+                                AuthService authService, UserRepository userRepo) {
         this.repo = repo;
         this.studentAnswerMapper = studentAnswerMapper;
         this.testQuizzRepo = testQuizzRepo;
         this.questionRepo = questionRepo;
         this.authService = authService;
+        this.userRepo = userRepo;
     }
 
     public List<StudentAnswerDTO> getAll(){
@@ -57,7 +61,7 @@ public class StudentAnswerService {
         Question question = questionRepo.findQuestionById(studentAnswerDTO.getQuestionId());
 
         StudentAnswer studentAnswer = studentAnswerMapper
-                .map(studentAnswerDTO, testQuizz, question, authService.getCurrentUser());
+                .map(studentAnswerDTO, testQuizz, question);
         studentAnswer.setIsSelected(studentAnswerDTO.getIsSelected());
         studentAnswer.setCompletionTime(Instant.now());
 

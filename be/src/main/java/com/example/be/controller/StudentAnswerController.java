@@ -1,6 +1,7 @@
 package com.example.be.controller;
 
 import com.example.be.dto.StudentAnswerDTO;
+import com.example.be.model.StudentAnswer;
 import com.example.be.service.StudentAnswerService;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,9 +38,10 @@ public class StudentAnswerController {
     }
 
     @PostMapping
-    public ResponseEntity<StudentAnswerDTO> saveStudentAnswer(@RequestBody StudentAnswerDTO studentAnswerDTO){
-        service.saveStudentAnswer(studentAnswerDTO);
-        return new ResponseEntity<>(CREATED);
+    public ResponseEntity<StudentAnswer> saveStudentAnswer(@RequestBody StudentAnswerDTO studentAnswerDTO){
+        return ResponseEntity
+                .status(CREATED)
+                .body(service.saveStudentAnswer(studentAnswerDTO));
     }
 
     @GetMapping("/calculateMark/{id}")

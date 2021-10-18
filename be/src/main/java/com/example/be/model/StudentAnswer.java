@@ -35,8 +35,9 @@ public class StudentAnswer {
     @Column(name = "completion_time")
     private Instant completionTime;
 
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+//    @OneToOne
+//    @JsonIgnore
+//    @JoinColumn(name = "user_id")
+//    private User user;
 
 }
