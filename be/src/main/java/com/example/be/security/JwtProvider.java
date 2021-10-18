@@ -1,6 +1,7 @@
 package com.example.be.security;
 
 import com.example.be.exception.SpringEmailException;
+import com.example.be.model.CustomUserDetail;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import org.springframework.security.core.Authentication;
@@ -33,10 +34,10 @@ public class JwtProvider {
     }
 
 
-    public String generateToken(Authentication authentication){
-        User principal = (User) authentication.getPrincipal();
+    public String generateToken(CustomUserDetail authentication){
+        // User principal = (User) authentication.getPrincipal();
         return Jwts.builder()
-                .setSubject(principal.getUsername())
+                .setSubject(authentication.getUsername())
                 .setIssuedAt(new Date())
                 .signWith(getPrivateKey())
                 .compact();

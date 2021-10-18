@@ -1,5 +1,6 @@
 package com.example.be.service;
 
+import com.example.be.model.CustomUserDetail;
 import com.example.be.model.User;
 import com.example.be.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -23,21 +24,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     @Transactional
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        Optional<User> userOptional = userRepository.findByUsername(email);
-        User user = userOptional
-                .orElseThrow(() -> new UsernameNotFoundException("No user found with email " + email));
+        User userOptional = userRepository.findByUsername(username);
 
-        return new org.springframework.security
-                .core.userdetails.User(user.getUsername(),
-                user.getPassword(), user.isEnabled(),
-                true, true, true, getAuthorities("ROLE_USER"));
-
-    }
-
-    private Collection<? extends GrantedAuthority> getAuthorities(String role){
-        return Collections.singletonList(new SimpleGrantedAuthority(role));
+        if (userOptional == null) {
+            throw new UsernameNotFoundException("User not found: " + username);
+        }
+        return new CustomUserDetail(userOptional);
     }
 
 }
