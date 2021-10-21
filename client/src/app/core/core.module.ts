@@ -41,6 +41,7 @@ import { httpInterceptorProviders } from './interceptors';
   ],
   providers: [httpInterceptorProviders],
 })
+
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
     if (parentModule) {
