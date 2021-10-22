@@ -20,6 +20,8 @@ import { DeleteQuizzModalComponent } from './components/delete-quizz-modal/delet
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { TimerCountdownModule } from 'src/app/shared/time-countdown/timer-countdown.module';
 import { ExamFulfilledPageComponent } from './pages/exam-fulfilled-page/exam-fulfilled-page.component';
+import { EditableQuestionPageComponent } from './pages/editable-question-page/editable-question-page.component';
+import { SplitButtonModule } from 'primeng/splitbutton';
 @NgModule({
   declarations: [
     QuizzListComponent,
@@ -28,7 +30,8 @@ import { ExamFulfilledPageComponent } from './pages/exam-fulfilled-page/exam-ful
     CreateQuizzModalComponent,
     UpdateQuizzModalComponent,
     DeleteQuizzModalComponent,
-    ExamFulfilledPageComponent
+    ExamFulfilledPageComponent,
+    EditableQuestionPageComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +46,8 @@ import { ExamFulfilledPageComponent } from './pages/exam-fulfilled-page/exam-ful
     NgbModalModule,
     NgbTimepickerModule,
     ConfirmDialogModule,
-    TimerCountdownModule
+    TimerCountdownModule,
+    SplitButtonModule
   ],
   exports: [
     QuizzListComponent

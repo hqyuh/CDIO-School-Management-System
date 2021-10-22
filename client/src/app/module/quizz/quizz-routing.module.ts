@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ExamGuard } from 'src/app/core/guard/exam.guard';
+import { EditableQuestionPageComponent } from './pages/editable-question-page/editable-question-page.component';
 import { ExamFulfilledPageComponent } from './pages/exam-fulfilled-page/exam-fulfilled-page.component';
 import { ExamPageComponent } from './pages/exam-page/exam-page.component';
 import { QuizzListComponent } from './pages/quizz-list/quizz-list.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
             pathMatch: 'full',
             redirectTo: 'fulfilled',
           },
+          {
+            path: 'editing',
+            component: EditableQuestionPageComponent
+          }
         ],
       },
       {

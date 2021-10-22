@@ -44,8 +44,8 @@ export class QuizzListComponent implements OnInit {
       field: 'dateCreated',
     },
     {
-      header: 'Ngôn ngữ',
-      field: 'nationality',
+      header: 'Tạo câu hỏi',
+      field: 'edit',
     },
     {
       header: 'Làm bài',

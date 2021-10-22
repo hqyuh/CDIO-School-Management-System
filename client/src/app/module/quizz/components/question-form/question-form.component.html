@@ -1,55 +1,56 @@
 <div class="card p-2 mt-2">
-  <p class="card-title">
-    <span class="text-danger font-weight-700">Câu hỏi {{ index + 1 }}: </span>
-    {{ question.text }}? ({{ question.mark }} điểm)
-  </p>
+  <div class="card-header d-flex justify-content-between py-1">
+    <p class="card-title d-inline-block">
+      <span class="text-danger font-weight-700">Câu hỏi {{ index + 1 }}: {{ question.text }}? ({{ question.mark }}
+        điểm)
+      </span>
+    </p>
+    <ng-container *ngIf="editable === true">
+      <p-splitButton label="Save" icon="pi pi-plus" [model]="menuItems" class="py-2 d-inline-block mr-2"
+        styleClass="p-button-help"></p-splitButton>
+    </ng-container>
+  </div>
   <div class="card-body">
     <div class="card-block">
       <form [formGroup]="questionForm">
         <div class="row">
-          <div class="col-6 mt-2">
-            <p-radioButton
-              formControlName="answer"
-              [value]="'A'"
-              [inputId]="'1a' + index"
-              (onFocus)="onSelectAnswer($event.target.value)"
-            ></p-radioButton>
-            <label class="ms-3" [for]="'1a' + index"
-              >A. {{ question.answerA }}</label
-            >
+          <div class="col-6 mt-2 d-flex align-items-center">
+            <p-radioButton formControlName="answer" [value]="'A'" [inputId]="'1a' + index"
+              (onFocus)="onSelectAnswer($event.target.value)" icon="pi pi-check"></p-radioButton>
+              <label class="ms-3" [for]="'1a' + index" *ngIf="isEditing === false else displayInputA">A.
+                {{ question.answerA }}
+              </label>
+            <ng-template #displayInputA>
+              <input type="text" class="form-control ms-1 w-75" [value]="question.answerA" />
+            </ng-template>
           </div>
-          <div class="col-6 mt-2">
-            <p-radioButton
-              formControlName="answer"
-              [value]="'B'"
-              [inputId]="'2a' + index"
-              (onFocus)="onSelectAnswer($event.target.value)"
-            ></p-radioButton>
-            <label class="ms-3" [for]="'2a' + index"
-              >B. {{ question.answerB }}</label
-            >
+          <div class="col-6 mt-2  d-flex align-items-center">
+            <p-radioButton formControlName="answer" [value]="'B'" [inputId]="'2a' + index"
+              (onFocus)="onSelectAnswer($event.target.value)"></p-radioButton>
+              <label class="ms-3" [for]="'2a' + index" *ngIf="isEditing === false else displayInputB">B. {{
+                question.answerB }}</label>
+            <ng-template #displayInputB>
+              <input type="text" class="form-control ms-1 w-75" [value]="question.answerB" />
+            </ng-template>
           </div>
-          <div class="col-6 mt-2">
-            <p-radioButton
-              formControlName="answer"
-              [value]="'C'"
-              [inputId]="'3a' + index"
-              (onFocus)="onSelectAnswer($event.target.value)"
-            ></p-radioButton>
-            <label class="ms-3" [for]="'3a' + index"
-              >C. {{ question.answerC }}</label
-            >
+          <div class="col-6 mt-2  d-flex align-items-center">
+            <p-radioButton formControlName="answer" [value]="'C'" [inputId]="'3a' + index"
+              (onFocus)="onSelectAnswer($event.target.value)"></p-radioButton>
+            <label class="ms-3" [for]="'3a' + index" *ngIf="isEditing === false else displayInputC">C. {{
+              question.answerC }}</label>
+            <ng-template #displayInputC>
+              <input type="text" class="form-control ms-1 w-75" [value]="question.answerC" />
+            </ng-template>
           </div>
-          <div class="col-6 mt-2">
-            <p-radioButton
-              formControlName="answer"
-              [value]="'D'"
-              [inputId]="'4a' + index"
-              (onFocus)="onSelectAnswer($event.target.value)"
-            ></p-radioButton>
-            <label class="ms-3" [for]="'1a' + index"
-              >D. {{ question.answerD }}</label
-            >
+          <div class="col-6 mt-2  d-flex align-items-center">
+            <p-radioButton formControlName="answer" [value]="'D'" [inputId]="'4a' + index"
+              (onFocus)="onSelectAnswer($event.target.value)"></p-radioButton>
+            <label class="ms-3" [for]="'1a' + index" *ngIf="isEditing === false else displayInputC">D. {{
+              question.answerD }}
+            </label>
+            <ng-template #displayInputC>
+              <input type="text" class="form-control ms-1 w-75" [value]="question.answerD" />
+            </ng-template>
           </div>
         </div>
       </form>
