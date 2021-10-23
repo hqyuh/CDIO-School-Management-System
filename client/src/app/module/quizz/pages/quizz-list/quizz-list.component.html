@@ -88,7 +88,7 @@
                 <span [ngbTooltip]="quizzes.dateCreated" placement="bottom" container="body">{{ quizzes.dateCreated }}</span>
               </ng-template>
               <ng-template [ngSwitchCase]="'edit'">
-                <a pButton label="Edit" class="p-button-success text-decoration-none" (click)="onSelectedQuizz(quizzes)" routerLink="/home/quizz/exam/editing"><i class="fas fa-edit"></i>&nbsp;&nbsp;</a>
+                <a pButton class="p-button-success text-decoration-none" (click)="onSelectedQuizz(quizzes)" routerLink="/home/quizz/exam/editing"><i class="fas fa-edit"></i></a>
               </ng-template>
               <ng-template [ngSwitchCase]="'exam'">
                 <button class="btn btn-danger px-4" [ngbTooltip]="'Bắt đầu làm bài'" 
