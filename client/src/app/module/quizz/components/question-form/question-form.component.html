@@ -1,10 +1,13 @@
 <div class="card p-2 mt-2">
-  <div class="card-header d-flex justify-content-between py-1">
-    <p class="card-title d-inline-block">
-      <span class="text-danger font-weight-700">Câu hỏi {{ index + 1 }}: {{ question.text }}? ({{ question.mark }}
+  <div class="card-header d-flex justify-content-between py-1" style="background-color: none!important;">
+    <div class="card-title d-inline-block">
+      <span class="font-weight-700 text-danger">Câu hỏi {{ index + 1 }}:</span>
+      <span>
+        {{ question.text }}?
+        ({{ question.mark }}
         điểm)
       </span>
-    </p>
+    </div>
     <ng-container *ngIf="editable === true">
       <p-splitButton label="Save" icon="pi pi-plus" [model]="menuItems" class="py-2 d-inline-block mr-2"
         styleClass="p-button-help"></p-splitButton>
@@ -17,20 +20,20 @@
           <div class="col-6 mt-2 d-flex align-items-center">
             <p-radioButton formControlName="answer" [value]="'A'" [inputId]="'1a' + index"
               (onFocus)="onSelectAnswer($event.target.value)" icon="pi pi-check"></p-radioButton>
-              <label class="ms-3" [for]="'1a' + index" *ngIf="isEditing === false else displayInputA">A.
-                {{ question.answerA }}
-              </label>
+            <label class="ms-3" [for]="'1a' + index" *ngIf="isEditing === false else displayInputA">A.
+              {{ question.answerA }}
+            </label>
             <ng-template #displayInputA>
-              <input type="text" class="form-control ms-1 w-75" [value]="question.answerA" />
+              <input type="text" class="form-control ms-1 w-75 app-control" [value]="question.answerA" />
             </ng-template>
           </div>
           <div class="col-6 mt-2  d-flex align-items-center">
             <p-radioButton formControlName="answer" [value]="'B'" [inputId]="'2a' + index"
               (onFocus)="onSelectAnswer($event.target.value)"></p-radioButton>
-              <label class="ms-3" [for]="'2a' + index" *ngIf="isEditing === false else displayInputB">B. {{
-                question.answerB }}</label>
+            <label class="ms-3" [for]="'2a' + index" *ngIf="isEditing === false else displayInputB">B. {{
+              question.answerB }}</label>
             <ng-template #displayInputB>
-              <input type="text" class="form-control ms-1 w-75" [value]="question.answerB" />
+              <input type="text" class="form-control ms-1 w-75 app-control" [value]="question.answerB" />
             </ng-template>
           </div>
           <div class="col-6 mt-2  d-flex align-items-center">
@@ -39,7 +42,7 @@
             <label class="ms-3" [for]="'3a' + index" *ngIf="isEditing === false else displayInputC">C. {{
               question.answerC }}</label>
             <ng-template #displayInputC>
-              <input type="text" class="form-control ms-1 w-75" [value]="question.answerC" />
+              <input type="text" class="form-control ms-1 w-75 app-control" [value]="question.answerC" />
             </ng-template>
           </div>
           <div class="col-6 mt-2  d-flex align-items-center">
@@ -49,7 +52,7 @@
               question.answerD }}
             </label>
             <ng-template #displayInputC>
-              <input type="text" class="form-control ms-1 w-75" [value]="question.answerD" />
+              <input type="text" class="form-control ms-1 w-75 app-control" [value]="question.answerD" />
             </ng-template>
           </div>
         </div>

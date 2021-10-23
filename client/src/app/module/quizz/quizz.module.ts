@@ -22,6 +22,7 @@ import { TimerCountdownModule } from 'src/app/shared/time-countdown/timer-countd
 import { ExamFulfilledPageComponent } from './pages/exam-fulfilled-page/exam-fulfilled-page.component';
 import { EditableQuestionPageComponent } from './pages/editable-question-page/editable-question-page.component';
 import { SplitButtonModule } from 'primeng/splitbutton';
+import { CreateQuestionFormComponent } from './components/create-question-form/create-question-form.component';
 @NgModule({
   declarations: [
     QuizzListComponent,
@@ -31,7 +32,8 @@ import { SplitButtonModule } from 'primeng/splitbutton';
     UpdateQuizzModalComponent,
     DeleteQuizzModalComponent,
     ExamFulfilledPageComponent,
-    EditableQuestionPageComponent
+    EditableQuestionPageComponent,
+    CreateQuestionFormComponent
   ],
   imports: [
     CommonModule,
