@@ -291,6 +291,21 @@ Student Answer
          "isSelected": "A"                   câu trả lời
       }
       
+Question
+
+   POST
+      {
+         "text": "2 + 4 = ???",
+         "mark": 2.0,
+         "answerA": "1",
+         "answerB": "8",
+         "answerC": "6",
+         "answerD": "5",
+         "result": "C",
+         "testQuizzId": 22        id bài test
+      }
+     
+    
       
     
  
