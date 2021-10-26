@@ -64,8 +64,8 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-quizzes let-columns="columns">
-        <tr class="p-selectable-row text-nowrap">
-          <td *ngFor="let col of columns" class="text-nowrap" [class.text-center]="col.field === 'nationality'">
+        <tr class="p-selectable-row">
+          <td *ngFor="let col of columns" class="text-nowrap" [class.text-center]="col.field === 'nationality' || col.field === 'edit'">
             <ng-container [ngSwitch]="col.field">
               <ng-template [ngSwitchCase]="'selection'">
                 <p-tableRadioButton
@@ -88,7 +88,7 @@
                 <span [ngbTooltip]="quizzes.dateCreated" placement="bottom" container="body">{{ quizzes.dateCreated }}</span>
               </ng-template>
               <ng-template [ngSwitchCase]="'edit'">
-                <a pButton class="p-button-success text-decoration-none" (click)="onSelectedQuizz(quizzes)" routerLink="/home/quizz/exam/editing"><i class="fas fa-edit"></i></a>
+                <a pButton class="p-button-success text-decoration-none" (click)="onSelectedQuizz(quizzes)" routerLink="/home/quizz/exam/editing" label=" "><i class="fas fa-edit"></i></a>
               </ng-template>
               <ng-template [ngSwitchCase]="'exam'">
                 <button class="btn btn-danger px-4" [ngbTooltip]="'Bắt đầu làm bài'" 

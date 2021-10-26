@@ -8,30 +8,36 @@ import {
 import { Select, Store } from '@ngxs/store';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { DestroyableService } from 'src/app/core/service/destroyable.service';
 import { AnswerConstant } from '../../model/answer-request.model';
 import { QuizzModel } from '../../model/quizz.model';
+import { QuestionService } from '../../service/question.service';
 import { QuizzState } from '../../service/quizz.state';
 
 @Component({
   selector: 'app-create-question-form',
   templateUrl: './create-question-form.component.html',
   styleUrls: ['./create-question-form.component.scss'],
+  providers: [DestroyableService],
 })
 export class CreateQuestionFormComponent implements OnInit {
   @Select(QuizzState.selectedQuizz)
   public selectedQuizz$: Observable<QuizzModel>;
+  public quizzId: number;
   public Answers: any;
   public createQuestionForm: FormGroup;
   constructor(
-    private store: Store,
     private toastService: ToastrService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private destroyableService: DestroyableService,
+    private questionService: QuestionService
   ) {}
 
   public ngOnInit(): void {
     this.Answers = AnswerConstant;
     this.createQuestionForm = this.formBuilder.group({
-      answer: [{ value: undefined }, [Validators.required]],
+      result: [{ value: undefined }, [Validators.required]],
       mark: [{ value: undefined }, [Validators.required, Validators.min(0.1)]],
       text: [{ value: undefined }, [Validators.required]],
       answerA: [{ value: undefined }, [Validators.required]],
@@ -44,10 +50,15 @@ export class CreateQuestionFormComponent implements OnInit {
     this.AnswerB.setValue('');
     this.AnswerC.setValue('');
     this.AnswerD.setValue('');
+    this.selectedQuizz$
+      .pipe(takeUntil(this.destroyableService.destroy$))
+      .subscribe((selectedQuizz) => {
+        this.quizzId = selectedQuizz.id;
+      });
   }
 
   public get Answer(): FormControl {
-    return this.createQuestionForm.get('answer') as FormControl;
+    return this.createQuestionForm.get('result') as FormControl;
   }
 
   public get Mark(): FormControl {
@@ -74,7 +85,29 @@ export class CreateQuestionFormComponent implements OnInit {
     return this.createQuestionForm.get('answerD') as FormControl;
   }
 
-  public generatePlaceholder(answer: string): string{
+  public generatePlaceholder(answer: string): string {
     return `answer ${answer}`;
+  }
+
+  public createQuestion(): void {
+    if (this.createQuestionForm.invalid) {
+      this.toastService.error('Vui lòng điền đầy đủ các thông tin yêu cầu!');
+    } else {
+      this.questionService
+        .createQuestion({
+          ...this.createQuestionForm.value,
+          testQuizzId: this.quizzId,
+        })
+        .pipe(takeUntil(this.destroyableService.destroy$))
+        .subscribe({
+          next: () => {
+            this.toastService.success('Tạo câu hỏi thành công!');
+          },
+          error: () =>
+            this.toastService.error(
+              'Tạo câu hỏi thất bại, vui lòng thử lại sau!'
+            ),
+        });
+    }
   }
 }

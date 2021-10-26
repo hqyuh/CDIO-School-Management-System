@@ -2,11 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngxs/store';
 import { ToastrService } from 'ngx-toastr';
-import { MenuItem, MessageService } from 'primeng/api';
+import { ConfirmationService, MenuItem } from 'primeng/api';
 import { takeUntil } from 'rxjs/operators';
 import { DestroyableService } from 'src/app/core/service/destroyable.service';
 import { AnswerRequestModel } from '../../model/answer-request.model';
 import { QuestionModel } from '../../model/question.model';
+import { QuestionService } from '../../service/question.service';
 import { QuizzService } from '../../service/quizz.service';
 import { QuizzState } from '../../service/quizz.state';
 
@@ -14,7 +15,7 @@ import { QuizzState } from '../../service/quizz.state';
   selector: 'app-question-form',
   templateUrl: './question-form.component.html',
   styleUrls: ['./question-form.component.scss'],
-  providers: [DestroyableService, MessageService],
+  providers: [DestroyableService, ConfirmationService],
 })
 export class QuestionFormComponent implements OnInit {
   public questionForm: any;
@@ -29,7 +30,8 @@ export class QuestionFormComponent implements OnInit {
     private destroyableService: DestroyableService,
     private quizzService: QuizzService,
     private toastService: ToastrService,
-    private messageService: MessageService
+    private confirmationService: ConfirmationService,
+    private questionService: QuestionService
   ) {}
 
   public ngOnInit(): void {
@@ -47,7 +49,28 @@ export class QuestionFormComponent implements OnInit {
             : this.Answer.enable();
         },
       },
-      { label: 'Delete', icon: 'pi pi-times', command: () => {} },
+      {
+        label: 'Delete',
+        icon: 'pi pi-times',
+        command: () => {
+          this.confirmationService.confirm({
+            message: 'Bạn có thật sự muốn xóa câu hỏi này không?',
+            accept: () => {
+              this.questionService
+                .deleteQuestion(this.question.id)
+                .pipe(takeUntil(this.destroyableService.destroy$))
+                .subscribe({
+                  next: () =>
+                    this.toastService.success('Xóa câu hỏi thành công!'),
+                  error: () =>
+                    this.toastService.error(
+                      'Xóa câu hỏi thất bại, vui lòng thử lại!'
+                    ),
+                });
+            },
+          });
+        },
+      },
     ];
   }
 

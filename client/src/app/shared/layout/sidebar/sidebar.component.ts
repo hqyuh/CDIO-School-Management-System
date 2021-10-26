@@ -11,6 +11,7 @@ import { AccountService } from 'src/app/module/account/service/account.service';
 import User from 'src/app/module/account/models/account.model';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { SystemRole } from 'src/app/core/enum/role.enum';
 
 @Component({
   selector: 'app-sidebar',
@@ -27,6 +28,7 @@ import { Router } from '@angular/router';
 export class SidebarComponent implements OnInit {
   public menus = [];
   public user: User;
+  public role: any;
 
   constructor(
     public sidebarservice: SidebarService,
@@ -39,6 +41,7 @@ export class SidebarComponent implements OnInit {
 
   public ngOnInit() {
     this.user = this.accountService.currentUserValue;
+    this.role = SystemRole;
   }
 
   public getSideBarState() {

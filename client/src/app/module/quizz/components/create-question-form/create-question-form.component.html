@@ -1,6 +1,6 @@
 <div class="row">
   <div class="card col-8 mx-auto">
-    <form [formGroup]="createQuestionForm">
+    <form [formGroup]="createQuestionForm" (ngSubmit)="createQuestion()">
       <div class="card-header" style="background-color: none !important">
         <div class="card-title">
           <div class="d-flex align-items-center justify-content-between mb-3">
@@ -41,12 +41,12 @@
         <div class="card-block">
           <label>Câu trả lời: </label>
           <div
-            class="form-group mt-2 d-flex"
+            class="form-group my-2 d-flex"
             *ngFor="let answer of Answers | keyvalue; let index = index"
           >
             <p-radioButton
-              formControlName="answer"
-              name="answer"
+              formControlName="result"
+              name="result"
               [value]="answer.value"
             ></p-radioButton>
             <input
@@ -57,11 +57,14 @@
             />
           </div>
           <ng-container *ngIf="createQuestionForm.invalid && (createQuestionForm.touched || createQuestionForm.dirty)">
-              <small   class="text-danger"*ngIf="AnswerA.invalid || AnswerB.invalid || AnswerC.invalid || AnswerD.invalid">Vui lòng điền trường này!</small>
+              <small   class="text-danger"*ngIf="AnswerA.invalid || AnswerB.invalid || AnswerC.invalid || AnswerD.invalid">Vui lòng điền đầy đủ thông tin!</small>
               <small  class="text-danger" *ngIf="Answer.errors?.required">Hãy chọn một đáp án đúng!</small>
           </ng-container>
         </div>
       </div>
+      <div class="px-3 text-center mt-2">
+        <button pButton label="Tạo câu hỏi" class="p-button-success rounded-50" icon="pi pi-plus" type="submit"></button>
+    </div>
     </form>
   </div>
 </div>
