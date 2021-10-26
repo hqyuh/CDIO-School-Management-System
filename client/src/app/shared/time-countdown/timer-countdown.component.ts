@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 import { range, timer, zip } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 import { DestroyableService } from 'src/app/core/service/destroyable.service';
+import { QuizzModel } from 'src/app/module/quizz/model/quizz.model';
 import { QuizzService } from 'src/app/module/quizz/service/quizz.service';
 import { QuizzState } from 'src/app/module/quizz/service/quizz.state';
 import { ConvertTimeService } from '../service/convert-time.service';
@@ -66,10 +67,12 @@ export class TimerCountdownComponent implements OnInit, OnDestroy {
     );
     selectedQuizzOnStore.examTime =
       this.convertTimeService.convertTimerToSeconds(this.timerValue);
-    const quizzChangeExamTime = selectedQuizzOnStore;
+    const quizzChangeExamTime: QuizzModel = {...selectedQuizzOnStore};
     delete quizzChangeExamTime.dateCreated;
-    delete quizzChangeExamTime.subject;
-    delete quizzChangeExamTime.questions;
+    delete quizzChangeExamTime.subject.dateCreated;
+    quizzChangeExamTime.questions.forEach((question)=>{
+      delete question.dateCreated;
+    })
     this.quizzService
       .updateQuizz(quizzChangeExamTime)
       .pipe(takeUntil(this.destroyableService.destroy$))

@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="card col-8 mx-auto">
+    <form [formGroup]="createQuestionForm">
+      <div class="card-header" style="background-color: none !important">
+        <div class="card-title">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <span class="font-weight-700 text-danger"
+              >Câu hỏi
+              {{ (selectedQuizz$ | async)?.questions.length + 1 }}:</span
+            >
+            <span
+              ><input
+                type="number"
+                class="form-control app-control"
+                style="max-width: 150px"
+                placeholder="Số điểm"
+                formControlName="mark"
+                [class.is-invalid]="(Mark.touched || Mark.dirty) && Mark.invalid"
+                [class.is-valid]="(Mark.touched || Mark.dirty) && Mark.valid"
+            />
+            <ng-container *ngIf="(Mark.touched || Mark.dirty) && Mark.invalid">
+                <small  class="text-danger" *ngIf="Mark.errors?.required">Vui lòng nhập điểm!</small>
+                <small  class="text-danger" *ngIf="Mark.errors?.min">Điểm phải lớn hơn hoặc bằng 0.1!</small>
+            </ng-container>
+            </span>
+          </div>
+          <textarea
+            class="form-control app-control"
+            placeholder="Write your question here"
+            rows="3"
+            [formControl]="Text"
+            [class.is-invalid]="(Text.touched || Text.dirty) && Text.invalid"
+            [class.is-valid]="(Text.touched || Text.dirty) && Text.valid"
+          ></textarea>
+          <ng-container *ngIf="(Text.touched || Text.dirty) && Text.invalid">
+              <small  class="text-danger" *ngIf="(Text.errors?.required)">Vui lòng nhập câu hỏi!</small>
+          </ng-container>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-block">
+          <label>Câu trả lời: </label>
+          <div
+            class="form-group mt-2 d-flex"
+            *ngFor="let answer of Answers | keyvalue; let index = index"
+          >
+            <p-radioButton
+              formControlName="answer"
+              name="answer"
+              [value]="answer.value"
+            ></p-radioButton>
+            <input
+              type="text"
+              class="form-control app-control ms-3"
+              [placeholder]="generatePlaceholder(answer.value) | titlecase"
+              [formControlName]="generatePlaceholder(answer.value).split(' ').join('')"
+            />
+          </div>
+          <ng-container *ngIf="createQuestionForm.invalid && (createQuestionForm.touched || createQuestionForm.dirty)">
+              <small   class="text-danger"*ngIf="AnswerA.invalid || AnswerB.invalid || AnswerC.invalid || AnswerD.invalid">Vui lòng điền trường này!</small>
+              <small  class="text-danger" *ngIf="Answer.errors?.required">Hãy chọn một đáp án đúng!</small>
+          </ng-container>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
