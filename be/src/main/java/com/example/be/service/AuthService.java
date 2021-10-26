@@ -45,6 +45,7 @@ public class AuthService {
         user.setPassword(encryptPassword(registerRequest.getPassword()));
         user.setCreated(Instant.now());
         user.setEnabled(false);
+        user.setRole("ROLE_USER");
 
         userRepository.save(user);
 
@@ -64,9 +65,11 @@ public class AuthService {
                    loginRequest.getPassword()
                 ));
         SecurityContextHolder.getContext().setAuthentication(authenticate);
+        CustomUserDetail userDetail = (CustomUserDetail) authenticate.getPrincipal();
+        String role = String.valueOf(userDetail.getAuthorities());
 
         String token = jwtProvider.generateToken((CustomUserDetail) authenticate.getPrincipal());
-        return new AuthenticationResponse(token, loginRequest.getUsername());
+        return new AuthenticationResponse(token, loginRequest.getUsername(), role);
     }
 
     // create verification token

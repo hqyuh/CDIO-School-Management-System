@@ -61,6 +61,4 @@ public class QuestionService {
         repo.deleteById(id);
     }
 
-
-
 }
