@@ -25,9 +25,11 @@
         #dt1
       >
         <ng-template pTemplate="caption">
+          <div canDisplayCrud>
             <app-create-subject-modal></app-create-subject-modal>
             <app-update-subject-modal></app-update-subject-modal>
             <app-delete-subject-modal></app-delete-subject-modal>
+          </div>
         </ng-template>
         <ng-template pTemplate="header" let-columns>
           <tr>

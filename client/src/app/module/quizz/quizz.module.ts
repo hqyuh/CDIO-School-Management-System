@@ -23,6 +23,7 @@ import { ExamFulfilledPageComponent } from './pages/exam-fulfilled-page/exam-ful
 import { EditableQuestionPageComponent } from './pages/editable-question-page/editable-question-page.component';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { CreateQuestionFormComponent } from './components/create-question-form/create-question-form.component';
+import { DirectiveModule } from 'src/app/core/directive/directive.module';
 @NgModule({
   declarations: [
     QuizzListComponent,
@@ -49,7 +50,8 @@ import { CreateQuestionFormComponent } from './components/create-question-form/c
     NgbTimepickerModule,
     ConfirmDialogModule,
     TimerCountdownModule,
-    SplitButtonModule
+    SplitButtonModule,
+    DirectiveModule
   ],
   exports: [
     QuizzListComponent

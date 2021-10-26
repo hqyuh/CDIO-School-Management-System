@@ -27,9 +27,11 @@
         #dt1
       >
       <ng-template pTemplate="caption">
-        <app-create-quizz-modal></app-create-quizz-modal>
-        <app-update-quizz-modal></app-update-quizz-modal>
-        <app-delete-quizz-modal></app-delete-quizz-modal>
+        <div canDisplayCrud>
+          <app-create-quizz-modal></app-create-quizz-modal>
+          <app-update-quizz-modal></app-update-quizz-modal>
+          <app-delete-quizz-modal></app-delete-quizz-modal>
+        </div>
       </ng-template>
       <ng-template pTemplate="header" let-columns let-quizzes>
         <tr>

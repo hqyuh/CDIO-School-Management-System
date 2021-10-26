@@ -15,6 +15,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { UpdateSubjectModalComponent } from './components/update-subject-modal/update-subject-modal.component';
 import { DeleteSubjectModalComponent } from './components/delete-subject-modal/delete-subject-modal.component';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { DirectiveModule } from 'src/app/core/directive/directive.module';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     NgSelectModule,
     FormsModule,
     ConfirmDialogModule,
+    DirectiveModule,
   ],
   providers: [
     NgbActiveModal
