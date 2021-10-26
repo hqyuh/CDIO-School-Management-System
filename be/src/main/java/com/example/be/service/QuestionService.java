@@ -1,7 +1,7 @@
 package com.example.be.service;
 
 import com.example.be.dto.QuestionDTO;
-import com.example.be.dto.StudentAnswerDTO;
+import com.example.be.exception.QuestionNotFoundException;
 import com.example.be.mapper.QuestionMapper;
 import com.example.be.model.Question;
 import com.example.be.model.TestQuizz;
@@ -10,7 +10,9 @@ import com.example.be.repository.TestQuizzRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -29,10 +31,9 @@ public class QuestionService {
         this.testQuizzRepo = testQuizzRepo;
     }
 
-    public Question addQuestion(QuestionDTO questionDTO){
+    public void addQuestion(QuestionDTO questionDTO){
         TestQuizz testQuizz = testQuizzRepo.findTestQuizzById(questionDTO.getTestQuizzId());
-        Question question = questionMapper
-                .map(questionDTO, testQuizz);
+        Question question = questionMapper.map(questionDTO, testQuizz);
         question.setText(questionDTO.getText());
         question.setAnswerA(questionDTO.getAnswerA());
         question.setAnswerB(questionDTO.getAnswerB());
@@ -40,7 +41,7 @@ public class QuestionService {
         question.setAnswerD(questionDTO.getAnswerD());
         question.setMark(questionDTO.getMark());
         question.setResult(questionDTO.getResult());
-        return repo.save(question);
+        repo.save(question);
     }
 
     public List<QuestionDTO> getAll(){
@@ -49,6 +50,17 @@ public class QuestionService {
                 .map(questionMapper::mapToDTO)
                 .collect(Collectors.toList());
     }
+
+    public QuestionDTO getQuestionById(Long id) throws QuestionNotFoundException {
+        Question question = repo.findById(id)
+                .orElseThrow(() -> new QuestionNotFoundException("No questions found with id " + id));
+        return questionMapper.mapToDTO(question);
+    }
+
+    public void deleteById(Long id) {
+        repo.deleteById(id);
+    }
+
 
 
 }

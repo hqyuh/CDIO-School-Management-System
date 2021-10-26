@@ -4,6 +4,7 @@ import com.example.be.dto.QuestionDTO;
 import com.example.be.model.Question;
 import com.example.be.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,10 +25,9 @@ public class QuestionController {
     }
 
     @PostMapping
-    public ResponseEntity<Question> addQuestion(@RequestBody QuestionDTO questionDTO){
-        return ResponseEntity
-                .status(CREATED)
-                .body(service.addQuestion(questionDTO));
+    public ResponseEntity<QuestionDTO> addQuestion(@RequestBody QuestionDTO questionDTO){
+        service.addQuestion(questionDTO);
+        return new ResponseEntity<>(CREATED);
     }
 
     @GetMapping
@@ -36,4 +36,18 @@ public class QuestionController {
                 .status(OK)
                 .body(service.getAll());
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<QuestionDTO> getQuestionById(@PathVariable("id") Long id) {
+        return ResponseEntity
+                .status(OK)
+                .body(service.getQuestionById(id));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteQuestionById(@PathVariable("id") Long id) {
+        service.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }

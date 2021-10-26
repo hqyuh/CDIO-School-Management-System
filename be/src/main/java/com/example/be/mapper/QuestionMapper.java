@@ -3,6 +3,7 @@ package com.example.be.mapper;
 import com.example.be.dto.QuestionDTO;
 import com.example.be.model.Question;
 import com.example.be.model.TestQuizz;
+import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
