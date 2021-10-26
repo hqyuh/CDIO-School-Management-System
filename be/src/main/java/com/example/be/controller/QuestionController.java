@@ -1,5 +1,6 @@
 package com.example.be.controller;
 
+import com.example.be.dto.QuestionDTO;
 import com.example.be.model.Question;
 import com.example.be.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +24,14 @@ public class QuestionController {
     }
 
     @PostMapping
-    public ResponseEntity<Question> addQuestion(@RequestBody Question question){
+    public ResponseEntity<Question> addQuestion(@RequestBody QuestionDTO questionDTO){
         return ResponseEntity
                 .status(CREATED)
-                .body(service.addQuestion(question));
+                .body(service.addQuestion(questionDTO));
     }
 
     @GetMapping
-    public ResponseEntity<List<Question>> getQuestion(){
+    public ResponseEntity<List<QuestionDTO>> getQuestion(){
         return ResponseEntity
                 .status(OK)
                 .body(service.getAll());

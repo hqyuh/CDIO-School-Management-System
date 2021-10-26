@@ -38,8 +38,8 @@ public class TestQuizz {
     @Column(name = "exam_time")
     private Integer examTime;
 
-    @OneToMany
-    @JoinColumn(name = "test_id")
+    @OneToMany(mappedBy = "testQuizz")
+    // @JoinColumn(name = "test_id")
     private List<Question> questions;
 
     @ManyToOne

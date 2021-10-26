@@ -1,6 +1,7 @@
 package com.example.be.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -47,6 +48,9 @@ public class Question {
     @Column(name = "result")
     private String result;
 
-
+    @ManyToOne
+    @JoinColumn(name = "test_id")
+    @JsonIgnore
+    private TestQuizz testQuizz;
 
 }
