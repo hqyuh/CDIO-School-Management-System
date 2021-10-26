@@ -1,5 +1,7 @@
 package com.example.be.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,9 +31,12 @@ public class User {
     @Column(name = "full_name")
     private String fullName;
 
+    // @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(name = "password", length = 64)
     private String password;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING,
+            pattern = "dd-MM-yyyy hh:mm:ss", timezone = "Asia/Ho_Chi_Minh")
     @Column(name = "created")
     private Instant created;
 
