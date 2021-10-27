@@ -36,7 +36,7 @@ export class QuestionFormComponent implements OnInit {
 
   public ngOnInit(): void {
     this.questionForm = this.formGroup.group({
-      answer: [{ value: undefined, disabled: true }, [Validators.required]],
+      answer: [{ value: undefined, disabled: this.editable }, [Validators.required]],
     });
     this.menuItems = [
       {

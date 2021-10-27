@@ -54,17 +54,7 @@ export class QuizzService {
             answerC: 'C',
             answerD: 'D',
             dateCreated: 'f',
-          },
-          {
-            id: 2,
-            text: 'hỏi gì 2',
-            mark: 2.0,
-            answerA: 'A',
-            answerB: 'B',
-            answerC: 'C',
-            answerD: 'D',
-            dateCreated: 'f',
-          },
+          }
         ],
       },
       {
