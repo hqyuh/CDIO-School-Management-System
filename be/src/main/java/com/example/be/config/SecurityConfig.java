@@ -33,7 +33,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf()
@@ -52,6 +51,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/user/**")
                 .permitAll()
                 .antMatchers("/api/question/**")
+                .permitAll()
+                .antMatchers("/api/studentMark/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated();
