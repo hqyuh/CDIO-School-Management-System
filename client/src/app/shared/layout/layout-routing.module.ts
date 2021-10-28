@@ -20,6 +20,10 @@ const routes: Routes = [
           import('../../module/quizz/quizz.module').then((m) => m.QuizzModule),
       },
       {
+        path: 'user-management',
+        loadChildren: () => import('../../module/user-management/user-management.module').then(m=>m.UserManagementModule)
+      },
+      {
         path: '',
         pathMatch: 'full',
         redirectTo: 'subject',

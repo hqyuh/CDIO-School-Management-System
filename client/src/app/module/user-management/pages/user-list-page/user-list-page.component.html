@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Danh sách tài khoản</h4>
+  </div>
+  <div class="card-body">
+    <div class="card-block">
+        <div class="py-2">
+            <app-delete-user></app-delete-user>
+        </div>
+      <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs" [destroyOnHide]="true">
+        <li [ngbNavItem]="1">
+          <a ngbNavLink class="font-weight-500">Giáo viên <span class="badge badge-warning">{{(teachers$ | async)?.length}}</span></a>
+          <ng-template ngbNavContent>
+            <app-user-list [users]="teachers$ | async"></app-user-list>
+          </ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+          <a ngbNavLink class="font-weight-500">Học sinh <span class="badge badge-warning">{{(students$ | async)?.length}}</span> </a>
+          <ng-template ngbNavContent>
+            <app-user-list [users]="students$ | async"></app-user-list>
+          </ng-template>
+        </li>
+      </ul>
+
+      <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    </div>
+  </div>
+</div>

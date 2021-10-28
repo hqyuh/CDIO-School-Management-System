@@ -63,7 +63,7 @@ export class SidebarService {
       submenus: [
         {
           title: 'Danh sách tài khoản',
-          href: 'admin/account-management'
+          href: '/user-management'
         },
       ]
     },

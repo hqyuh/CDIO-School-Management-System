@@ -8,13 +8,13 @@ import { SystemRole } from '../enum/role.enum';
 @Injectable({
   providedIn: 'root'
 })
-export class TeacherGuard implements CanActivate {
+export class AdminGuard implements CanActivate {
   constructor(private accountService: AccountService, private router: Router, private toastService: ToastrService){}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const userRole = SystemRole[this.accountService.currentUserValue.role];
-    if( userRole === 'Teacher' ) {
+    if( userRole === 'Administrator' ) {
       return true;
     } else {
       void this.router.navigate(['/home']);
@@ -22,4 +22,5 @@ export class TeacherGuard implements CanActivate {
       return false;
     }
   }
+  
 }
