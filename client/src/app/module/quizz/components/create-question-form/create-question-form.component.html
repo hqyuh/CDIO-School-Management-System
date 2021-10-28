@@ -60,10 +60,12 @@
               <small   class="text-danger"*ngIf="AnswerA.invalid || AnswerB.invalid || AnswerC.invalid || AnswerD.invalid">Vui lòng điền đầy đủ thông tin!</small>
               <small  class="text-danger" *ngIf="Answer.errors?.required">Hãy chọn một đáp án đúng!</small>
           </ng-container>
+          <div class="form-group text-end">
+            <button class="btn btn-outline-danger"type="reset">Reset</button>
+          </div>
         </div>
       </div>
       <div class="px-3 text-center mt-2">
-        <button pButton label="Reset" class="p-button-danger rounded-50" icon="pi pi-plus" type="reset"></button>
         <button pButton label="Tạo câu hỏi" class="p-button-success rounded-50" icon="pi pi-plus" type="submit"></button>
     </div>
     </form>
