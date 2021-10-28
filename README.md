@@ -305,7 +305,43 @@ Question
          "result": "C",
          "testQuizzId": 22        id bài test
       }
-     
+      
+
+User
+    
+    [
+        {
+            "userId": 1,
+            "username": "quanghuy",
+            "email": "hoquanghuy0123@gmail.com",
+            "fullName": "Ho Quang Huy",
+            "password": "$2a$10$w7j/qlV9a08nX0jFod1WkO1KCl.O.k9XxneqqD7VfuvhZN.MCBzoi",
+            "created": "14-10-2021 01:24:47",
+            "enabled": true,
+            "role": "ROLE_TEACHER"
+        },
+        {
+            "userId": 2,
+            "username": "hoquanghuy",
+            "email": "hoquang.huyy@gmail.com",
+            "fullName": null,
+            "password": "$2a$10$Di9HvRTAuEPNMViWtvw9a.NIHR1WitikYUpaR0Qpqd3Z2b2EJo7eC",
+            "created": "17-10-2021 10:59:52",
+            "enabled": true,
+            "role": "ROLE_ADMIN"
+        },
+        {
+            "userId": 5,
+            "username": "summer",
+            "email": "nguyennhanly87@gmail.com",
+            "fullName": "Summer Time",
+            "password": "$2a$10$4eqPxw/x9Qhbn8sDiLxPgO4nlU8f9vE6kNUodwS.Q5cMRxyuPbzqu",
+            "created": "26-10-2021 10:34:17",
+            "enabled": true,
+            "role": "ROLE_STUDENT"
+        }
+    ]
+
     
       
     
