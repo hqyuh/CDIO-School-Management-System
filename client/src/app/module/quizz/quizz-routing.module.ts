@@ -28,11 +28,11 @@ const routes: Routes = [
             pathMatch: 'full',
             redirectTo: 'fulfilled',
           },
-          { 
+          {
             canActivate: [TeacherGuard],
             path: 'editing',
-            component: EditableQuestionPageComponent
-          }
+            component: EditableQuestionPageComponent,
+          },
         ],
       },
       {
