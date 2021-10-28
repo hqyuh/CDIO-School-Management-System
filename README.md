@@ -345,6 +345,49 @@ User
             "role": "ROLE_STUDENT"
         }
     ]
+    
+    
+    
+Student Mark
+  
+  POST
+  
+    {
+        "mark": 8.0,            // điểm
+        "testQuizzId": 3        // id của bài test
+    }
+    
+    
+ GET   /api/studentMark/user/{userId}               
+    
+    [
+        {
+            "id": 3,
+            "mark": 8.0,
+            "testQuizzId": 2,
+            "userId": 1
+        },
+        {
+            "id": 4,
+            "mark": 8.0,
+            "testQuizzId": 3,
+            "userId": 1
+        }
+    ]
+    
+    
+  GET   /api/studentMark/quizz/{testId}
+  
+    [
+        {
+            "id": 3,
+            "mark": 8.0,
+            "testQuizzId": 2,
+            "userId": 1
+        }
+    ]
+  
+  
 
     
       
