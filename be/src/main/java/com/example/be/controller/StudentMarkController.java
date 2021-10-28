@@ -28,7 +28,7 @@ public class StudentMarkController {
         return new ResponseEntity<>(OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/user/{id}")
     private ResponseEntity<List<StudentMarkDTO>> getAllStudentMark(@PathVariable("id") Long id) {
         return ResponseEntity
                 .status(OK)
