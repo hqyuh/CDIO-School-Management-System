@@ -11,7 +11,7 @@ Database: https://dbdiagram.io/d/61396086825b5b0146f9b555
 
 Discord: https://discord.com/channels/856773246069637152/856773246069637158
 ######################################################################################################################
-Proposal: https://docs.google.com/document/d/1Y9bP1QeQ9x9jo_rHv2mxOJD4Enpd_3Qw97NAu8VsEO4/edit?hl=vi
+Proposal: https://docs.google.com/document/d/1JYh5wpmIWnowkCd6q8osMEemUTLUdRvYYgIrpEW9rA8/edit
 ######################################################################################################################
 Project plan: https://docs.google.com/document/d/1IJAW1EkrC1woekomGTQ0UwCvZ5pzXxlevHV09kFdo_g/edit?hl=vi
 ######################################################################################################################
