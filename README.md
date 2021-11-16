@@ -15,7 +15,7 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 Proposal: https://docs.google.com/document/d/1JYh5wpmIWnowkCd6q8osMEemUTLUdRvYYgIrpEW9rA8/edit
 ######################################################################################################################
 
-Project plan: https://docs.google.com/document/d/1IJAW1EkrC1woekomGTQ0UwCvZ5pzXxlevHV09kFdo_g/edit?hl=vi
+Project plan: https://docs.google.com/document/d/1PthBGdnf2dbHK3wOtvVAS09SxUZyUrg_pGHph-SHd8A/edit
 ######################################################################################################################
 
 User story: https://docs.google.com/document/d/1a9ScM62JfQdDmLhrfC0MNH-3IiFU4UQq2GTIpdsmKA4/edit?hl=vi
