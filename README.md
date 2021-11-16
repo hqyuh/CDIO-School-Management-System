@@ -15,10 +15,10 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 4. Proposal: https://docs.google.com/document/d/1JYh5wpmIWnowkCd6q8osMEemUTLUdRvYYgIrpEW9rA8/edit
 ######################################################################################################################
 
-5. Project plan: https://docs.google.com/document/d/1IJAW1EkrC1woekomGTQ0UwCvZ5pzXxlevHV09kFdo_g/edit?hl=vi
+5. Project plan: https://docs.google.com/document/d/1PthBGdnf2dbHK3wOtvVAS09SxUZyUrg_pGHph-SHd8A/edit
 ######################################################################################################################
 
-6. User story: https://docs.google.com/document/d/1a9ScM62JfQdDmLhrfC0MNH-3IiFU4UQq2GTIpdsmKA4/edit?hl=vi
+6. User story: https://docs.google.com/document/d/1ZmeS09tMfcT-G_6M4K8Y9ClrVsAC3Y3xBXWFSEPK8mI/edit
 ######################################################################################################################
 
 7. Product backlog: https://docs.google.com/document/d/1rSXJ3K0qy8rZvQgfbXeVltWUgySWSey19e1OF0Rs-3I/edit?hl=vi
