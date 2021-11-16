@@ -18,7 +18,7 @@ Proposal: https://docs.google.com/document/d/1JYh5wpmIWnowkCd6q8osMEemUTLUdRvYYg
 Project plan: https://docs.google.com/document/d/1PthBGdnf2dbHK3wOtvVAS09SxUZyUrg_pGHph-SHd8A/edit
 ######################################################################################################################
 
-User story: https://docs.google.com/document/d/1a9ScM62JfQdDmLhrfC0MNH-3IiFU4UQq2GTIpdsmKA4/edit?hl=vi
+User story: https://docs.google.com/document/d/1ZmeS09tMfcT-G_6M4K8Y9ClrVsAC3Y3xBXWFSEPK8mI/edit
 ######################################################################################################################
 
 Product backlog: https://docs.google.com/document/d/1rSXJ3K0qy8rZvQgfbXeVltWUgySWSey19e1OF0Rs-3I/edit?hl=vi
