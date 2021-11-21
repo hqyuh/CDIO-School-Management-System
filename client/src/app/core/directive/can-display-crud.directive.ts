@@ -11,7 +11,7 @@ export class CanDisplayCrudDirective {
     private accountService: AccountService
   ) {
     const userRole = this.accountService.currentUserValue?.role;
-    if (SystemRole[userRole] !== 'Teacher' || SystemRole[userRole] !== 'Teacher') {
+    if (SystemRole[userRole] === 'Student') {
       this.element.nativeElement.style.display = 'none';
     }
   }
