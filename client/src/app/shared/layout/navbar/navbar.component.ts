@@ -7,9 +7,12 @@ import { SidebarService } from '../sidebar/sidebar.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private sidebarService: SidebarService) {}
 
-  public ngOnInit(): void {}
+  constructor(private sidebarService: SidebarService) {
+  }
+
+  public ngOnInit(): void {
+  }
 
   public toggleSideBar(): void {
     this.sidebarService.toggle();

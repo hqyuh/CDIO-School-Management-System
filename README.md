@@ -12,6 +12,21 @@ Database: https://dbdiagram.io/d/61396086825b5b0146f9b555
 Discord: https://discord.com/channels/856773246069637152/856773246069637158
 ######################################################################################################################
 
+4. Proposal: https://docs.google.com/document/d/1JYh5wpmIWnowkCd6q8osMEemUTLUdRvYYgIrpEW9rA8/edit
+######################################################################################################################
+
+
+5. Project plan: https://docs.google.com/document/d/1PthBGdnf2dbHK3wOtvVAS09SxUZyUrg_pGHph-SHd8A/edit
+######################################################################################################################
+
+6. User story: https://docs.google.com/document/d/1ZmeS09tMfcT-G_6M4K8Y9ClrVsAC3Y3xBXWFSEPK8mI/edit
+
+7. Product backlog: https://docs.google.com/document/d/1rSXJ3K0qy8rZvQgfbXeVltWUgySWSey19e1OF0Rs-3I/edit?hl=vi
+######################################################################################################################
+
+
+
+
 
 *****
   LOGIN
@@ -317,7 +332,7 @@ User
         {
             "userId": 1,
             "username": "quanghuy",
-            "email": "hoquanghuy0123@gmail.com",
+            "email": "",
             "fullName": "Ho Quang Huy",
             "password": "$2a$10$w7j/qlV9a08nX0jFod1WkO1KCl.O.k9XxneqqD7VfuvhZN.MCBzoi",
             "created": "14-10-2021 01:24:47",
@@ -327,7 +342,7 @@ User
         {
             "userId": 2,
             "username": "hoquanghuy",
-            "email": "hoquang.huyy@gmail.com",
+            "email": "",
             "fullName": null,
             "password": "$2a$10$Di9HvRTAuEPNMViWtvw9a.NIHR1WitikYUpaR0Qpqd3Z2b2EJo7eC",
             "created": "17-10-2021 10:59:52",
@@ -337,7 +352,7 @@ User
         {
             "userId": 5,
             "username": "summer",
-            "email": "nguyennhanly87@gmail.com",
+            "email": "",
             "fullName": "Summer Time",
             "password": "$2a$10$4eqPxw/x9Qhbn8sDiLxPgO4nlU8f9vE6kNUodwS.Q5cMRxyuPbzqu",
             "created": "26-10-2021 10:34:17",
