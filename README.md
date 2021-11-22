@@ -401,6 +401,11 @@ Student Mark
             "userId": 1
         }
     ]
+    
+    
+  GET   /api/studentMark/quizz/code/{code}
+    
+    http://localhost:8080/api/quizz/code/780226
   
   
 
