@@ -62,4 +62,11 @@ public class TestQuizzController {
         service.deleteQuizz(id);
         return new ResponseEntity<>(OK);
     }
+
+    @GetMapping("/code/{code}")
+    public ResponseEntity<TestQuizz> getQuizzByCode(@PathVariable("code") String code){
+        return ResponseEntity
+                .status(OK)
+                .body(service.findQuizzByCode(code));
+    }
 }

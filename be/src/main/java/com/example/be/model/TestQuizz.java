@@ -38,6 +38,17 @@ public class TestQuizz {
     @Column(name = "exam_time")
     private Integer examTime;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING,
+            pattern = "hh:mm:ss", timezone = "Asia/Ho_Chi_Minh")
+    @Column(name = "is_start")
+    private Integer isStart;
+
+    @Column(name = "is_end")
+    private Integer isEnd;
+
+    @Column(name = "activation_code")
+    private String activationCode;
+
     @OneToMany(mappedBy = "testQuizz")
     // @JoinColumn(name = "test_id")
     private List<Question> questions;

@@ -2,6 +2,7 @@ package com.example.be.service;
 
 import com.example.be.model.TestQuizz;
 import com.example.be.repository.TestQuizzRepository;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,9 +25,13 @@ public class TestQuizzService {
 
     public TestQuizz addQuizz(TestQuizz testQuizz){
         testQuizz.setDateCreated(Instant.now());
+        testQuizz.setActivationCode(generateActivationCode());
         return repo.save(testQuizz);
     }
 
+    private String generateActivationCode() {
+        return RandomStringUtils.randomNumeric(6);
+    }
 
     public TestQuizz updateQuizz(TestQuizz testQuizz) {
         testQuizz.setName(testQuizz.getName());
@@ -46,6 +51,10 @@ public class TestQuizzService {
 
     public List<TestQuizz> getQuizzBySubjectId(Long id){
         return repo.findAllTestQuizzBySubjectId(id);
+    }
+
+    public TestQuizz findQuizzByCode(String code) {
+        return repo.findQuizzByCode(code);
     }
 
 }
