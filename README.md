@@ -21,7 +21,7 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 
 6. User story: https://docs.google.com/document/d/1ZmeS09tMfcT-G_6M4K8Y9ClrVsAC3Y3xBXWFSEPK8mI/edit
 
-7. Product backlog: https://docs.google.com/document/d/1rSXJ3K0qy8rZvQgfbXeVltWUgySWSey19e1OF0Rs-3I/edit?hl=vi
+7. Product backlog: https://docs.google.com/document/d/1daPPWnOR-g_wjuNjyJDk4t33Fo6n8o0dQKyifkAoG_c/edit#
 ######################################################################################################################
 
 
