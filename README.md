@@ -25,6 +25,8 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 7. Product backlog: https://docs.google.com/document/d/1daPPWnOR-g_wjuNjyJDk4t33Fo6n8o0dQKyifkAoG_c/edit#
 ######################################################################################################################
 
+8. SprintBacklog https://docs.google.com/spreadsheets/d/1A8aFyrPWbRDLea1L0J4s2WEUuQh5LjcSHqebL_3JFMw/edit?fbclid=IwAR2yY_3vOMBau0oYup7pkI5unFuIyoBUdoOHEebxY4mGJpLQIenGGXpQITY#gid=0
+######################################################################################################################
 
 
 
