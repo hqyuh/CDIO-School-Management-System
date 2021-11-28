@@ -1,14 +1,12 @@
 package com.example.be.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.Instant;
-import java.util.HashSet;
 
 @Data
 @AllArgsConstructor
