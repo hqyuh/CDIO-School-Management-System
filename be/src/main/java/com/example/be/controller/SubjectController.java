@@ -1,13 +1,16 @@
 package com.example.be.controller;
 
+import com.example.be.dto.SubjectDTO;
 import com.example.be.model.Subject;
 import com.example.be.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.OK;
 
 @RestController
 @RequestMapping("/api/subject")
@@ -21,29 +24,27 @@ public class SubjectController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Subject>> getAllSubject(){
+    public ResponseEntity<List<SubjectDTO>> getAllSubject(){
         return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(service.findAllSubjects());
+                .status(OK)
+                .body(service.getAllSubjects());
     }
 
     @PostMapping
-    public ResponseEntity<Subject> createSubject(@RequestBody Subject subject){
-        return ResponseEntity
-                .status(HttpStatus.CREATED)
-                .body(service.addSubject(subject));
+    public ResponseEntity<SubjectDTO> createSubject(@RequestBody SubjectDTO subjectDTO){
+        service.addSubject(subjectDTO);
+        return new ResponseEntity<>(CREATED);
     }
 
     @PutMapping
     public ResponseEntity<Subject> updateSubject(@RequestBody Subject subject){
-        return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(service.updateSubject(subject));
+        service.updateSubject(subject);
+        return new ResponseEntity<>(OK);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteSubject(@PathVariable("id") Long id){
         service.deleteSubject(id);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(OK);
     }
 }

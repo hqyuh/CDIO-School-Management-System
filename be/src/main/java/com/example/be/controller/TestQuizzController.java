@@ -50,7 +50,7 @@ public class TestQuizzController {
                 .body(service.addQuizz(quizz));
     }
 
-    @PutMapping
+    @PatchMapping
     public ResponseEntity<TestQuizz> updateQuizz(@RequestBody TestQuizz quizz){
         return ResponseEntity
                 .status(OK)

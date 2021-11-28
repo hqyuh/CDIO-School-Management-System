@@ -30,7 +30,7 @@ public class Subject {
     private Instant dateCreated;
 
     @OneToOne
-    @JoinColumn(name = "teacher_id")
-    private Teacher teacher;
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }

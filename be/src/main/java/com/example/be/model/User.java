@@ -45,4 +45,7 @@ public class User {
 
     @Column(name = "role")
     private String role;
+
+    @Column(name = "position")
+    private String position;
 }
