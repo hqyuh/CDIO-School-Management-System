@@ -28,6 +28,7 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 8. SprintBacklog https://docs.google.com/spreadsheets/d/1A8aFyrPWbRDLea1L0J4s2WEUuQh5LjcSHqebL_3JFMw/edit#gid=0
 ######################################################################################################################
 
+USE CASES: https://drive.google.com/drive/folders/1TMUT76Jz-wj22ueF9ceRLGB-wq1cay4f?usp=sharing
 
 
 
