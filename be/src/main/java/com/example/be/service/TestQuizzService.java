@@ -36,8 +36,9 @@ public class TestQuizzService {
     public TestQuizz updateQuizz(TestQuizz testQuizz) {
         testQuizz.setName(testQuizz.getName());
         testQuizz.setDescription(testQuizz.getDescription());
-        testQuizz.setExamTime(testQuizz.getExamTime());
         testQuizz.setDateCreated(Instant.now());
+        testQuizz.setExamTime(testQuizz.getExamTime());
+        testQuizz.setActivationCode(testQuizz.getActivationCode());
         return repo.save(testQuizz);
     }
 

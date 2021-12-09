@@ -30,6 +30,12 @@ public class QuestionController {
         return new ResponseEntity<>(CREATED);
     }
 
+    @PutMapping
+    public ResponseEntity<QuestionDTO> updateQuestion(@RequestBody QuestionDTO questionDTO){
+        // service.updateQuestion(questionDTO);
+        return new ResponseEntity<>(OK);
+    }
+
     @GetMapping
     public ResponseEntity<List<QuestionDTO>> getQuestion(){
         return ResponseEntity
