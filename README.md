@@ -15,7 +15,6 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 4. Proposal: https://docs.google.com/document/d/1JYh5wpmIWnowkCd6q8osMEemUTLUdRvYYgIrpEW9rA8/edit
 ######################################################################################################################
 
-
 5. Project plan: https://docs.google.com/document/d/1PthBGdnf2dbHK3wOtvVAS09SxUZyUrg_pGHph-SHd8A/edit
 ######################################################################################################################
 
@@ -25,8 +24,31 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 7. Product backlog: https://docs.google.com/document/d/1daPPWnOR-g_wjuNjyJDk4t33Fo6n8o0dQKyifkAoG_c/edit#
 ######################################################################################################################
 
-8. SprintBacklog https://docs.google.com/spreadsheets/d/1A8aFyrPWbRDLea1L0J4s2WEUuQh5LjcSHqebL_3JFMw/edit#gid=0
+8. Interface Design: https://docs.google.com/document/d/12lY7gO94c9iotlvSE26G7N4Pyge_feki9V24le5Tpd4/edit?fbclid=IwAR3N71-2N9MrWQ7cw2bHAOdCT0kPawXdRPQoxIL2DCBYE1N_FmmiPpLaO8E#
 ######################################################################################################################
+9. Database Design: https://docs.google.com/document/d/1tKkKocEX583e1ZALRerd-iT1xeMEgOg0T2rtVV0ZWjo/edit#
+######################################################################################################################
+10. Test Plan
+######################################################################################################################
+11. Naming Convention
+######################################################################################################################
+12. Coding Convention
+######################################################################################################################
+13. Meeting With Mentor
+######################################################################################################################
+14. Weekly Meeting
+######################################################################################################################
+15. Kết luận
+######################################################################################################################
+
+* SprintBacklog https://docs.google.com/spreadsheets/d/1A8aFyrPWbRDLea1L0J4s2WEUuQh5LjcSHqebL_3JFMw/edit#gid=0
+######################################################################################################################
+
+* TEST CASE
+
+USE CASES: https://drive.google.com/drive/folders/1TMUT76Jz-wj22ueF9ceRLGB-wq1cay4f?usp=sharing
+
+
 
 
 
