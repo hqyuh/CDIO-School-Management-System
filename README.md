@@ -189,6 +189,9 @@ USE CASES: https://drive.google.com/drive/folders/1TMUT76Jz-wj22ueF9ceRLGB-wq1ca
         "description": "First quizz",
         "examTime": 1100,
         "questions": null,
+        "isStart": null,
+        "isEnd: null,
+        "activationCode": 416001,
         "subject": {
             "id": 1,
             "name": "Java",
