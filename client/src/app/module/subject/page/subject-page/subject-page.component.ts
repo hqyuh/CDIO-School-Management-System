@@ -65,14 +65,11 @@ export class SubjectPageComponent implements OnInit {
     this.store.dispatch(new SaveSelectedSubject(subject));
   }
 
-  public watchQuizzes(): void {
-    if (!this.selectedSubject) {
-      this.toastSerivce.error('Vui lòng chọn môn học để xem bài thi!');
-    } else {
+  public watchQuizzes(subject: SubjectModel): void {
+    this.store.dispatch(new SaveSelectedSubject(subject));
       void this.router.navigate(['/home/quizz']);
       this.toastSerivce.success(
-        `Danh sách bài thi môn ${this.selectedSubject.name}`
+        `Danh sách bài thi môn ${subject.name}`
       );
-    }
   }
 }

@@ -16,6 +16,7 @@ import {Router} from "@angular/router";
 })
 export class RegisterComponent implements OnInit {
   public registerForm: any;
+  public userRole = 'ROLE_STUDENT';
   constructor(
     private fb: FormBuilder,
     private toastrService: ToastrService,
@@ -47,16 +48,15 @@ export class RegisterComponent implements OnInit {
   }
 
   public register(): void {
-    this.accountService.register(this.registerForm.value).subscribe({
-      // next: () => this.toastrService.success('Register successfully!'),
-      error: () => {
+    const userValue = { ...this.registerForm.value, role: this.userRole };
+    this.accountService.register(userValue).subscribe({
+      next: () => {
         this.toastrService.success('Register successfully!');
-        this.router.navigate(['/login']).then();
+        this.router.navigate(['/account/login'])
+      },
+      error: () => {
+        this.toastrService.success('Register fail!');
       }
-      // next: () => {
-      //   void this.router.navigate(['/signup']);
-      //   this.toastr.success('Sign Up Success');
-      // },
     });
   }
 
@@ -70,6 +70,10 @@ export class RegisterComponent implements OnInit {
         return null;
       }
     };
+  }
+
+  public onChangeUserRole(role: boolean): void {
+    this.userRole = role === true ? '[ROLE_STUDENT]' : '[ROLE_TEACHER]';
   }
 
   public get Email(): FormControl {

@@ -7,10 +7,27 @@
         style="max-width: 80px"
         class="mx-auto d-block"
       />
-      <h5 class="card-title font-weight-600 font-size-25 text-center mt-2 text-dark">
+      <h5
+        class="
+          card-title
+          font-weight-600 font-size-25
+          text-center
+          mt-2
+          text-dark
+        "
+      >
         Quizzes Online
       </h5>
-      <h6 class="card-subtitle font-size-22 text-center font-weight-600 mt-2 text-dark">
+      <h6
+        class="
+          card-subtitle
+          font-size-22
+          text-center
+          font-weight-600
+          mt-2
+          text-dark
+        "
+      >
         Đăng kí
       </h6>
     </div>
@@ -18,7 +35,9 @@
       <div class="card-block">
         <form action="#" [formGroup]="registerForm" (ngSubmit)="register()">
           <div class="form-group">
-            <label class="font-size-15 font-weight-500 mb-2 mt-2">Tên tài khoản</label>
+            <label class="font-size-15 font-weight-500 mb-2 mt-2"
+              >Tên tài khoản</label
+            >
             <input
               type="text"
               class="app-control form-control"
@@ -131,7 +150,18 @@
               </p>
             </div>
           </div>
-
+          <div
+            class="
+              from-group
+              mt-3
+              d-flex
+              align-items-center
+              justify-content-between
+            "
+          >
+            <span>Giáo viên</span><ui-switch [checked]="true" (change)="onChangeUserRole($event)"></ui-switch
+            ><span>Học sinh</span>
+          </div>
           <div>
             <button
               class="

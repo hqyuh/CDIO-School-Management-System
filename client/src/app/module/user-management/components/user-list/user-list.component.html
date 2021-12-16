@@ -29,6 +29,9 @@
             {{ col.header }}
             <p-sortIcon field="{{ col.field }}"></p-sortIcon>
           </ng-template>
+          <ng-template ngSwitchCase="block">
+            {{ col.header }}
+          </ng-template>
         </ng-container>
       </th>
     </tr>
@@ -76,6 +79,10 @@
               placement="left"
               container="body"
               >{{ user.password }}</span
+            >
+          </ng-template>
+          <ng-template [ngSwitchCase]="'block'">
+            <ui-switch checkedLabel="Block" uncheckedLabel="Unblock" [checked]="false" (change)="onBlockUser(user.id)"></ui-switch>
             >
           </ng-template>
         </ng-container>

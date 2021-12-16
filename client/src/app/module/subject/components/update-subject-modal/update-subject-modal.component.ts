@@ -49,7 +49,6 @@ export class UpdateSubjectModalComponent implements OnInit {
       this.subject = selectedSubjectOnStore;
       this.updateSubjectForm = this.formBuilder.group({
         name: [this.subject?.name, Validators.required],
-        teacher: [selectedSubjectOnStore.teacher.name, Validators.required],
       });
     }
   }
@@ -60,11 +59,8 @@ export class UpdateSubjectModalComponent implements OnInit {
 
   public updateSubject(): void {
     if (this.updateSubjectForm.valid) {
-      const selectedSubjectOnStore = this.store.selectSnapshot(
-        SubjectState.getSelectedSubject
-      );
       const value:  SubjectModel = this.updateSubjectForm.value;
-      const newSubject: SubjectModel = {...value, id: this.subject.id, teacher: value.teacher.position ? value.teacher : selectedSubjectOnStore.teacher };
+      const newSubject: SubjectModel = {...value, id: this.subject.id };
       this.subjectService
         .updateSubject(newSubject)
         .pipe(takeUntil(this.destroyableService.destroy$))

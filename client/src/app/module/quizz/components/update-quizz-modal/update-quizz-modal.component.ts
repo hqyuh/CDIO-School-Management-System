@@ -5,6 +5,7 @@ import { Store } from '@ngxs/store';
 import { ToastrService } from 'ngx-toastr';
 import { takeUntil } from 'rxjs/operators';
 import { DestroyableService } from 'src/app/core/service/destroyable.service';
+import { SubjectState } from 'src/app/module/subject/service/subject.state';
 import { ConvertTimeService } from 'src/app/shared/service/convert-time.service';
 import { QuizzService } from '../../service/quizz.service';
 import { QuizzState } from '../../service/quizz.state';
@@ -58,7 +59,10 @@ export class UpdateQuizzModalComponent implements OnInit {
   }
 
   public updateQuizz(): void{
+    const newQuizz = this.updateQuizzForm.value;
     if(this.updateQuizzForm.valid){
+      const selectedSubjectOnStore = this.store.selectSnapshot(SubjectState.getSelectedSubject);
+      newQuizz.subject = {id: selectedSubjectOnStore.id};
       this.quizzService.updateQuizz(this.updateQuizzForm.value).pipe(takeUntil(this.destroyableService.destroy$)).subscribe({
         next: ()=> this.toastService.success('Bài thi đã được cập nhật dưới nền. Hãy quay lại trong ít phút!;'),
         error: ()=> this.toastService.error('Cập nhật bài thi thất bại!')

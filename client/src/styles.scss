@@ -7,7 +7,9 @@
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/regular";
 @import "~@ng-select/ng-select/themes/default.theme.css";
+@import '~ngx-ui-switch/ui-switch.component.scss';
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+
 $app-color: #f63428;
 
 @for $i from 6 through 50 {

@@ -9,6 +9,7 @@ import {
   NgxUiLoaderModule,
   NgxUiLoaderRouterModule,
 } from 'ngx-ui-loader';
+import { UiSwitchModule } from 'ngx-ui-switch';
 import { NgxsResetPluginModule } from 'ngxs-reset-plugin';
 import { httpInterceptorProviders } from './interceptors';
 
@@ -32,12 +33,17 @@ import { httpInterceptorProviders } from './interceptors';
         warning: 'rounded-4 font-size-20 toast-warning',
       },
     }),
+    UiSwitchModule.forRoot({
+      size: 'large',
+      switchOffColor: '#237fdb',
+    })
   ],
   exports: [
     BrowserAnimationsModule,
     NgxUiLoaderModule,
     ToastrModule,
     HttpClientModule,
+    UiSwitchModule
   ],
   providers: [httpInterceptorProviders],
 })

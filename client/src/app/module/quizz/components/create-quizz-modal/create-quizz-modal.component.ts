@@ -65,9 +65,8 @@ export class CreateQuizzModalComponent implements OnInit {
       newQuizz.examTime = this.convertTimeService.convertTimerToSeconds(
         newQuizz.examTime
       );
-      newQuizz.subject = selectedSubjectOnStore;
-      delete newQuizz.subject.dateCreated;
-      delete newQuizz.subject.teacher;
+      const subjectOfQuizz = { id: selectedSubjectOnStore.id };
+      newQuizz.subject = subjectOfQuizz;
       this.quizzService
         .createQuizz(newQuizz)
         .pipe(takeUntil(this.destroyableService.destroy$))

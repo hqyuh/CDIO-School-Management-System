@@ -16,14 +16,6 @@
           <small class="text-danger" *ngIf="Name?.errors.required">Vui lòng nhập tên môn</small>
         </div>
       </div>
-      <div class="form-group mt-2">
-        <label>Chọn giáo viên của môn học</label>
-        <ng-select placeholder="Ex: Teacher three" formControlName="teacher" class="mt-1">
-          <ng-option *ngFor="let teacher of teachers | async" [value]="teacher" class="custom">
-            {{ teacher?.name }}
-          </ng-option>
-        </ng-select>
-      </div>
       <div class="text-end mt-3">
         <button label="Update" class="p-button-help ms-2" pButton type="submit">
           <i class="fas fa-sync text-white"></i>&nbsp;&nbsp;

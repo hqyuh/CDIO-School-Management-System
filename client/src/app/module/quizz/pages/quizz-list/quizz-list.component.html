@@ -26,82 +26,107 @@
         responsiveLayout="scroll"
         #dt1
       >
-      <ng-template pTemplate="caption">
-        <div canDisplayCrud>
-          <app-create-quizz-modal></app-create-quizz-modal>
-          <app-update-quizz-modal></app-update-quizz-modal>
-          <app-delete-quizz-modal></app-delete-quizz-modal>
-        </div>
-      </ng-template>
-      <ng-template pTemplate="header" let-columns let-quizzes>
-        <tr>
-          <th *ngFor="let col of columns" pSortableColumn="{{ col.field }}">
-            <ng-container [ngSwitch]="col.field">
-              <ng-template ngSwitchCase="selection">
-                {{ col.header }}
-              </ng-template>
-              <ng-template ngSwitchCase="exam">
-                {{ col.header }}
-              </ng-template>
-              <ng-template ngSwitchDefault>
-                {{ col.header }}
-                <p-sortIcon field="{{ col.field }}"></p-sortIcon>
-              </ng-template>
-            </ng-container>
-          </th>
-        </tr>
-        <tr>
-          <th *ngFor="let col of columns">
-            <ng-container [ngSwitch]="col.field">
-              <ng-template ngSwitchCase="selection"></ng-template>
-              <ng-template ngSwitchDefault>
-                <p-columnFilter
-                  type="text"
-                  [field]="col.field"
-                  display="menu"
-                ></p-columnFilter>
-              </ng-template>
-            </ng-container>
-          </th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-quizzes let-columns="columns">
-        <tr class="p-selectable-row">
-          <td *ngFor="let col of columns" class="text-nowrap" [class.text-center]="col.field === 'nationality' || col.field === 'edit'">
-            <ng-container [ngSwitch]="col.field">
-              <ng-template [ngSwitchCase]="'selection'">
-                <p-tableRadioButton
-                  name="subject"
-                  [value]="quizzes"
-                ></p-tableRadioButton>
-              </ng-template>
-              <ng-template [ngSwitchCase]="'id'">
-                <span class="text-primary">{{ quizzes.id }}</span>
-              </ng-template>
-              <ng-template [ngSwitchCase]="'description'">
-                <i class="pi pi-pencil"></i>
-                {{ quizzes.description }}
-              </ng-template>
-              <ng-template [ngSwitchCase]="'name'">
-                <i class="pi pi-pencil"></i>
-                {{ quizzes.name }}
-              </ng-template>
-              <ng-template [ngSwitchCase]="'dateCreated'">
-                <span [ngbTooltip]="quizzes.dateCreated" placement="bottom" container="body">{{ quizzes.dateCreated }}</span>
-              </ng-template>
-              <ng-template [ngSwitchCase]="'edit'">
-                <a pButton class="p-button-success text-decoration-none" (click)="onSelectedQuizz(quizzes)" routerLink="/home/quizz/exam/editing" label=" "><i class="fas fa-edit"></i></a>
-              </ng-template>
-              <ng-template [ngSwitchCase]="'exam'">
-                <button class="btn btn-danger px-4" [ngbTooltip]="'Bắt đầu làm bài'" 
-                (click)="saveSelectedQuizz(quizzes)" container="body" placement="bottom">
-                  <i class="fas fa-hourglass-start"></i>
-                </button>
-              </ng-template>
-            </ng-container>
-          </td>
-        </tr>
-      </ng-template>
+        <ng-template pTemplate="caption">
+          <div canDisplayCrud>
+            <app-create-quizz-modal></app-create-quizz-modal>
+            <app-update-quizz-modal></app-update-quizz-modal>
+            <app-delete-quizz-modal></app-delete-quizz-modal>
+          </div>
+        </ng-template>
+        <ng-template pTemplate="header" let-columns let-quizzes>
+          <tr>
+            <th *ngFor="let col of columns" pSortableColumn="{{ col.field }}">
+              <ng-container [ngSwitch]="col.field">
+                <ng-template ngSwitchCase="selection">
+                  {{ col.header }}
+                </ng-template>
+                <ng-template ngSwitchCase="exam">
+                  {{ col.header }}
+                </ng-template>
+                <ng-template ngSwitchDefault>
+                  {{ col.header }}
+                  <p-sortIcon field="{{ col.field }}"></p-sortIcon>
+                </ng-template>
+              </ng-container>
+            </th>
+          </tr>
+          <tr>
+            <th *ngFor="let col of columns">
+              <ng-container [ngSwitch]="col.field">
+                <ng-template ngSwitchCase="selection"></ng-template>
+                <ng-template ngSwitchDefault>
+                  <p-columnFilter
+                    type="text"
+                    [field]="col.field"
+                    display="menu"
+                  ></p-columnFilter>
+                </ng-template>
+              </ng-container>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-quizzes let-columns="columns">
+          <tr class="p-selectable-row">
+            <td
+              *ngFor="let col of columns"
+              class="text-nowrap"
+              [class.text-center]="
+                col.field === 'nationality' || col.field === 'edit'
+              "
+            >
+              <ng-container [ngSwitch]="col.field">
+                <ng-template [ngSwitchCase]="'selection'">
+                  <p-tableRadioButton
+                    name="subject"
+                    [value]="quizzes"
+                  ></p-tableRadioButton>
+                </ng-template>
+                <ng-template [ngSwitchCase]="'id'">
+                  <span class="text-primary">{{ quizzes.id }}</span>
+                </ng-template>
+                <ng-template [ngSwitchCase]="'description'">
+                  <i class="pi pi-pencil"></i>
+                  {{ quizzes.description }}
+                </ng-template>
+                <ng-template [ngSwitchCase]="'name'">
+                  <i class="pi pi-pencil"></i>
+                  {{ quizzes.name }}
+                </ng-template>
+                <ng-template [ngSwitchCase]="'dateCreated'">
+                  <span
+                    [ngbTooltip]="quizzes.dateCreated"
+                    placement="bottom"
+                    container="body"
+                    >{{ quizzes.dateCreated }}</span
+                  >
+                </ng-template>
+                <ng-template [ngSwitchCase]="'edit'">
+                  <a
+                    canDisplayCrud
+                    pButton
+                    class="p-button-success text-decoration-none"
+                    (click)="onSelectedQuizz(quizzes)"
+                    routerLink="/home/quizz/exam/editing"
+                    label=" "
+                    ><i class="fas fa-edit"></i
+                  ></a>
+                </ng-template>
+                <ng-template [ngSwitchCase]="'exam'">
+                  <button
+                    class="btn btn-danger px-4"
+                    [ngbTooltip]="'Bắt đầu làm bài'"
+                    (click)="saveSelectedQuizz(quizzes)"
+                    container="body"
+                    placement="bottom"
+                    studentCanUse
+                  >
+                    <i class="fas fa-hourglass-start"></i>
+                  </button>
+                </ng-template>
+              </ng-container>
+            </td>
+          </tr>
+        </ng-template>
       </p-table>
     </div>
   </div>

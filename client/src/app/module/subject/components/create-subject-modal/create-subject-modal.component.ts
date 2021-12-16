@@ -31,7 +31,6 @@ export class CreateSubjectModalComponent implements OnInit {
   public ngOnInit(): void {
     this.createSubjectForm = this.formBuilder.group({
       name: ['', Validators.required],
-      teacher: ['', Validators.required],
     });
     this.teachers = this.teacherService
       .getAllTeacher()

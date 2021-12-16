@@ -8,8 +8,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { FormFooterComponent } from './components/form-footer/form-footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
-import { TableModule } from 'primeng/table';
-import { RadioButtonModule } from 'primeng/radiobutton';
+import { UiSwitchModule } from 'ngx-ui-switch';
+
 
 
 @NgModule({
@@ -20,6 +20,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     DirectiveModule,
     ReactiveFormsModule,
     PasswordModule,
+    UiSwitchModule
   ],
   exports: [LoginComponent, RegisterComponent],
 })

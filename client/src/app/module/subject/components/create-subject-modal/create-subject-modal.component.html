@@ -31,38 +31,6 @@
           >
         </div>
       </div>
-      <div class="form-group mt-2">
-        <label>Chọn giáo viên của môn học</label>
-        <ng-select
-          placeholder="Ex: Teacher three"
-          formControlName="teacher"
-          class="mt-1"
-        >
-          <ng-option
-            *ngFor="let teacher of teachers | async"
-            [value]="teacher"
-            class="custom"
-            [class.is-valid]="
-              (Teacher.touched || Teacher.dirty) && Teacher.valid
-            "
-            [class.is-invalid]="
-              (Teacher.touched || Teacher.dirty) && Teacher.invalid
-            "
-          >
-            <img
-              src="../../../../../assets/teacher.png"
-              alt="teacher"
-              style="width: 50px"
-            />
-            {{ teacher.name }}
-          </ng-option>
-        </ng-select>
-        <div *ngIf="Teacher.invalid && (Teacher.dirty || Teacher.touched)">
-          <small class="text-danger" *ngIf="Teacher?.errors.required">
-            Vui lòng chọn giáo viên của môn học này
-          </small>
-        </div>
-      </div>
       <div class="text-end mt-3">
         <button
           class="p-button-success ms-2"

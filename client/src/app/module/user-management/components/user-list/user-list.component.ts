@@ -36,6 +36,10 @@ export class UserListComponent implements OnInit {
     {
       header: 'Mật khẩu',
       field: 'password'
+    },
+    {
+      header: 'Block',
+      field: 'block'
     }
   ]
 
@@ -46,5 +50,8 @@ export class UserListComponent implements OnInit {
   public onSelectedUser(user: User): void { 
     this.store.dispatch(new SaveSelectedUser(user));
   }
-
+  
+  public onBlockUser(id: number): void {
+    
+  }
 }
