@@ -338,7 +338,7 @@ Student Mark
     ]
     
     
-  GET   /api/studentMark/quizz/code/{code}
+  GET   /api/quizz/code/{code}
     
     http://localhost:8080/api/quizz/code/780226
   
