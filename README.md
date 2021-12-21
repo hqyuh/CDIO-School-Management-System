@@ -341,6 +341,17 @@ Student Mark
   GET   /api/quizz/code/{code}
     
     http://localhost:8080/api/quizz/code/780226
+    
+  
+  Account Lock
+  
+    /api/user/{id}/enabled/{status}
+    /api/user/2/enabled/true  
+    
+  Resetpassword
+  
+    /api/auth/resetPassword/{email} 
+    
   
   
 
