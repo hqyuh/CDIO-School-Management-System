@@ -46,6 +46,9 @@ public class TestQuizz {
     @Column(name = "is_end")
     private Integer isEnd;
 
+    @Column(name = "is_private")
+    private boolean isPrivate;
+
     @Column(name = "activation_code")
     private String activationCode;
 
