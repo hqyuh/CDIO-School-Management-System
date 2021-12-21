@@ -66,6 +66,11 @@ public class UserService {
         repo.deleteById(id);
     }
 
+    /**
+     * Hàm này sẽ kích hoạt
+     *      -> true là mở tài khoản
+     *      -> false là khóa tài khoản
+    * */
     public void updateUserEnabledStatus(Long id, boolean enabled) {
         repo.updateEnabledStatus(id, enabled);
     }

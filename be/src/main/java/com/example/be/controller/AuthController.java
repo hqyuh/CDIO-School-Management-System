@@ -35,4 +35,9 @@ public class AuthController {
         return authService.login(loginRequest);
     }
 
+    @GetMapping("/resetPassword/{email}")
+    public ResponseEntity<?> resetPassword(@PathVariable("email") String email) {
+        authService.resetPassword(email);
+        return new ResponseEntity<>(OK);
+    }
 }
