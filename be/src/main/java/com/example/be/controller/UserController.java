@@ -54,4 +54,11 @@ public class UserController {
         return new ResponseEntity<>(OK);
     }
 
+    @GetMapping("/{id}/enabled/{status}")
+    public ResponseEntity<?> updateUserEnabledStatus(@PathVariable("id") Long id,
+                                                     @PathVariable("status") String enabled) {
+        service.updateUserEnabledStatus(id, Boolean.parseBoolean(enabled));
+        return new ResponseEntity<>(OK);
+    }
+
 }

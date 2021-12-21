@@ -8,10 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.time.Instant;
 import java.util.List;
 
 @Service
+@Transactional
 public class UserService {
 
     private final UserRepository repo;
@@ -62,6 +64,10 @@ public class UserService {
 
     public void deleteUser(Long id) {
         repo.deleteById(id);
+    }
+
+    public void updateUserEnabledStatus(Long id, boolean enabled) {
+        repo.updateEnabledStatus(id, enabled);
     }
 
 }
