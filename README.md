@@ -375,7 +375,7 @@ Student Mark
          "username": "alex",
          "email": "alex@gmail.com",
          "fullName": "Alex CLI",
-         "password": "$2a$10$62FY/Kr7ktPGS1Hw8EbINusnNTLC8k83cF1tAST67WIOZdg14mQhG",
+         "password": "1q2w3e456789", // reset password
          "enabled": false,
          "role": "ROLE_STUDENT",
          "position": "SP"
