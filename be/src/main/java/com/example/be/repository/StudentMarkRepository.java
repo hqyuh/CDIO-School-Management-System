@@ -11,8 +11,8 @@ import java.util.List;
 @Repository
 public interface StudentMarkRepository extends JpaRepository<StudentMark, Long> {
 
-    @Query("SELECT u FROM StudentMark u WHERE u.user.userId = :userId")
-    List<StudentMark> findByUserId(@Param("userId") Long userId);
+    @Query("SELECT u FROM StudentMark u WHERE u.user.username = :username")
+    List<StudentMark> findByUsername(@Param("username") String username);
 
     List<StudentMark> findByTestQuizzId(Long testId);
 

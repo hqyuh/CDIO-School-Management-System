@@ -43,8 +43,8 @@ public class StudentMarkService {
         return repo.save(studentMark);
     }
 
-    public List<StudentMarkDTO> getAllStudentMarkByUserId(Long userId) {
-        return repo.findByUserId(userId)
+    public List<StudentMarkDTO> getAllStudentMarkByUsername(String username) {
+        return repo.findByUsername(username)
                 .stream()
                 .map(studentMarkMapper::mapToDTO)
                 .collect(Collectors.toList());
