@@ -26,6 +26,7 @@ public class TestQuizzService {
     public TestQuizz addQuizz(TestQuizz testQuizz){
         testQuizz.setDateCreated(Instant.now());
         testQuizz.setActivationCode(generateActivationCode());
+        testQuizz.setPrivate(true);
         return repo.save(testQuizz);
     }
 
