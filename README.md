@@ -346,14 +346,41 @@ Student Mark
   Account Lock
   
     /api/user/{id}/enabled/{status}
-    /api/user/2/enabled/true  
+    Ex: /api/user/2/enabled/true  
     
   Resetpassword
   
     /api/auth/resetPassword/{email} 
     
+  User
   
+  POST
+   
+    /api/user/
+    
+      {
+        "username": "Alex",
+        "email": "alex@gmail.com",
+        "fullName": "Jame Alex",
+        "role": "ROLE_STUDENT",
+        "position": "Student of DTU"
+      }
   
+   PATCH
+   
+    /api/user/
+    
+       {
+         "userId": 33,
+         "username": "alex",
+         "email": "alex@gmail.com",
+         "fullName": "Alex CLI",
+         "password": "1q2w3e456789", // reset password
+         "enabled": false,
+         "role": "ROLE_STUDENT",
+         "position": "SP"
+       }
+      
 
     
       
