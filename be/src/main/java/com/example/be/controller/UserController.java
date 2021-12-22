@@ -37,15 +37,16 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<User> addUser(@RequestBody User user) {
-        service.addUser(user);
-        return new ResponseEntity<>(CREATED);
+    public ResponseEntity<User> addNewUser(@RequestBody User user) {
+
+        User newUser = service.addNewUser(user);
+        return new ResponseEntity<>(newUser, CREATED);
     }
 
     @PatchMapping
     public ResponseEntity<User> updateUser(@RequestBody User user) {
-        service.updateUser(user);
-        return new ResponseEntity<>(OK);
+        User updateUser = service.updateUser(user);
+        return new ResponseEntity<>(updateUser, OK);
     }
 
     @DeleteMapping("/{id}")
