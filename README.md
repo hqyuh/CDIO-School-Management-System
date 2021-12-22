@@ -82,9 +82,6 @@ USE CASES: https://drive.google.com/drive/folders/1TMUT76Jz-wj22ueF9ceRLGB-wq1ca
         "password": "1q2w3e456789"
      }
      
-   response
-  
-        "User Registration Successfully"
 
  SUBJECT 
      
