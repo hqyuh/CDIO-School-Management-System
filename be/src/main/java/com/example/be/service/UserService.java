@@ -58,7 +58,7 @@ public class UserService {
         user.setUsername(user.getUsername());
         user.setFullName(user.getFullName());
         user.setEmail(user.getEmail());
-        user.setPassword(user.getPassword());
+        user.setPassword(encodePassword(user.getPassword()));
         user.setRole(user.getRole());
         user.setEnabled(user.isEnabled());
         user.setPosition(user.getPosition());
