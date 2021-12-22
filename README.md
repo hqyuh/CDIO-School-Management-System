@@ -308,32 +308,50 @@ Student Mark
     }
     
     
- GET   /api/studentMark/user/{userId}               
+  GET   
+ 
+    /api/studentMark/quizz/{id}
+    EX: /api/studentMark/quizz/2  
     
     [
         {
-            "id": 3,
-            "mark": 8.0,
-            "testQuizzId": 2,
-            "userId": 1
+          "id": 3,
+          "mark": 8.0,
+          "testQuizzId": 2,
+          "username": "quanghuy"
         },
         {
-            "id": 4,
-            "mark": 8.0,
-            "testQuizzId": 3,
-            "userId": 1
+          "id": 7,
+          "mark": 8.0,
+          "testQuizzId": 2,
+          "username": "summer"
         }
     ]
     
     
-  GET   /api/studentMark/quizz/{testId}
+  GET  
+  
+    /api/studentMark/user/{username}
+    EX: /api/studentMark/user/summer
   
     [
         {
-            "id": 3,
+            "id": 5,
+            "mark": 6.0,
+            "testQuizzId": 9,
+            "username": "summer"
+        },
+        {
+            "id": 6,
             "mark": 8.0,
+            "testQuizzId": 33,
+            "username": "summer"
+        },
+        {
+            "id": 8,
+            "mark": 10.0,
             "testQuizzId": 2,
-            "userId": 1
+            "username": "summer"
         }
     ]
     
