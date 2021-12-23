@@ -50,6 +50,10 @@ export class QuizzListComponent implements OnInit {
     {
       header: 'Tạo câu hỏi',
       field: 'edit',
+    },
+    {
+      header: 'Làm bài',
+      field: 'exam',
     }
   ]
 
