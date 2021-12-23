@@ -11,25 +11,91 @@
         <span>&times;</span>
       </button>
     </div>
-    <!-- <div class="modal-body py-5">
-      <form [formGroup]="createSubjectForm" (ngSubmit)="createSubject()">
+    <div class="modal-body py-5">
+      <form [formGroup]="createUserForm" (ngSubmit)="createUser()">
         <div class="form-group">
-          <label for="subjectName">Tên môn học</label>
+          <label class="font-size-15 font-weight-500 mb-2 mt-2"
+            >Tên tài khoản</label
+          >
           <input
             type="text"
-            class="app-control form-control mt-1"
-            placeholder="Tên môn học"
-            formControlName="name"
-            pInputText
-            id="subjectName"
-            [class.is-valid]="(Name.touched || Name.dirty) && Name.valid"
-            [class.is-invalid]="(Name.touched || Name.dirty) && Name.invalid"
+            class="app-control form-control"
+            placeholder="Nhập tên tài khoản của bạn"
+            name="username"
+            formControlName="username"
+            [class.is-invalid]="
+              Username.invalid && (Username.touched || Username.dirty)
+            "
+            [class.is-valid]="
+              Username.valid && (Username.touched || Username.dirty)
+            "
           />
-          <div *ngIf="(Name.touched || Name.dirty) && Name.invalid">
-            <small class="text-danger" *ngIf="Name?.errors.required"
-              >Vui lòng nhập tên môn</small
-            >
+          <div
+            *ngIf="Username.invalid && (Username.touched || Username.dirty)"
+            text-error
+          >
+            <p *ngIf="Username.errors?.required">Vui lòng nhập tên !</p>
           </div>
+        </div>
+
+        <div class="form-group">
+          <label class="font-size-15 font-weight-500 mb-2 mt-2">Email</label>
+          <input
+            type="email"
+            class="app-control form-control"
+            placeholder="Nhập email của bạn"
+            formControlName="email"
+            [class.is-invalid]="
+              Email.invalid && (Email.touched || Email.dirty)
+            "
+            [class.is-valid]="Email.valid && (Email.touched || Email.dirty)"
+          />
+          <div
+            *ngIf="Email.invalid && (Email.touched || Email.dirty)"
+            text-error
+          >
+            <p *ngIf="Email.errors?.required">Vui lòng nhập email !</p>
+            <p *ngIf="Email.errors?.email">Email sai định dạng !</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="font-size-15 font-weight-500 mb-2 mt-2"
+            >Mật khẩu</label
+          >
+          <input
+            type="password"
+            class="app-control form-control"
+            placeholder="Nhập mật khẩu của bạn"
+            formControlName="password"
+            pPassword
+            [class.is-invalid]="
+              Password.invalid && (Password.touched || Password.dirty)
+            "
+            [class.is-valid]="
+              Password.valid && (Password.touched || Password.dirty)
+            "
+          />
+          <div
+            *ngIf="Password.invalid && (Password.touched || Password.dirty)"
+            text-error
+          >
+            <p *ngIf="Password.errors?.required">Vui lòng nhập mật khẩu !</p>
+            <p *ngIf="Password.errors?.pattern">Mật khẩu sai định dạng !</p>
+            <p *ngIf="Password.errors?.minLength">
+              Mật khẩu phải ít nhất 6 kí tự !
+            </p>
+            <p *ngIf="Password.errors?.maxLength">
+              Mật khẩu tối đa 18 kí tự !
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="" class="font-size-15 font-weight-500 mb-2 mt-2">Vai trò</label>
+          <ng-select formControlName="role" class="form-control app-control">
+            <ng-option value="ROLE_STUDENT">Student</ng-option>
+            <ng-option value="ROLE_TEACHER">Teacher</ng-option>
+          </ng-select>
         </div>
         <div class="text-end mt-3">
           <button
@@ -43,16 +109,16 @@
           </button>
         </div>
       </form>
-    </div> -->
+    </div>
   </ng-template>
   
-  <!-- <button
+  <button
     pButton
     type="button"
     label="Create"
     class="p-button-success"
-    (click)="openCreateSubjectModal(content)"
+    (click)="openCreateUserModal(content)"
   >
     <i class="fas fa-plus text-white"></i>&nbsp;&nbsp;
-  </button> -->
+  </button>
   

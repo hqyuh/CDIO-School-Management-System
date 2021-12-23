@@ -88,6 +88,9 @@
                   <i class="pi pi-pencil"></i>
                   {{ quizzes.description }}
                 </ng-template>
+                <ng-template [ngSwitchCase]="'activationCode'">
+                  {{ quizzes.activationCode }}
+                </ng-template>
                 <ng-template [ngSwitchCase]="'name'">
                   <i class="pi pi-pencil"></i>
                   {{ quizzes.name }}

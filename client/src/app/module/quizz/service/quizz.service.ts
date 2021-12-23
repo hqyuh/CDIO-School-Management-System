@@ -16,7 +16,7 @@ export class QuizzService {
   }
 
   public updateQuizz(quizz: QuizzModel): Observable<QuizzModel> {
-    return this.http.put<QuizzModel>(`${environment.apiHost}/quizz`, quizz);
+    return this.http.patch<QuizzModel>(`${environment.apiHost}/quizz`, quizz);
   }
 
   public deleteQuizz(quizzId: number): Observable<any> {
@@ -44,6 +44,7 @@ export class QuizzService {
         dateCreated: '29-09-2021 09:06:59',
         description: 'ab',
         examTime: 6900,
+        activationCode: 'abcxyz',
         questions: [
           {
             id: 1,
@@ -63,6 +64,7 @@ export class QuizzService {
         dateCreated: '29-09-2021 09:06:59',
         description: 'ab',
         examTime: 12345,
+        activationCode: 'def',
         questions: [
           {
             id: 1,

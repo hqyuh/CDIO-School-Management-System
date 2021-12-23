@@ -48,4 +48,8 @@ export class AccountService {
       })
     );
   }
+
+  public forgetPassword(payload: { newPassword: string}): Observable<any> {
+    return this.http.patch<any>(`${environment.apiHost}/auth/forgetPassword`, payload);
+  }
 }

@@ -1,0 +1,44 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Tham gia làm bài thi</h4>
+  </div>
+  <div class="card-body">
+    <div class="card-block">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="code" class="text-primary font-size-22"
+              >Nhập mã code bài thi tại đây</label
+            >
+            <input
+              type="text"
+              placeholder="Ex: Yasuo01def"
+              class="form-control app-control"
+              name="code"
+              id="code"
+              [formControl]="examCode"
+            />
+            <small class="text-danger" *ngIf="(ExamCode.touched || ExamCode.dirty) && ExamCode.invalid">Please enter exam code!</small>
+            <div class="d-flex justify-content-center">
+                <button
+                class="
+                  btn-raised
+                  app-btn app-bg
+                  text-white
+                  d-block
+                  mt-4
+                  font-weight-700 font-size-22
+                "
+                type="button"
+                (click)="exam()"
+              >
+                Tham gia
+              </button>
+            </div>
+      
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

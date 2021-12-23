@@ -9,11 +9,12 @@ import { FormFooterComponent } from './components/form-footer/form-footer.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { UiSwitchModule } from 'ngx-ui-switch';
+import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
 
 
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, FormFooterComponent],
+  declarations: [LoginComponent, RegisterComponent, FormFooterComponent, ForgetPasswordComponent],
   imports: [
     CommonModule,
     AccountRoutingModule,

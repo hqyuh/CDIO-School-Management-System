@@ -1,19 +1,24 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
+import { takeUntil } from 'rxjs/operators';
+import { DestroyableService } from 'src/app/core/service/destroyable.service';
 import User from 'src/app/module/account/models/account.model';
+import { UserService } from 'src/app/shared/service/user.service';
 import { SaveSelectedUser } from '../../service/user.action';
+import { UserState } from '../../service/user.state';
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.scss']
+  styleUrls: ['./user-list.component.scss'],
+  providers: [DestroyableService]
 })
 export class UserListComponent implements OnInit {
   @Input('users') public users: User[];
   public selectedUser: User;
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, private userService: UserService, private toastService: ToastrService, private destroyableService: DestroyableService) { }
 
   public cols = [
     {
@@ -51,7 +56,11 @@ export class UserListComponent implements OnInit {
     this.store.dispatch(new SaveSelectedUser(user));
   }
   
-  public onBlockUser(id: number): void {
-    
+  public onBlockUser(isBLock: boolean): void {
+    const userId = this.store.selectSnapshot(UserState.selectedUser).id;
+    this.userService.lockUser(userId, isBLock).pipe(takeUntil(this.destroyableService.destroy$)).subscribe({
+      next: ()=> this.toastService.success('Đã khóa tài khoản thành công!'),
+      error: ()=> this.toastService.error('Khóa tài khoản thất bại')
+    })
   }
 }

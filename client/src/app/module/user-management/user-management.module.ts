@@ -12,6 +12,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { UiSwitchModule } from 'ngx-ui-switch';
 import { CreateUserComponent } from './components/create-user/create-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PasswordModule } from 'primeng/password';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 @NgModule({
@@ -31,7 +33,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     ConfirmDialogModule,
     UiSwitchModule,
     ReactiveFormsModule,
-    NgbModalModule
+    NgbModalModule,
+    NgbModalModule,
+    PasswordModule,
+    NgSelectModule
   ]
 })
 export class UserManagementModule { }

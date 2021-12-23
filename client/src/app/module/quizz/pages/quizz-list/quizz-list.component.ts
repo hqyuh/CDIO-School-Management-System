@@ -44,13 +44,13 @@ export class QuizzListComponent implements OnInit {
       field: 'dateCreated',
     },
     {
-      header: 'Tạo câu hỏi',
-      field: 'edit',
+      header: 'Mã code',
+      field: 'activationCode'
     },
     {
-      header: 'Làm bài',
-      field: 'exam',
-    },
+      header: 'Tạo câu hỏi',
+      field: 'edit',
+    }
   ]
 
   constructor(private router: Router , private toastService: ToastrService, private quizzService: QuizzService, private store: Store) {}

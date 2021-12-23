@@ -7,6 +7,9 @@
         ><b class="text-dark">Ngày tạo:</b> {{ exam?.dateCreated }}
       </span>
     </div>
+    <div class="px-3">
+        <span>Private &nbsp;</span><ui-switch (change)="onChangeQuizzPrivateMode($event)"></ui-switch><span>&nbsp;Public</span>
+    </div>
     <div class="card-body">
         <div class="card-block">
             <ng-container *ngFor="let question of exam?.questions; let i = index">

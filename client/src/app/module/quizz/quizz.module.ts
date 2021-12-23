@@ -24,6 +24,7 @@ import { EditableQuestionPageComponent } from './pages/editable-question-page/ed
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { CreateQuestionFormComponent } from './components/create-question-form/create-question-form.component';
 import { DirectiveModule } from 'src/app/core/directive/directive.module';
+import { UiSwitchModule } from 'ngx-ui-switch';
 @NgModule({
   declarations: [
     QuizzListComponent,
@@ -51,7 +52,8 @@ import { DirectiveModule } from 'src/app/core/directive/directive.module';
     ConfirmDialogModule,
     TimerCountdownModule,
     SplitButtonModule,
-    DirectiveModule
+    DirectiveModule,
+    UiSwitchModule
   ],
   exports: [
     QuizzListComponent

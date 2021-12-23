@@ -24,6 +24,10 @@ const routes: Routes = [
         loadChildren: () => import('../../module/user-management/user-management.module').then(m=>m.UserManagementModule)
       },
       {
+        path: 'exam-code',
+        loadChildren: ()=> import('../../shared/exam-code-page/exam-code-page.module').then(m=>m.ExamCodePageModule)
+      },
+      {
         path: '',
         pathMatch: 'full',
         redirectTo: 'subject',
