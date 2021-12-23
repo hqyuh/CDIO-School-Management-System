@@ -18,12 +18,12 @@ public interface StudentAnswerMapper {
     @Mapping(target = "testQuizz", source = "testQuizz")
     @Mapping(target = "question", source = "question")
     @Mapping(target = "isSelected", ignore = true)
-
-    StudentAnswer map(StudentAnswerDTO studentAnswerDTO, TestQuizz testQuizz, Question question);
+    @Mapping(target = "user", source = "user")
+    StudentAnswer map(StudentAnswerDTO studentAnswerDTO, TestQuizz testQuizz, Question question, User user);
 
     @Mapping(target = "testQuizzId", expression = "java(studentAnswer.getTestQuizz().getId())")
     @Mapping(target = "questionId", expression = "java(studentAnswer.getQuestion().getId())")
-    // @Mapping(target = "userId", expression = "java(studentAnswer.getUser().getId())")
+    @Mapping(target = "userId", expression = "java(studentAnswer.getUser().getId())")
     StudentAnswerDTO mapToDTO(StudentAnswer studentAnswer);
 
 }

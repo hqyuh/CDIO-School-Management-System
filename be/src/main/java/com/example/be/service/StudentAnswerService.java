@@ -61,7 +61,7 @@ public class StudentAnswerService {
         Question question = questionRepo.findQuestionById(studentAnswerDTO.getQuestionId());
 
         StudentAnswer studentAnswer = studentAnswerMapper
-                .map(studentAnswerDTO, testQuizz, question);
+                .map(studentAnswerDTO, testQuizz, question, authService.getCurrentUser());
         studentAnswer.setIsSelected(studentAnswerDTO.getIsSelected());
         studentAnswer.setCompletionTime(Instant.now());
 

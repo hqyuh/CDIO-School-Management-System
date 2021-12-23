@@ -12,5 +12,5 @@ public class StudentAnswerDTO {
     private Long testQuizzId;
     private Long questionId;
     private String isSelected;
-    // private Long userId;
+    private Long userId;
 }
