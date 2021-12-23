@@ -51,7 +51,8 @@ export class RegisterComponent implements OnInit {
     const userValue = { ...this.registerForm.value, role: this.userRole };
     this.accountService.register(userValue).subscribe({
       next: () => {
-        this.toastrService.success('Register successfully!');
+        this.toastrService.success('Register successfully! ' +
+          '\n Please check your email to activate your account. Thanks!');
         this.router.navigate(['/account/login'])
       },
       error: () => {
