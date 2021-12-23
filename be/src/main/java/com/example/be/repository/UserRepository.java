@@ -18,7 +18,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User getUserByEmail(@Param("email") String email);
 
     @Modifying
-    @Query("UPDATE User u SET u.enabled = ?2 WHERE u.userId = ?1")
+    @Query("UPDATE User u SET u.enabled = ?2 WHERE u.id = ?1")
     public void updateEnabledStatus(Long id, boolean enabled);
 
 }
