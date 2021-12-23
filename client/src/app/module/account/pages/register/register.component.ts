@@ -73,7 +73,7 @@ export class RegisterComponent implements OnInit {
   }
 
   public onChangeUserRole(role: boolean): void {
-    this.userRole = role === true ? '[ROLE_STUDENT]' : '[ROLE_TEACHER]';
+    this.userRole = role === true ? 'ROLE_STUDENT' : 'ROLE_TEACHER';
   }
 
   public get Email(): FormControl {

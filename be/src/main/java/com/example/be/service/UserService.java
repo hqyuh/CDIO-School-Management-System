@@ -8,10 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.time.Instant;
 import java.util.List;
 
 @Service
+@Transactional
 public class UserService {
 
     private final UserRepository repo;
@@ -35,15 +37,34 @@ public class UserService {
         return repo.findByUsername(username);
     }
 
-    public User addUser(User user) {
+    public User addNewUser(User user) {
+        user.setUsername(user.getUsername());
+        user.setFullName(user.getFullName());
+        user.setEmail(user.getEmail());
         String password = generatePassword();
         user.setPassword(encodePassword(password));
+        user.setRole(user.getRole());
         user.setEnabled(true);
+        user.setPosition(user.getPosition());
         user.setCreated(Instant.now());
-        mailService.sentMail(
-                new NotificationEmail("DTU Quizz - Password", user.getEmail(),
+        repo.save(user);
+        mailService.sentMail(new NotificationEmail("DTU Quizz - Password", user.getEmail(),
                         "This is your password: " + password));
-        return repo.save(user);
+
+        return user;
+    }
+
+    public User updateUser(User user) {
+        user.setUsername(user.getUsername());
+        user.setFullName(user.getFullName());
+        user.setEmail(user.getEmail());
+        user.setPassword(encodePassword(user.getPassword()));
+        user.setRole(user.getRole());
+        user.setEnabled(user.isEnabled());
+        user.setPosition(user.getPosition());
+        user.setCreated(Instant.now());
+        repo.save(user);
+        return user;
     }
 
     private String encodePassword(String password) {
@@ -54,14 +75,17 @@ public class UserService {
         return RandomStringUtils.randomAlphanumeric(6);
     }
 
-    public User updateUser(User user) {
-        user.setCreated(Instant.now());
-        user.setPassword(encodePassword(user.getPassword()));
-        return repo.save(user);
-    }
-
     public void deleteUser(Long id) {
         repo.deleteById(id);
+    }
+
+    /**
+     * Hàm này sẽ kích hoạt
+     *      -> true là mở tài khoản
+     *      -> false là khóa tài khoản
+    * */
+    public void updateUserEnabledStatus(Long id, boolean enabled) {
+        repo.updateEnabledStatus(id, enabled);
     }
 
 }

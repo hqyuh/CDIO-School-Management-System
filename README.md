@@ -45,6 +45,7 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 ######################################################################################################################
 
 * TEST CASE
+* TEST1: https://docs.google.com/spreadsheets/d/1TKhkPtoo311MlBpH-6x5WwhKGinbcXlBWU_tF_Vk41Q/edit?fbclid=IwAR2j6iLtlG9KZBDCzlg-sMpwVytFOt_Et8QNpzDB8LJBxy3wo34W6KMmeqE#gid=585024898
 
 USE CASES: https://drive.google.com/drive/folders/1TMUT76Jz-wj22ueF9ceRLGB-wq1cay4f?usp=sharing
 
@@ -82,9 +83,6 @@ USE CASES: https://drive.google.com/drive/folders/1TMUT76Jz-wj22ueF9ceRLGB-wq1ca
         "password": "1q2w3e456789"
      }
      
-   response
-  
-        "User Registration Successfully"
 
  SUBJECT 
      
@@ -189,6 +187,9 @@ USE CASES: https://drive.google.com/drive/folders/1TMUT76Jz-wj22ueF9ceRLGB-wq1ca
         "description": "First quizz",
         "examTime": 1100,
         "questions": null,
+        "isStart": null,
+        "isEnd: null,
+        "activationCode": 416001,
         "subject": {
             "id": 1,
             "name": "Java",
@@ -305,41 +306,97 @@ Student Mark
     }
     
     
- GET   /api/studentMark/user/{userId}               
+  GET   
+ 
+    /api/studentMark/quizz/{id}
+    EX: /api/studentMark/quizz/2  
     
     [
         {
-            "id": 3,
-            "mark": 8.0,
-            "testQuizzId": 2,
-            "userId": 1
+          "id": 3,
+          "mark": 8.0,
+          "testQuizzId": 2,
+          "username": "quanghuy"
         },
         {
-            "id": 4,
-            "mark": 8.0,
-            "testQuizzId": 3,
-            "userId": 1
+          "id": 7,
+          "mark": 8.0,
+          "testQuizzId": 2,
+          "username": "summer"
         }
     ]
     
     
-  GET   /api/studentMark/quizz/{testId}
+  GET  
+  
+    /api/studentMark/user/{username}
+    EX: /api/studentMark/user/summer
   
     [
         {
-            "id": 3,
+            "id": 5,
+            "mark": 6.0,
+            "testQuizzId": 9,
+            "username": "summer"
+        },
+        {
+            "id": 6,
             "mark": 8.0,
+            "testQuizzId": 33,
+            "username": "summer"
+        },
+        {
+            "id": 8,
+            "mark": 10.0,
             "testQuizzId": 2,
-            "userId": 1
+            "username": "summer"
         }
     ]
     
     
-  GET   /api/studentMark/quizz/code/{code}
+  GET   /api/quizz/code/{code}
     
     http://localhost:8080/api/quizz/code/780226
+    
   
+  Account Lock
   
+    /api/user/{id}/enabled/{status}
+    Ex: /api/user/2/enabled/true  
+    
+  Resetpassword
+  
+    /api/auth/resetPassword/{email} 
+    
+  User
+  
+  POST
+   
+    /api/user/
+    
+      {
+        "username": "Alex",
+        "email": "alex@gmail.com",
+        "fullName": "Jame Alex",
+        "role": "ROLE_STUDENT",
+        "position": "Student of DTU"
+      }
+  
+   PATCH
+   
+    /api/user/
+    
+       {
+         "userId": 33,
+         "username": "alex",
+         "email": "alex@gmail.com",
+         "fullName": "Alex CLI",
+         "password": "1q2w3e456789", // reset password
+         "enabled": false,
+         "role": "ROLE_STUDENT",
+         "position": "SP"
+       }
+      
 
     
       

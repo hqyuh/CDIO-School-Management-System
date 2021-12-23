@@ -27,11 +27,11 @@ public class StudentMarkController {
         return new ResponseEntity<>(OK);
     }
 
-    @GetMapping("/user/{id}")
-    private ResponseEntity<List<StudentMarkDTO>> getAllStudentMark(@PathVariable("id") Long id) {
+    @GetMapping("/user/{username}")
+    private ResponseEntity<List<StudentMarkDTO>> getAllStudentMark(@PathVariable("username") String username) {
         return ResponseEntity
                 .status(OK)
-                .body(service.getAllStudentMarkByUserId(id));
+                .body(service.getAllStudentMarkByUsername(username));
     }
 
     @GetMapping("/quizz/{id}")

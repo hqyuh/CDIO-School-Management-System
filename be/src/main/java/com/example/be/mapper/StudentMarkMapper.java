@@ -20,7 +20,7 @@ public interface StudentMarkMapper {
     StudentMark map(StudentMarkDTO studentMarkDTO, TestQuizz testQuizz, User user);
 
     @Mapping(target = "testQuizzId", expression = "java(studentMark.getTestQuizz().getId())")
-    @Mapping(target = "userId", expression = "java(studentMark.getUser().getUserId())")
+    @Mapping(target = "username", expression = "java(studentMark.getUser().getUsername())")
     StudentMarkDTO mapToDTO(StudentMark studentMark);
 
 }

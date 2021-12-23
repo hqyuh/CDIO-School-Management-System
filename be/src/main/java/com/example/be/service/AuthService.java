@@ -12,12 +12,11 @@ import com.example.be.repository.UserRepository;
 import com.example.be.repository.VerificationTokenRepository;
 import com.example.be.security.JwtProvider;
 import lombok.AllArgsConstructor;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -112,6 +111,26 @@ public class AuthService {
                 SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         return userRepository.findByUsername(principal.getUsername());
                 // .orElseThrow(() -> new UsernameNotFoundException("Username not found " + principal.getUsername()));
+    }
+
+    private String generatePassword() {
+        return RandomStringUtils.randomAlphanumeric(6);
+    }
+
+    /**
+     * Reset password
+     * */
+    public void resetPassword(String email) {
+        User user = userRepository.getUserByEmail(email);
+        if(user == null) {
+            throw new SpringEmailException("Not found by email " + email);
+        }
+        String password = generatePassword();
+        user.setPassword(encryptPassword(password));
+        userRepository.save(user);
+        mailService.sentMail(
+                new NotificationEmail("DTU Quizz - Reset Password", user.getEmail(),
+                        "This is your password: " + password));
     }
 
 }
