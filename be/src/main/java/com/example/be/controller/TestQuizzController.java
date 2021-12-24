@@ -69,4 +69,11 @@ public class TestQuizzController {
                 .status(OK)
                 .body(service.findQuizzByCode(code));
     }
+
+    @GetMapping("/{id}/status/{status}")
+    public ResponseEntity<?> updateTestQuizzStatus(@PathVariable("id") Long id,
+                                                   @PathVariable("status") String status) {
+        service.updateTestQuizzStatus(id, Boolean.parseBoolean(status));
+        return new ResponseEntity<>(OK);
+    }
 }

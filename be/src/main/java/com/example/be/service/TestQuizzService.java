@@ -6,6 +6,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.time.Instant;
 import java.util.List;
 
@@ -57,6 +58,11 @@ public class TestQuizzService {
 
     public TestQuizz findQuizzByCode(String code) {
         return repo.findQuizzByCode(code);
+    }
+
+    @Transactional
+    public void updateTestQuizzStatus(Long id, boolean status) {
+        repo.updateQuizzStatus(id, status);
     }
 
 }
