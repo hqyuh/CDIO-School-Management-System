@@ -36,7 +36,7 @@ export class EditableQuestionPageComponent implements OnInit {
 
   public onChangeQuizzPrivateMode(isPrivate: boolean): void {
       const selectedQuizzOnStore = this.store.selectSnapshot(QuizzState.selectedQuizz);
-      this.quizzService.updateQuizz({id: selectedQuizzOnStore.id, isPrivate}).pipe(takeUntil(this.destroyableService.destroy$)).subscribe({
+      this.quizzService.changeQuizzStatus(selectedQuizzOnStore.id, isPrivate).pipe(takeUntil(this.destroyableService.destroy$)).subscribe({
         next: ()=> this.toastService.success('Thay đổi chế độ thành công'),
         error: ()=> this.toastService.error('Thay đổi chế độ thất bại')
       })

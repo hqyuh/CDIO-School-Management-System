@@ -17,7 +17,7 @@ export class TeacherGuard implements CanActivate {
     if( userRole === 'Teacher' || userRole === 'Administrator' ) {
       return true;
     } else {
-      void this.router.navigate(['/home/student-mark']);
+      void this.router.navigate(['/home/exam-code']);
       this.toastService.error('Bạn không có quyền truy cập trang này!');
       return false;
     }

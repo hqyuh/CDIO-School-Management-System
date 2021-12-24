@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
+import {TeacherGuard} from "../../core/guard/teacher.guard";
 
 const routes: Routes = [
   {
@@ -8,6 +9,7 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       {
+        canActivate: [TeacherGuard],
         path: 'subject',
         loadChildren: () =>
           import('../../module/subject/subject.module').then(

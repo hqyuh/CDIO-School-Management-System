@@ -52,13 +52,8 @@ export class QuizzListComponent implements OnInit {
       field: 'edit',
     },
     {
-<<<<<<< HEAD
       header: 'Điểm',
       field: 'mark'
-=======
-      header: 'Làm bài',
-      field: 'exam',
->>>>>>> 685e9087eefc9b525bd0a1951f786cd089589872
     }
   ]
 

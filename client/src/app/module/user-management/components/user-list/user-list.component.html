@@ -82,7 +82,7 @@
             >
           </ng-template>
           <ng-template [ngSwitchCase]="'block'">
-            <ui-switch checkedLabel="Block" uncheckedLabel="Unblock" [checked]="user.enabled == 'true' ? true  : false" (change)="onSelectedUser(user);onBlockUser($event)"></ui-switch>
+            <ui-switch checkedLabel="Block" uncheckedLabel="Unblock" [checked]="user.enabled" (change)="onSelectedUser(user);onBlockUser($event)"></ui-switch>
             >
           </ng-template>
         </ng-container>

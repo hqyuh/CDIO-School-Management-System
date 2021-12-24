@@ -62,7 +62,10 @@ export class UpdateQuizzModalComponent implements OnInit {
     const newQuizz = this.updateQuizzForm.value;
     if(this.updateQuizzForm.valid){
       const selectedSubjectOnStore = this.store.selectSnapshot(SubjectState.getSelectedSubject);
+      const { id } = this.store.selectSnapshot(QuizzState.selectedQuizz);
       newQuizz.subject = {id: selectedSubjectOnStore.id};
+      newQuizz.id = id;
+      newQuizz.examTime = this.convertTimeService.convertTimerToSeconds(newQuizz.examTime);
       this.quizzService.updateQuizz(this.updateQuizzForm.value).pipe(takeUntil(this.destroyableService.destroy$)).subscribe({
         next: ()=> this.toastService.success('Bài thi đã được cập nhật dưới nền. Hãy quay lại trong ít phút!;'),
         error: ()=> this.toastService.error('Cập nhật bài thi thất bại!')

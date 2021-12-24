@@ -6,3 +6,4 @@ export class SubjectModel {
     public teacher: TeacherModel;
     public dateCreated?: string;
 }
+

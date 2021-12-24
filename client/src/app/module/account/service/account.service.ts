@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import User from '../models/account.model';
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ import User from '../models/account.model';
 export class AccountService {
   public currentUser: Observable<any>;
   private currentUser$: BehaviorSubject<User>;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.currentUser$ = new BehaviorSubject(
       JSON.parse(localStorage.getItem('currentUser'))
     );
@@ -47,6 +48,7 @@ export class AccountService {
         this.currentUser$.next(null);
       })
     );
+   //  return "OK";
   }
 
   public forgetPassword(payload: { newPassword: string}): Observable<any> {
