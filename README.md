@@ -231,6 +231,12 @@ USE CASES: https://drive.google.com/drive/folders/1TMUT76Jz-wj22ueF9ceRLGB-wq1ca
    
       Chỉ cần http://localhost:8080/api/quizz/{id}
       
+   
+   GET
+    
+      /api/quizz/{id}/status/{status}
+      EX: /api/quizz/40/status/false
+      
       
       
 Student Answer
