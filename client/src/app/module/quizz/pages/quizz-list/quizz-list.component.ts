@@ -52,8 +52,13 @@ export class QuizzListComponent implements OnInit {
       field: 'edit',
     },
     {
+<<<<<<< HEAD
+      header: 'Điểm',
+      field: 'mark'
+=======
       header: 'Làm bài',
       field: 'exam',
+>>>>>>> 685e9087eefc9b525bd0a1951f786cd089589872
     }
   ]
 
@@ -79,5 +84,9 @@ export class QuizzListComponent implements OnInit {
 
   public onSelectedQuizz(quizz: QuizzModel): void{
     this.store.dispatch(new SaveSelectedQuizz(quizz));
+  }
+
+  public navigateToStudentMark(): void {
+    this.router.navigate(['/student-mark'])
   }
 }
