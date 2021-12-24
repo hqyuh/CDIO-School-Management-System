@@ -11,5 +11,6 @@ public class StudentMarkDTO {
     private Long id;
     private float mark;
     private Long testQuizzId;
+    private String testQuizzName;
     private String username;
 }

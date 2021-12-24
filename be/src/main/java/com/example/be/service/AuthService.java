@@ -90,7 +90,7 @@ public class AuthService {
 
     @Transactional
     public void fetchUserAndEnabled(VerificationToken verificationToken){
-        Long userId = verificationToken.getUser().getUserId();
+        Long userId = verificationToken.getUser().getId();
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new SpringEmailException("User not found with id " + userId));
 

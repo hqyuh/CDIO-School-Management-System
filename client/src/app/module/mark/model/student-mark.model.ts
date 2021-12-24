@@ -3,4 +3,5 @@ export class StudentMarkModel {
     public username: string;
     public testQuizzId: number;
     public mark: number;
+    public name: string;
 }

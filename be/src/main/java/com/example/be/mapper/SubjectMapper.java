@@ -18,7 +18,7 @@ public interface SubjectMapper {
     @Mapping(target = "user", source = "user")
     Subject map(SubjectDTO subjectDTO, User user);
 
-    @Mapping(target = "userId", expression = "java(subject.getUser().getUserId())")
+    @Mapping(target = "userId", expression = "java(subject.getUser().getId())")
     SubjectDTO mapToDTO(Subject subject);
 
 }

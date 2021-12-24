@@ -31,7 +31,7 @@ export class StudentMarkPageComponent implements OnInit {
     },
     {
       header: 'Quizz',
-      field: 'testQuizzId'
+      field: 'name'
     }
   ]
   public ngOnInit(): void {
