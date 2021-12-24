@@ -316,12 +316,14 @@ Student Mark
           "id": 3,
           "mark": 8.0,
           "testQuizzId": 2,
+          "testQuizzName": "Quizz A",
           "username": "quanghuy"
         },
         {
           "id": 7,
           "mark": 8.0,
           "testQuizzId": 2,
+          "testQuizzName": "Quizz A",
           "username": "summer"
         }
     ]
@@ -334,21 +336,17 @@ Student Mark
   
     [
         {
-            "id": 5,
-            "mark": 6.0,
-            "testQuizzId": 9,
-            "username": "summer"
-        },
-        {
             "id": 6,
             "mark": 8.0,
             "testQuizzId": 33,
+            "testQuizzName": "Test A",
             "username": "summer"
         },
         {
             "id": 8,
             "mark": 10.0,
             "testQuizzId": 2,
+            "testQuizzName": "Quizz A",
             "username": "summer"
         }
     ]
