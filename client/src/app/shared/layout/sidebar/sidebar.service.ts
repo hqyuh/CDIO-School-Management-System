@@ -47,7 +47,7 @@ export class SidebarService {
       submenus: [
         {
           title: 'Bảng điểm',
-          href: 'study/mark'
+          href: 'student-mark'
         },
         {
           title: 'Kết quả thi',

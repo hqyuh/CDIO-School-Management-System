@@ -40,9 +40,6 @@
                 <ng-template ngSwitchCase="selection">
                   {{ col.header }}
                 </ng-template>
-                <ng-template ngSwitchCase="exam">
-                  {{ col.header }}
-                </ng-template>
                 <ng-template ngSwitchDefault>
                   {{ col.header }}
                   <p-sortIcon field="{{ col.field }}"></p-sortIcon>
@@ -114,16 +111,15 @@
                     ><i class="fas fa-edit"></i
                   ></a>
                 </ng-template>
-                <ng-template [ngSwitchCase]="'exam'">
+                <ng-template [ngSwitchCase]="'mark'">
                   <button
                     class="btn btn-danger px-4"
-                    [ngbTooltip]="'Bắt đầu làm bài'"
-                    (click)="saveSelectedQuizz(quizzes)"
+                    [ngbTooltip]="'Xem điểm'"
+                    (click)="saveSelectedQuizz(quizzes); navigateToStudentMark()"
                     container="body"
                     placement="bottom"
-                    studentCanUse
                   >
-                    <i class="fas fa-hourglass-start"></i>
+                  <i class="fas fa-mask"></i>
                   </button>
                 </ng-template>
               </ng-container>

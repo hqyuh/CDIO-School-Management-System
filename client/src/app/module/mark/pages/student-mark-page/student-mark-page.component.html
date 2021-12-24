@@ -1,0 +1,64 @@
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Danh sách điểm {{ quizz.name || accountService.currentUserValue.username}}</h4>
+    </div>
+    <div class="card-body">
+        <div class="card-block">
+            <p-table
+            [value]="studentMarks$ | async"
+            [rowHover]="true"
+            [rows]="5"
+            [paginator]="true"
+            [filterDelay]="0"
+            [columns]="cols"
+            [scrollable]="true"
+            [scrollHeight]="'100%'"
+            scrollWidth="100%"
+            [responsive]="true"
+            [selectionMode]="'single'"
+            [resizableColumns]="true"
+            columnResizeMode="expand"
+            styleClass="p-datatable-gridlines"
+            responsiveLayout="scroll"
+            #dt1
+            >
+            <ng-template pTemplate="header" let-columns let-mark>
+                <tr>
+                  <th *ngFor="let col of columns" pSortableColumn="{{ col.field }}">
+                    <ng-container [ngSwitch]="col.field">
+                      <ng-template ngSwitchDefault>
+                        {{ col.header }}
+                      </ng-template>
+                    </ng-container>
+                  </th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-mark let-columns="columns">
+                <tr class="p-selectable-row">
+                  <td
+                    *ngFor="let col of columns"
+                    class="text-nowrap"
+                  >
+                    <ng-container [ngSwitch]="col.field">
+                      <ng-template [ngSwitchCase]="'id'">
+                        <span class="text-primary">{{ mark.id }}</span>
+                      </ng-template>
+                      <ng-template [ngSwitchCase]="'mark'">
+                        <i class="pi pi-pencil"></i>
+                        {{ mark.mark }}
+                      </ng-template>
+                      <ng-template [ngSwitchCase]="'username'">
+                        {{ mark.username }}
+                      </ng-template>
+                      <ng-template [ngSwitchCase]="'testQuizzId'">
+                        <i class="pi pi-pencil"></i>
+                        {{ mark.testQuizzId }}
+                      </ng-template>
+                    </ng-container>
+                  </td>
+                </tr>
+              </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

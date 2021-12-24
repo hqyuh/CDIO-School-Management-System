@@ -14,10 +14,10 @@ export class TeacherGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const userRole = SystemRole[this.accountService.currentUserValue.role];
-    if( userRole === 'Teacher' ) {
+    if( userRole === 'Teacher' || userRole === 'Administrator' ) {
       return true;
     } else {
-      void this.router.navigate(['/home']);
+      void this.router.navigate(['/home/student-mark']);
       this.toastService.error('Bạn không có quyền truy cập trang này!');
       return false;
     }

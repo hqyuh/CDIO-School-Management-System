@@ -28,6 +28,10 @@ const routes: Routes = [
         loadChildren: ()=> import('../../shared/exam-code-page/exam-code-page.module').then(m=>m.ExamCodePageModule)
       },
       {
+        path: 'student-mark',
+        loadChildren: ()=> import('../../module/mark/student-mark.module').then(m => m.StudentMarkModule)
+      },
+      {
         path: '',
         pathMatch: 'full',
         redirectTo: 'subject',
