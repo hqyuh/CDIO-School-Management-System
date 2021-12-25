@@ -76,4 +76,11 @@ public class TestQuizzController {
         service.updateTestQuizzStatus(id, Boolean.parseBoolean(status));
         return new ResponseEntity<>(OK);
     }
+
+    @PatchMapping("/examtime/{id}")
+    public ResponseEntity<TestQuizz> updateExamTime(@PathVariable("id") Long id,
+                                                    @RequestBody TestQuizz testQuizz) {
+        service.updateExamTime(id, testQuizz);
+        return new ResponseEntity<>(OK);
+    }
 }

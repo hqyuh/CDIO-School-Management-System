@@ -65,4 +65,11 @@ public class TestQuizzService {
         repo.updateQuizzStatus(id, status);
     }
 
+    public void updateExamTime(Long id, TestQuizz testQuizz) {
+        TestQuizz test = repo.findTestQuizzById(id);
+        test.setExamTime(testQuizz.getExamTime());
+
+        repo.save(test);
+    }
+
 }
