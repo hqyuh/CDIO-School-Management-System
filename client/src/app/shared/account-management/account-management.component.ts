@@ -27,17 +27,19 @@ export class AccountManagementComponent implements OnInit {
       email: ['', Validators.email],
       fullname: ['', Validators.required],
       position: ['', Validators.required],
+      password: ['',Validators.required]
     });
     this.accountService
       .getUserInfo()
       .pipe(takeUntil(this.destroyableService.destroy$))
       .subscribe({
-        next: ({ username, email, fullname, position }) => {
+        next: ({ username, email, fullname, position, password }) => {
           this.accountInfoForm.setValue({
             username,
             email,
             fullname,
             position,
+            password
           });
         },
         error: () => {
@@ -49,12 +51,13 @@ export class AccountManagementComponent implements OnInit {
   public onChangeUserInfo(): void {
     if (this.accountInfoForm.valid) {
       this.accountService.updateInfo(this.accountInfoForm.value).subscribe({
-        next: ({ username, email, fullname, position }) => {
+        next: ({ username, email, fullname, position, password }) => {
           this.accountInfoForm.setValue({
             username,
             email,
             fullname,
             position,
+            password
           });
           this.toastService.success('Đã cập nhật thông tin thành công!');
         },
