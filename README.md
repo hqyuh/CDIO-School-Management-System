@@ -46,6 +46,8 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 
 * TEST CASE
 * TEST1: https://docs.google.com/spreadsheets/d/1TKhkPtoo311MlBpH-6x5WwhKGinbcXlBWU_tF_Vk41Q/edit?fbclid=IwAR2j6iLtlG9KZBDCzlg-sMpwVytFOt_Et8QNpzDB8LJBxy3wo34W6KMmeqE#gid=585024898
+* TEST2: https://docs.google.com/spreadsheets/d/1AqxBFBCaIfVZqyddFap-dCMs7DWjdf0g07eBH3MdMlc/edit?usp=sharing
+* TEST3: https://docs.google.com/spreadsheets/d/1Vy_Lujy7hKYTYmV4ipmPMq01nZ8fdIqKeBORTFJuy2E/edit?usp=sharing
 
 USE CASES: https://drive.google.com/drive/folders/1TMUT76Jz-wj22ueF9ceRLGB-wq1cay4f?usp=sharing
 
