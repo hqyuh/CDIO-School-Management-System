@@ -25,38 +25,38 @@ export class SubjectService {
   }
 
   public getSubjectList(): Observable<SubjectModel[]>{
-    // return of([
-    //   {
-    //     id: 5,
-    //     name: 'Hệ phân tán',
-    //     teacher: {
-    //       teacherId: 1,
-    //       name: 'huy',
-    //       position: 'Professcor',
-    //     },
-    //     dateCreated: '0',
-    //   },
-    //   {
-    //     id: 7,
-    //     name: 'K7',
-    //     teacher:  {
-    //       teacherId: 2,
-    //       name: 'huy',
-    //       position: 'Professcor',
-    //     },
-    //     dateCreated: '0',
-    //   },
-    //   {
-    //     id: 7,
-    //     name: 'Xạo lz',
-    //     teacher:  {
-    //       teacherId: 3,
-    //       name: 'huy',
-    //       position: 'Professcor',
-    //     },
-    //     dateCreated: '0',
-    //   }
-    // ])
-    return this.http.get<SubjectModel[]>(`${environment.apiHost}/subject`);
+    return of([
+      {
+        id: 5,
+        name: 'Hệ phân tán',
+        teacher: {
+          teacherId: 1,
+          name: 'huy',
+          position: 'Professcor',
+        },
+        dateCreated: '0',
+      },
+      {
+        id: 7,
+        name: 'K7',
+        teacher:  {
+          teacherId: 2,
+          name: 'huy',
+          position: 'Professcor',
+        },
+        dateCreated: '0',
+      },
+      {
+        id: 7,
+        name: 'Xạo lz',
+        teacher:  {
+          teacherId: 3,
+          name: 'huy',
+          position: 'Professcor',
+        },
+        dateCreated: '0',
+      }
+    ])
+    // return this.http.get<SubjectModel[]>(`${environment.apiHost}/subject`);
   }
 }
