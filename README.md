@@ -26,7 +26,7 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 
 8. Interface Design: https://docs.google.com/document/d/12lY7gO94c9iotlvSE26G7N4Pyge_feki9V24le5Tpd4/edit?fbclid=IwAR3N71-2N9MrWQ7cw2bHAOdCT0kPawXdRPQoxIL2DCBYE1N_FmmiPpLaO8E#
 ######################################################################################################################
-9. Database Design: https://docs.google.com/document/d/1tKkKocEX583e1ZALRerd-iT1xeMEgOg0T2rtVV0ZWjo/edit#
+9. Database Design: https://docs.google.com/document/d/1tKkKocEX583e1ZALRerd-iT1xeMEgOg0T2rtVV0ZWjo/edit?fbclid=IwAR3KCKkD-4O5bk51fwSyP5B-ZHCN4qlvTv1HLhpmHfYRqRz5AkVminTJ3N4#
 ######################################################################################################################
 10. Test Plan
 ######################################################################################################################
