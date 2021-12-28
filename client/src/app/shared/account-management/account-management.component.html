@@ -4,7 +4,7 @@
   </div>
   <div class="card-body">
     <div class="card-block pb-5">
-      <form [formGroup]="accountInfoForm" (ngSubmit)="accountInfoForm">
+      <form [formGroup]="accountInfoForm" (ngSubmit)="onChangeUserInfo()">
         <div class="row justify-content-center">
           <div class="row col-8 mx-center">
             <div class="col-md-6">
@@ -27,18 +27,19 @@
                   class="form-control app-control"
                   id="email"
                   name="email"
+                  formControlName="email"
                 />
               </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                  <label for="fullname">Full Name</label>
+                  <label for="fullName">Full Name</label>
                   <input
                     type="text"
                     class="form-control app-control"
-                    id="fullname"
-                    name="fullname"
-                    formControlName="fullname"
+                    id="fullName"
+                    name="fullName"
+                    formControlName="fullName"
                   />
                 </div>
               </div>
@@ -58,7 +59,6 @@
                 <div class="form-group">
                   <label for="password">Password</label>
                   <input
-                    type="text"
                     class="form-control app-control"
                     id="password"
                     name="password"

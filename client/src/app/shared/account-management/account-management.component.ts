@@ -23,9 +23,10 @@ export class AccountManagementComponent implements OnInit {
 
   public ngOnInit(): void {
     this.accountInfoForm = this.fb.group({
+      id: ['', Validators.required],
       username: ['', Validators.required],
       email: ['', Validators.email],
-      fullname: ['', Validators.required],
+      fullName: ['', Validators.required],
       position: ['', Validators.required],
       password: ['',Validators.required]
     });
@@ -33,11 +34,12 @@ export class AccountManagementComponent implements OnInit {
       .getUserInfo()
       .pipe(takeUntil(this.destroyableService.destroy$))
       .subscribe({
-        next: ({ username, email, fullname, position, password }) => {
+        next: ({ id, username, email, fullName, position, password }) => {
           this.accountInfoForm.setValue({
+            id,
             username,
             email,
-            fullname,
+            fullName,
             position,
             password
           });
@@ -51,11 +53,12 @@ export class AccountManagementComponent implements OnInit {
   public onChangeUserInfo(): void {
     if (this.accountInfoForm.valid) {
       this.accountService.updateInfo(this.accountInfoForm.value).subscribe({
-        next: ({ username, email, fullname, position, password }) => {
+        next: ({id, username, email, fullName, position, password }) => {
           this.accountInfoForm.setValue({
+            id,
             username,
             email,
-            fullname,
+            fullName,
             position,
             password
           });
