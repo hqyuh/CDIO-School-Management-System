@@ -62,4 +62,10 @@ public class UserController {
         return new ResponseEntity<>(OK);
     }
 
+    @GetMapping("/me")
+    public ResponseEntity<User> editProfile() {
+        User user = service.editProfile();
+        return new ResponseEntity<>(user, OK);
+    }
+
 }

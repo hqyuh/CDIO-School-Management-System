@@ -19,14 +19,16 @@ public class UserService {
     private final UserRepository repo;
     private final MailService mailService;
     private final PasswordEncoder passwordEncoder;
+    private final AuthService authService;
 
     @Autowired
     public UserService(UserRepository repo,
                        MailService mailService,
-                       PasswordEncoder passwordEncoder) {
+                       PasswordEncoder passwordEncoder, AuthService authService) {
         this.repo = repo;
         this.mailService = mailService;
         this.passwordEncoder = passwordEncoder;
+        this.authService = authService;
     }
 
     public List<User> getAllUser() {
@@ -86,6 +88,10 @@ public class UserService {
     * */
     public void updateUserEnabledStatus(Long id, boolean enabled) {
         repo.updateEnabledStatus(id, enabled);
+    }
+
+    public User editProfile() {
+        return authService.getCurrentUser();
     }
 
 }
