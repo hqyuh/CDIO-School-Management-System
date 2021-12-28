@@ -84,4 +84,9 @@ export class QuizzListComponent implements OnInit {
   public navigateToStudentMark(): void {
     this.router.navigate(['/student-mark'])
   }
+
+  public copyCode(code: string): void {
+    navigator.clipboard.writeText(code);
+    this.toastService.success('Đã copy mã code bài làm vào clipboard!')
+  }
 }

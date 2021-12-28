@@ -14,7 +14,7 @@ export class SidebarService {
     {
       title: 'Môn học',
       icon: 'fas fa-book-open',
-      active: false,
+      active: true,
       type: 'dropdown',
       badge: {
         text: 'New ',
@@ -50,9 +50,9 @@ export class SidebarService {
           href: 'student-mark'
         },
         {
-          title: 'Kết quả thi',
-          href: 'study/test-result'
-        },
+          title: 'Làm bài thi',
+          href: '/home/exam-code'
+        }
       ]
     },
     {
@@ -64,6 +64,30 @@ export class SidebarService {
         {
           title: 'Danh sách tài khoản',
           href: '/user-management'
+        },
+      ]
+    },
+    {
+      title: 'Quản lý cá nhân',
+      icon: 'fas fa-user',
+      active: false,
+      type: 'dropdown',
+      submenus: [
+        {
+          title: 'Thông tin cá nhân',
+          href: '/home/user/me'
+        },
+      ]
+    },
+    {
+      title: 'Báo lỗi',
+      icon: 'fas fa-bug',
+      active: false,
+      type: 'dropdown',
+      submenus: [
+        {
+          title: 'Báo lỗi - Góp ý',
+          href: '/home/report/bug'
         },
       ]
     },

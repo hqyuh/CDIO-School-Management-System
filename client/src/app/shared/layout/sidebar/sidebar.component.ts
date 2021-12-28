@@ -6,12 +6,12 @@ import {
   transition,
   animate,
 } from '@angular/animations';
-import { SidebarService } from './sidebar.service';
 import { AccountService } from 'src/app/module/account/service/account.service';
 import User from 'src/app/module/account/models/account.model';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { SystemRole } from 'src/app/core/enum/role.enum';
+import { SidebarService } from '../../service/sidebar.service';
 
 @Component({
   selector: 'app-sidebar',

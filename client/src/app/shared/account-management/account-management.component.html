@@ -1,0 +1,65 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Thông tin cá nhân</h4>
+  </div>
+  <div class="card-body">
+    <div class="card-block pb-5">
+      <form [formGroup]="accountInfoForm" (ngSubmit)="accountInfoForm">
+        <div class="row justify-content-center">
+          <div class="row col-8 mx-center">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input
+                  type="text"
+                  class="form-control app-control"
+                  id="username"
+                  name="username"
+                  formControlName="username"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="text"
+                  class="form-control app-control"
+                  id="email"
+                  name="email"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="fullname">Full Name</label>
+                  <input
+                    type="text"
+                    class="form-control app-control"
+                    id="fullname"
+                    name="fullname"
+                    formControlName="fullname"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="position">Position</label>
+                  <input
+                    type="text"
+                    class="form-control app-control"
+                    id="position"
+                    name="position"
+                    formControlName="position"
+                  />
+                </div>
+              </div>
+              <div class="col-md-12 mt-4">
+                  <button class="btn btn-primary w-100 rounded-30" type="submit">Lưu thay đổi</button>
+              </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

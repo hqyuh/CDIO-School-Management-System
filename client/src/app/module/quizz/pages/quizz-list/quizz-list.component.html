@@ -85,9 +85,6 @@
                   <i class="pi pi-pencil"></i>
                   {{ quizzes.description }}
                 </ng-template>
-                <ng-template [ngSwitchCase]="'activationCode'">
-                  {{ quizzes.activationCode }}
-                </ng-template>
                 <ng-template [ngSwitchCase]="'name'">
                   <i class="pi pi-pencil"></i>
                   {{ quizzes.name }}
@@ -120,6 +117,17 @@
                     placement="bottom"
                   >
                   <i class="fas fa-mask"></i>
+                  </button>
+                </ng-template>
+                <ng-template [ngSwitchCase]="'activationCode'">
+                  <button 
+                    class="btn btn-primary px-4"
+                    [ngbTooltip]="quizzes.activationCode"
+                    container="body"
+                    placement="bottom"
+                    (click)="copyCode(quizzes.activationCode)"
+                  >
+                    Mời &nbsp;<i class="fas fa-file-code"></i>
                   </button>
                 </ng-template>
               </ng-container>

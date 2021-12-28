@@ -34,6 +34,10 @@ const routes: Routes = [
         loadChildren: ()=> import('../../module/mark/student-mark.module').then(m => m.StudentMarkModule)
       },
       {
+        path: 'user/me',
+        loadChildren: ()=> import('../../shared/account-management/account-management.module').then(m=>m.AccountManagementModule)
+      },
+      {
         path: '',
         pathMatch: 'full',
         redirectTo: 'subject',

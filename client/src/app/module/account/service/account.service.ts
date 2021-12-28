@@ -48,10 +48,17 @@ export class AccountService {
         this.currentUser$.next(null);
       })
     );
-   //  return "OK";
   }
 
   public forgetPassword(payload: { newPassword: string}): Observable<any> {
     return this.http.patch<any>(`${environment.apiHost}/auth/forgetPassword`, payload);
+  }
+
+  public getUserInfo(): Observable<User> {
+    return this.http.get<User>(`${environment.apiHost}/user/me`);
+  }
+
+  public updateInfo(user: User): Observable<User> {
+    return this.http.patch<User>(`${environment.apiHost}/user/me`,user);
   }
 }
