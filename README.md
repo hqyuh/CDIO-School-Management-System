@@ -28,7 +28,7 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 ######################################################################################################################
 9. Database Design: https://docs.google.com/document/d/1tKkKocEX583e1ZALRerd-iT1xeMEgOg0T2rtVV0ZWjo/edit?fbclid=IwAR3KCKkD-4O5bk51fwSyP5B-ZHCN4qlvTv1HLhpmHfYRqRz5AkVminTJ3N4#
 ######################################################################################################################
-10. Test Plan
+10. Test Plan: https://docs.google.com/document/d/1pvj_f2KhEa2sdE7qA0ZIE6fxFMdnBOkcD9qqDjpWRDM/edit#
 ######################################################################################################################
 11. Naming Convention: https://docs.google.com/document/d/1wDqKNuwlZg-MscVntuAPhc1VulhVvfjfmrzC6pwkM28/edit?usp=sharing
 ######################################################################################################################
