@@ -12,6 +12,15 @@ Database: https://dbdiagram.io/d/61396086825b5b0146f9b555
 Discord: https://discord.com/channels/856773246069637152/856773246069637158
 ######################################################################################################################
 
+1. Bìa chính: https://docs.google.com/document/d/1EBx7ctsTq8I8xw5AmERCKTJ__Hc4rM1IYnnYiWWwTmc/edit?usp=sharing
+######################################################################################################################
+
+2. Bìa phụ: https://docs.google.com/document/d/1VnymG1Q58Nqa4Lcnusy_XJiYRenre8l214ez7Cf4QC8/edit?usp=sharing
+######################################################################################################################
+
+3. Lời cảm ơn: https://docs.google.com/document/d/1wr3YpSGIudBCrikMdRKvf5z4DU8JtG4yvedVC_P9P0E/edit?usp=sharing
+######################################################################################################################
+
 4. Proposal: https://docs.google.com/document/d/1JYh5wpmIWnowkCd6q8osMEemUTLUdRvYYgIrpEW9rA8/edit
 ######################################################################################################################
 
