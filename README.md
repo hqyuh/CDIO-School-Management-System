@@ -50,6 +50,9 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 15. Kết luận: https://docs.google.com/document/d/1y72gP6nS72ipnLLov6T6yKPL0RR6BoWy_y_Gly82oP8/edit?usp=sharing
 ######################################################################################################################
 
+Sprint_Backlog-Bìa: https://docs.google.com/document/d/1CyZCS4-Pdv8b_ImbL_SuweJlTyHQH0YLFbNWAyWAd98/edit?usp=sharing
+######################################################################################################################
+
 * SprintBacklog https://docs.google.com/spreadsheets/d/1A8aFyrPWbRDLea1L0J4s2WEUuQh5LjcSHqebL_3JFMw/edit#gid=0
 ######################################################################################################################
 
