@@ -38,7 +38,7 @@ Discord: https://discord.com/channels/856773246069637152/856773246069637158
 ######################################################################################################################
 14. Weekly Meeting: https://docs.google.com/document/d/1G2CnxVakIU6iFlz0Ah1LDPlMdAjFQounW5kgrVMSHso/edit?usp=sharing
 ######################################################################################################################
-15. Kết luận
+15. Kết luận: https://docs.google.com/document/d/1y72gP6nS72ipnLLov6T6yKPL0RR6BoWy_y_Gly82oP8/edit?usp=sharing
 ######################################################################################################################
 
 * SprintBacklog https://docs.google.com/spreadsheets/d/1A8aFyrPWbRDLea1L0J4s2WEUuQh5LjcSHqebL_3JFMw/edit#gid=0
