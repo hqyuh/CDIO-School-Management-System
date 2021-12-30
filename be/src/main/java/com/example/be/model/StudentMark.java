@@ -1,10 +1,12 @@
 package com.example.be.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.Instant;
 
 @Data
 @AllArgsConstructor
@@ -20,6 +22,9 @@ public class StudentMark {
 
     @Column(name = "mark")
     private float mark;
+
+    @Column(name = "completed_date")
+    private Instant completedDate;
 
     @OneToOne
     @JoinColumn(name = "test_mark_id")

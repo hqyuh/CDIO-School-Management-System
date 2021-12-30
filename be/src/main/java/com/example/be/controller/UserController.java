@@ -43,7 +43,7 @@ public class UserController {
         return new ResponseEntity<>(newUser, CREATED);
     }
 
-    @PatchMapping
+    @PatchMapping("/me")
     public ResponseEntity<User> updateUser(@RequestBody User user) {
         User updateUser = service.updateUser(user);
         return new ResponseEntity<>(updateUser, OK);
