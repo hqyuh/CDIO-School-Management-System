@@ -67,7 +67,7 @@ export class TimerCountdownComponent implements OnInit, OnDestroy {
     );
     const quizzUpdatedExamTime = {id: selectedQuizzOnStore.id, examTime: this.convertTimeService.convertTimerToSeconds(this.timerValue)};
     this.quizzService
-      .updateQuizz(quizzUpdatedExamTime as QuizzModel)
+      .updateExamTime(selectedQuizzOnStore.id,quizzUpdatedExamTime)
       .pipe(takeUntil(this.destroyableService.destroy$))
       .subscribe({
         next: () =>
