@@ -48,11 +48,16 @@
                         {{ mark.mark }}
                       </ng-template>
                       <ng-template [ngSwitchCase]="'username'">
+                        <i class="pi pi-user"></i>
                         {{ mark.username }}
                       </ng-template>
                       <ng-template [ngSwitchCase]="'name'">
                         <i class="pi pi-pencil"></i>
                         {{ mark.name }}
+                      </ng-template>
+                      <ng-template [ngSwitchCase]="'completedDate'">
+                        <i class="pi pi-pencil"></i>
+                        {{ mark.completedDate }}
                       </ng-template>
                     </ng-container>
                   </td>
