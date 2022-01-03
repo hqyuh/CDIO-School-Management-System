@@ -1,5 +1,6 @@
 package com.example.be.service;
 
+import com.example.be.mapper.StudentMarkMapper;
 import com.example.be.model.TestQuizz;
 import com.example.be.repository.TestQuizzRepository;
 import org.apache.commons.lang3.RandomStringUtils;

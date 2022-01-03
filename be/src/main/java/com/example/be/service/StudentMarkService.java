@@ -6,7 +6,6 @@ import com.example.be.model.StudentMark;
 import com.example.be.model.TestQuizz;
 import com.example.be.repository.StudentMarkRepository;
 import com.example.be.repository.TestQuizzRepository;
-import com.example.be.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +37,7 @@ public class StudentMarkService {
 
         StudentMark studentMark = studentMarkMapper.map(studentMarkDTO, testQuizz, authService.getCurrentUser());
         studentMark.setMark(studentMarkDTO.getMark());
+        studentMark.setCompletedDate(Instant.now());
         repo.save(studentMark);
     }
 
