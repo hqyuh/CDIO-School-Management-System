@@ -102,4 +102,8 @@ export class QuizzService {
     return this.http.patch<QuizzModel>(`${environment.apiHost}/quizz/examtime/${quizzId}`,body);
   }
 
+
+  public saveMark(testQuizzId: number,mark: number): Observable<QuizzModel> {
+    return this.http.post<QuizzModel>(`${environment.apiHost}/studentMark/`,{testQuizzId, mark})
+  }
 }
