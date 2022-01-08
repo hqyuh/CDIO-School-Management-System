@@ -40,7 +40,8 @@ public class TestQuizzService {
         testQuizz.setDescription(testQuizz.getDescription());
         testQuizz.setDateCreated(Instant.now());
         testQuizz.setExamTime(testQuizz.getExamTime());
-        testQuizz.setActivationCode(testQuizz.getActivationCode());
+        testQuizz.setActivationCode(generateActivationCode());
+        testQuizz.setPrivate(true);
         return repo.save(testQuizz);
     }
 
