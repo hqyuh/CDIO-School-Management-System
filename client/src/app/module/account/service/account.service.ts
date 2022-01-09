@@ -41,13 +41,14 @@ export class AccountService {
     );
   }
 
-  public logout(): Observable<any> {
-   return this.http.delete(`${environment.apiHost}/auth/logout`).pipe(
+  public logout(): string {
+   /*return this.http.delete(`${environment.apiHost}/auth/logout`).pipe(
       tap(() => {
         localStorage.removeItem('currentUser');
         this.currentUser$.next(null);
       })
-    );
+    );*/
+    return "OK";
   }
 
   public forgetPassword(payload: { newPassword: string}): Observable<any> {

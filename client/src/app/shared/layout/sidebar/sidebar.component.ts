@@ -76,13 +76,20 @@ export class SidebarComponent implements OnInit {
     this.sidebarservice.setSidebarState(true);
   }
 
+  // public logout(): void {
+  //   this.accountService.logout().subscribe({
+  //     next: () => {
+  //       void this.router.navigate(['/account/login']);
+  //       this.toastService.show('We will miss you UwU');
+  //     },
+  //     error: () => this.toastService.error('Some thing went wrong!'),
+  //   });
+  // }
+
   public logout(): void {
-    this.accountService.logout().subscribe({
-      next: () => {
-        void this.router.navigate(['/account/login']);
-        this.toastService.show('We will miss you UwU');
-      },
-      error: () => this.toastService.error('Some thing went wrong!'),
-    });
+    this.router.navigate(['/account/login']);
+    this.toastService.show('We will miss you UwU');
   }
+
+
 }
