@@ -72,7 +72,7 @@ export class TimerCountdownComponent implements OnInit, OnDestroy {
       .subscribe({
         next: () =>
           this.toastService.success(
-            'Hãy quay lại và hoàn thành bài thi của bạn!'
+            'Hãy quay lại và hoàn thành bài thi của bạn'
           ),
         error: () => this.toastService.error('Đã có lỗi bất ngờ xảy ra!'),
       });
